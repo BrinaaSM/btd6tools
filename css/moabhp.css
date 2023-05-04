@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
+p {
+	display: inline-block;
+	text-align: left;
+	font-size: 25px;
+	text-shadow: 3px 3px #000000;
+	width: 6em;
+}
+
+.input {
+	text-align: center;
+}
+
+.output {
+	display: block;
+	text-align: center;
+}
+
+.moab-input {
+	text-shadow: 2px 2px #000000;
+	background-color: #000069;
+	text-align: center;
+	font-size: 25px;
+	width: 30em;
+	height: 1em;
+}
+
+.moab-output {
+	text-shadow: 2px 2px #000000;
+	background-color: #000069;
+	text-align: center;
+	font-size: 25px;
+	width: 24em;
+	height: 1em;
+}
