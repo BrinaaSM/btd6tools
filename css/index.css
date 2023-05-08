@@ -1,0 +1,28 @@
+.grid-item {
+	border:5px solid black;
+	background-color: #000069;
+	text-align: center;
+	font-size: 42px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.grid-item > p {
+	background-color: #000069;
+}
+
+.grid-item > a {
+	padding: 10px;
+	display: block;
+	background-color: #000069;
+	text-decoration: none;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	row-gap: 1em;
+	column-gap: 1em;
+}
