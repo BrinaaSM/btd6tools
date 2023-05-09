@@ -1,4 +1,5 @@
 const source = document.getElementById("current-round-input");
+const modifierSource = document.getElementById("modifier-input");
 const result1 = document.getElementById("moab-hp-output");
 const result2 = document.getElementById("bfb-hp-output");
 const result3 = document.getElementById("zomg-hp-output");
@@ -8,16 +9,59 @@ const result5 = document.getElementById("bad-hp-output");
 var knowledge;
 var doubleHP;
 var fortified;
+var challenge;
+var modifier;
+var round;
 
-function inputHandler(e) {
-	var round = e.target.value;
-	calcAll(round);
+function inputHandlerRound(e) {
+	round = e.target.value;
+	calcAll(round, modifier);
 }
 
-function calcAll(round) {
-	if(round === undefined) {
-		round = document.getElementById("current-round-input").value;
+function inputHandlerModifier(e) {
+	modifier = e.target.value;
+	if(modifier < 0) {
+		modifierSource.value = 0;
 	}
+	if(modifier < 5) {
+		modifier = 5;
+	} else if(modifier > 2000) {
+		modifierSource.value = 2000;
+		modifier = 2000;
+	}
+	calcAll(round, modifier);
+}
+
+function toggleChallenge(){
+	var div = document.getElementById("modifier-div");
+	if (challenge === true) {
+		div.style.display = "block";
+	} else {
+		div.style.display = "none";
+	}
+}
+
+function calcAll(round, modifier) {
+	
+	if(round === undefined) {
+		round = source.value;
+	}
+	
+	if(modifier === undefined) {
+		modifierSource.value = 100;
+		modifier = 100;
+	}
+	
+	if(round < 0) {
+		source.value = 0;
+	}
+	if(round <= 0) {
+		round = 1;
+	} else if(round > Number.MAX_SAFE_INTEGER) {
+		source.value = Number.MAX_SAFE_INTEGER;
+		round = Number.MAX_SAFE_INTEGER;
+	}
+	
 	result1.innerHTML = calcHP(200, round);
 	result2.innerHTML = calcHP(700, round);
 	result3.innerHTML = calcHP(4000, round);
@@ -27,7 +71,8 @@ function calcAll(round) {
 
 function calcHP(baseHP, round) {
 	var hp;
-	if(round >= 1 && round <= 80) {
+	
+	if (round >= 1 && round <= 80) {
 		hp = baseHP;
 	}
 	else if(round >= 81 && round <= 100) {
@@ -54,12 +99,6 @@ function calcHP(baseHP, round) {
 	else if(round > 500 && round <= Number.MAX_SAFE_INTEGER) {
 		hp = baseHP * (491.5 + (round - 500) * 5.0);
 	}
-	else if(round > Number.MAX_SAFE_INTEGER) {
-		return "JS doesn't support this number safely.";
-	}
-	else {
-		return "N/A";
-	}
 	
 	if(knowledge === true) {
 		hp = Math.floor(parseInt(hp) * 0.9);
@@ -70,8 +109,13 @@ function calcHP(baseHP, round) {
 	if(doubleHP === true) {
 		hp = hp * 2;
 	}
+	if(challenge === true) {
+		hp = Math.floor(hp * (modifier / 100));
+	}
 	
 	return hp.toLocaleString();
 }
 
-source.addEventListener("input", inputHandler);
+document.getElementById("modifier-div").style.display = "none";
+source.addEventListener("input", inputHandlerRound);
+modifierSource.addEventListener("input", inputHandlerModifier);

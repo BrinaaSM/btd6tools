@@ -32,32 +32,42 @@
 		<input type="checkbox" id="double" name="double" value="Double HP" onchange='doubleHP=this.checked;calcAll()'>
 		<label for="double">Double HP</label><br>
 	</div>
+	<div>
+		<input type="checkbox" id="challenge" name="challenge" value="Custom Challenge HP Modifier" onchange='challenge=this.checked;toggleChallenge();calcAll()'>
+		<label for="challenge">Custom Challenge HP Modifier</label><br>
+	</div>
+	
+</div>
+
+<div class="input" id= "modifier-div">
+	<input class="modifier-input" id="modifier-input" type="number" placeholder="HP modifier in %" value="100" min="5" max="2000"/>
 </div>
 
 <div class="input">
 	<input class="moab-input" id="current-round-input" type="number" placeholder="Current Round" min="1"/>
 </div>
 
-	<div class="output"> 
-		<p>M.O.A.B. HP:</p>
-		<p class="moab-output" id="moab-hp-output">N/A<p/>
-	</div>
-	<div class="output"> 
-		<p>B.F.B. HP:</p>
-		<p class="moab-output" id="bfb-hp-output">N/A<p/>
-	</div>
-	<div class="output"> 
-		<p>Z.O.M.G. HP:</p>
-		<p class="moab-output" id="zomg-hp-output">N/A<p/>
-	</div>
-	<div class="output"> 
-		<p>D.D.T. HP:</p>
-		<p class="moab-output" id="ddt-hp-output">N/A<p/>
-	</div>
-	<div class="output"> 
-		<p>B.A.D. HP:</p>
-		<p class="moab-output" id="bad-hp-output">N/A<p/>
-	</div>
+<div class="output"> 
+	<p>M.O.A.B. HP:</p>
+	<p class="moab-output" id="moab-hp-output">N/A<p/>
+</div>
+<div class="output"> 
+	<p>B.F.B. HP:</p>
+	<p class="moab-output" id="bfb-hp-output">N/A<p/>
+</div>
+<div class="output"> 
+	<p>Z.O.M.G. HP:</p>
+	<p class="moab-output" id="zomg-hp-output">N/A<p/>
+</div>
+<div class="output"> 
+	<p>D.D.T. HP:</p>
+	<p class="moab-output" id="ddt-hp-output">N/A<p/>
+</div>
+<div class="output"> 
+	<p>B.A.D. HP:</p>
+	<p class="moab-output" id="bad-hp-output">N/A<p/>
+</div>
+
 </body>
 
 <script src="../js/moabhp.js"></script>

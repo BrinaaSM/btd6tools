@@ -9,6 +9,7 @@ p {
 }
 
 .input {
+	padding: 1em;
 	text-align: center;
 }
 
@@ -18,6 +19,15 @@ p {
 }
 
 .moab-input {
+	text-shadow: 2px 2px #000000;
+	background-color: #000069;
+	text-align: center;
+	font-size: 25px;
+	width: 30em;
+	height: 1em;
+}
+
+.modifier-input {
 	text-shadow: 2px 2px #000000;
 	background-color: #000069;
 	text-align: center;
