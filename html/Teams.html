@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/globalstyle.css">
+<link rel="stylesheet" href="../css/teams.css">
+<title>Monkey Teams - Bloons TD 6 Tools</title>
+
+<div class="header">
+	<div class=home-button>
+		<a href="../index.html">Home</a>
+	</div>
+	<div class=back-button>
+		<a href="../index.html">Back</a>
+	</div>
+</div>
+
+<h1>Monkey Teams</h1>
+
+</head>
+<body>
+
+<div class="grid-container">
+	<div class="grid-item">
+		<div class="checkbox-container">
+			<div>
+				<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='togglePrimary()'>
+				<label for="primary">Primary</label><br>
+			</div>
+			<div class="checkbox-sub-container">
+				<div>
+					<input type="checkbox" id="dart" name="primary" value="Dart" checked="true" onchange='toggleDart()'>
+					<label for="dart">Dart Monkey</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="boomerang" name="boomerang" value="Boomerang" checked="true" onchange='toggleBoomerang()'>
+					<label for="boomerang">Boomerang Monkey</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="bomb" name="bomb" value="Bomb" checked="true" onchange='toggleBomb()'>
+					<label for="bomb">Bomb Shooter</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="tack" name="tack" value="Tack" checked="true" onchange='toggleTack()'>
+					<label for="tack">Tack Shooter</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="ice" name="ice" value="Ice" checked="true" onchange='toggleIce()'>
+					<label for="ice">Ice Monkey</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="glue" name="glue" value="Glue" checked="true" onchange='toggleGlue()'>
+					<label for="glue">Glue Gunner</label><br>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="grid-item">
+		<div class="checkbox-container">
+			<div>
+				<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+				<label for="primary">Military</label><br>
+			</div>
+			<div class="checkbox-sub-container">
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Sniper Monkey</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Monkey Sub</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Monkey Buccaneer</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Monkey Ace</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Heli Pilot</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Mortar Monkey</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Dartling Gunner</label><br>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="grid-item">
+				<div class="checkbox-container">
+			<div>
+				<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+				<label for="primary">Magic</label><br>
+			</div>
+			<div class="checkbox-sub-container">
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Wizard Monkey</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Super Monkey</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Ninja Monkey</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Alchemist</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Druid</label><br>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="grid-item">
+				<div class="checkbox-container">
+			<div>
+				<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+				<label for="primary">Support</label><br>
+			</div>
+			<div class="checkbox-sub-container">
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Banana Farm</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Spike Factory</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Monkey Village</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Engineer Monkey</label><br>
+				</div>
+				<div>
+					<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='knowledge=this.checked;calcAll()'>
+					<label for="primary">Beast Handler</label><br>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="input">
+	<input class="count-input" id="count-input" type="number" placeholder="How many Monkeys?" min="1", max="23"/>
+</div>
+
+</body>
+
+<script src="../js/teams.js"></script>
+
+<footer>
+<div class="footer">by Kyufoxy</div>
+</footer>
+</html>
