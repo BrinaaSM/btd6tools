@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
+p {
+	display: inline-block;
+	text-align: left;
+	font-size: 25px;
+	text-shadow: 3px 3px #000000;
+}
+
+.input {
+	padding: 1em;
+	text-align: center;
+}
+
+.output {
+	display: block;
+	text-align: center;
+}
+
+.output.text {
+}
+
+.count-input {
+	text-shadow: 2px 2px #000000;
+	background-color: #000069;
+	text-align: center;
+	font-size: 25px;
+	width: 30em;
+	height: 1em;
+}
+
+.checkbox-container {
+	text-shadow: 1px 1px #000000;
+	display: block;
+	padding: 1em;
+	text-align: left;
+	font-size: 1.15em;
+}
+
+.checkbox-sub-container {
+	display: inline-block;
+	padding-left: 1em;
+	text-align: left;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	row-gap: 1em;
+}
+
+.roll-button-div {
+	display: block;
+	text-align: center;
+}
+
+.roll-button {
+	font-size: 42px;
+	background-color: #000069;
+}
