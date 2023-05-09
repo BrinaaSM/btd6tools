@@ -5,8 +5,19 @@ const result3 = document.getElementById("zomg-hp-output");
 const result4 = document.getElementById("ddt-hp-output");
 const result5 = document.getElementById("bad-hp-output");
 
+var knowledge;
+var doubleHP;
+var fortified;
+
 function inputHandler(e) {
 	var round = e.target.value;
+	calcAll(round);
+}
+
+function calcAll(round) {
+	if(round === null) {
+		round = document.getElementById("current-round-input").value;
+	}
 	result1.innerHTML = calcHP(200, round);
 	result2.innerHTML = calcHP(700, round);
 	result3.innerHTML = calcHP(4000, round);
@@ -15,40 +26,52 @@ function inputHandler(e) {
 }
 
 function calcHP(baseHP, round) {
+	var hp;
 	if(round >= 1 && round <= 80) {
-		return baseHP.toLocaleString();
+		hp = baseHP;
 	}
-	if(round >= 81 && round <= 100) {
-		return (baseHP * (1 + (round - 80) * 0.02)).toLocaleString();
+	else if(round >= 81 && round <= 100) {
+		hp = baseHP * (1 + (round - 80) * 0.02);
 	}
-	if(round >= 101 && round <= 124) {
-		return (baseHP * (1.4 + (round - 100) * 0.05)).toLocaleString();
+	else if(round >= 101 && round <= 124) {
+		hp = baseHP * (1.4 + (round - 100) * 0.05);
 	}
-	if(round >= 125 && round <= 150) {
-		return (baseHP * (2.6 + (round - 124) * 0.15)).toLocaleString();
+	else if(round >= 125 && round <= 150) {
+		hp = baseHP * (2.6 + (round - 124) * 0.15);
 	}
-	if(round >= 151 && round <= 250) {
-		return (baseHP * (6.5 + (round - 150) * 0.35)).toLocaleString();
+	else if(round >= 151 && round <= 250) {
+		hp = baseHP * (6.5 + (round - 150) * 0.35);
 	}
-	if(round >= 251 && round <= 300) {
-		return (baseHP * (41.5 + (round - 250) * 1.0)).toLocaleString();
+	else if(round >= 251 && round <= 300) {
+		hp = baseHP * (41.5 + (round - 250) * 1.0);
 	}
-	if(round >= 301 && round <= 400) {
-		return (baseHP * (91.5 + (round - 300) * 1.5)).toLocaleString();
+	else if(round >= 301 && round <= 400) {
+		hp = baseHP * (91.5 + (round - 300) * 1.5);
 	}
-	if(round >= 401 && round <= 500) {
-		return (baseHP * (241.5 + (round - 400) * 2.5)).toLocaleString();
+	else if(round >= 401 && round <= 500) {
+		hp = baseHP * (241.5 + (round - 400) * 2.5);
 	}
-	if(round > 500 && round <= Number.MAX_SAFE_INTEGER) {
-		return (baseHP * (491.5 + (round - 500) * 5.0)).toLocaleString();
+	else if(round > 500 && round <= Number.MAX_SAFE_INTEGER) {
+		hp = baseHP * (491.5 + (round - 500) * 5.0);
 	}
-	if(round > Number.MAX_SAFE_INTEGER) {
+	else if(round > Number.MAX_SAFE_INTEGER) {
 		return "JS doesn't support this number safely.";
 	}
-	return "N/A";
+	else {
+		return "N/A";
+	}
+	
+	if(knowledge === true) {
+		hp = Math.floor(parseInt(hp) * 0.9);
+	}
+	if(fortified === true) {
+		hp = hp * 2;
+	}
+	if(doubleHP === true) {
+		hp = hp * 2;
+	}
+	
+	return hp.toLocaleString();
 }
-
-
-
 
 source.addEventListener("input", inputHandler);

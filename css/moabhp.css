@@ -34,3 +34,11 @@ p {
 	width: 24em;
 	height: 1em;
 }
+
+.checkbox-container {
+	position: relative;
+	display: block;
+	padding: 1em;
+	text-align: left;
+	left: 20%;
+}
