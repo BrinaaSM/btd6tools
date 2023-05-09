@@ -21,6 +21,7 @@ const iceBox = document.getElementById("ice");
 var glue;
 const glueBox = document.getElementById("glue");
 
+
 var military;
 const militaryBox = document.getElementById("military");
 
@@ -44,6 +45,7 @@ const mortarBox = document.getElementById("mortar");
 
 var dartling;
 const dartlingBox = document.getElementById("dartling");
+
 
 var magic;
 const magicBox = document.getElementById("magic");
@@ -129,55 +131,92 @@ const gerryBox = document.getElementById("gerry");
 
 
 function togglePrimary() {
-	dartBox.checked = primaryBox.checked;
-	boomerangBox.checked = primaryBox.checked;
-	bombBox.checked = primaryBox.checked;
-	tackBox.checked = primaryBox.checked;
-	iceBox.checked = primaryBox.checked;
-	glueBox.checked = primaryBox.checked;
+	dartBox.checked = primary;
+	dartBox.disabled = !primary;
+	boomerangBox.checked = primary;
+	boomerangBox.disabled = !primary;
+	bombBox.checked = primary;
+	bombBox.disabled = !primary;
+	tackBox.checked = primary;
+	tackBox.disabled = !primary;
+	iceBox.checked = primary;
+	iceBox.disabled = !primary;
+	glueBox.checked = primary;
+	glueBox.disabled = !primary;
 }
 
 function toggleMilitary() {
-	sniperBox.checked = militaryBox.checked;
-	subBox.checked = militaryBox.checked;
-	buccBox.checked = militaryBox.checked;
-	aceBox.checked = militaryBox.checked;
-	heliBox.checked = militaryBox.checked;
-	mortarBox.checked = militaryBox.checked;
-	dartlingBox.checked = militaryBox.checked;
+	sniperBox.checked = military;
+	sniperBox.disabled = !military;
+	subBox.checked = military;
+	subBox.disabled = !military;
+	buccBox.checked = military;
+	buccBox.disabled = !military;
+	aceBox.checked = military;
+	aceBox.disabled = !military;
+	heliBox.checked = military;
+	heliBox.disabled = !military;
+	mortarBox.checked = military;
+	mortarBox.disabled = !military;
+	dartlingBox.checked = military;
+	dartlingBox.disabled = !military;
 }
 
 function toggleMagic() {
-	wizBox.checked = magicBox.checked;
-	supermBox.checked = magicBox.checked;
-	ninjaBox.checked = magicBox.checked;
-	alchBox.checked = magicBox.checked;
-	druidBox.checked = magicBox.checked;
+	wizBox.checked = magic;
+	wizBox.disabled = !magic;
+	supermBox.checked = magic;
+	supermBox.disabled = !magic;
+	ninjaBox.checked = magic;
+	ninjaBox.disabled = !magic;
+	alchBox.checked = magic;
+	alchBox.disabled = !magic;
+	druidBox.checked = magic;
+	druidBox.disabled = !magic;
 }
 
 function toggleSupport() {
-	farmBox.checked = supportBox.checked;
-	spacBox.checked = supportBox.checked;
-	villageBox.checked = supportBox.checked;
-	engiBox.checked = supportBox.checked;
-	beastBox.checked = supportBox.checked;
+	farmBox.checked = support;
+	farmBox.disabled = !support;
+	spacBox.checked = support;
+	spacBox.disabled = !support;
+	villageBox.checked = support;
+	villageBox.disabled = !support;
+	engiBox.checked = support;
+	engiBox.disabled = !support;
+	beastBox.checked = support;
+	beastBox.disabled = !support;
 }
 
 function toggleHero() {
-	quincyBox.checked = heroBox.checked;
-	gwenBox.checked = heroBox.checked;
-	strikerBox.checked = heroBox.checked;
-	obynBox.checked = heroBox.checked;
-	churchillBox.checked = heroBox.checked;
-	benBox.checked = heroBox.checked;
-	eziliBox.checked = heroBox.checked;
-	patBox.checked = heroBox.checked;
-	adoraBox.checked = heroBox.checked;
-	brickellBox.checked = heroBox.checked;
-	etienneBox.checked = heroBox.checked;
-	saudaBox.checked = heroBox.checked;
-	psiBox.checked = heroBox.checked;
-	gerryBox.checked = heroBox.checked;
+	quincyBox.checked = hero;
+	quincyBox.disabled = !hero;
+	gwenBox.checked = hero;
+	gwenBox.disabled = !hero;
+	strikerBox.checked = hero;
+	strikerBox.disabled = !hero;
+	obynBox.checked = hero;
+	obynBox.disabled = !hero;
+	churchillBox.checked = hero;
+	churchillBox.disabled = !hero;
+	benBox.checked = hero;
+	benBox.disabled = !hero;
+	eziliBox.checked = hero;
+	eziliBox.disabled = !hero;
+	patBox.checked = hero;
+	patBox.disabled = !hero;
+	adoraBox.checked = hero;
+	adoraBox.disabled = !hero;
+	brickellBox.checked = hero;
+	brickellBox.disabled = !hero;
+	etienneBox.checked = hero;
+	etienneBox.disabled = !hero;
+	saudaBox.checked = hero;
+	saudaBox.disabled = !hero;
+	psiBox.checked = hero;
+	psiBox.disabled = !hero;
+	gerryBox.checked = hero;
+	gerryBox.disabled = !hero;
 }
 
 function inputHandlerRound(e) {

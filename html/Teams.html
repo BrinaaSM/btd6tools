@@ -24,64 +24,64 @@
 		<div class="grid-item">
 		<div class="checkbox-container">
 			<div>
-				<input type="checkbox" id="hero" name="hero" value="Hero" checked="true" onchange='toggleHero()'>
+				<input type="checkbox" id="hero" name="hero" value="Hero" onchange='hero=this.checked;toggleHero()'>
 				<label for="hero">Hero</label><br>
 			</div>
 			<div class="checkbox-sub-container">
 				<div>
-					<input type="checkbox" id="quincy" name="quincy" value="Quincy" checked="true" onchange='toggleQuincy()'>
+					<input type="checkbox" id="quincy" name="quincy" value="Quincy" disabled="true" onchange='quincy=this.checked'>
 					<label for="quincy">Quincy</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="gwen" name="gwen" value="Gwen" checked="true" onchange='toggleGwen()'>
+					<input type="checkbox" id="gwen" name="gwen" value="Gwen" disabled="true" onchange='gwen=this.checked'>
 					<label for="gwen">Gwendolin</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="striker" name="striker" value="Striker" checked="true" onchange='toggleStriker()'>
+					<input type="checkbox" id="striker" name="striker" value="Striker" disabled="true" onchange='striker=this.checked'>
 					<label for="striker">Striker Jones</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="obyn" name="obyn" value="Obyn" checked="true" onchange='toggleObyn()'>
+					<input type="checkbox" id="obyn" name="obyn" value="Obyn" disabled="true" onchange='obyn=this.checked'>
 					<label for="obyn">Obyn Greenfoot</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="churchill" name="churchill" value="Churchill" checked="true" onchange='toggleChurchill()'>
+					<input type="checkbox" id="churchill" name="churchill" value="Churchill" disabled="true" onchange='churchill=this.checked;toggleHero(false)'>
 					<label for="churchill">Captain Churchill</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="ben" name="ben" value="Ben" checked="true" onchange='toggleBen()'>
+					<input type="checkbox" id="ben" name="ben" value="Ben" disabled="true" onchange='ben=this.checked'>
 					<label for="ben">Benjamin</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="ezili" name="ezili" value="Ezili" checked="true" onchange='toggleEzili()'>
+					<input type="checkbox" id="ezili" name="ezili" value="Ezili" disabled="true" onchange='ezili=this.checked'>
 					<label for="ezili">Ezili</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="pat" name="pat" value="Pat" checked="true" onchange='togglePat()'>
+					<input type="checkbox" id="pat" name="pat" value="Pat" disabled="true" onchange='pat=this.checked'>
 					<label for="pat">Pat Fusty</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="adora" name="adora" value="Adora" checked="true" onchange='toggleAdora()'>
+					<input type="checkbox" id="adora" name="adora" value="Adora" disabled="true" onchange='adora=this.checked'>
 					<label for="adora">Adora</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="brickell" name="brickell" value="Brickell" checked="true" onchange='toggleBrickell()'>
+					<input type="checkbox" id="brickell" name="brickell" value="Brickell" disabled="true" onchange='brickell=this.checked'>
 					<label for="brickell">Admiral Brickell</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="etienne" name="etienne" value="Etienne" checked="true" onchange='toggleEtienne()'>
+					<input type="checkbox" id="etienne" name="etienne" value="Etienne" disabled="true" onchange='etienne=this.checked'>
 					<label for="etienne">Etienne</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="sauda" name="sauda" value="Sauda" checked="true" onchange='toggleSauda()'>
+					<input type="checkbox" id="sauda" name="sauda" value="Sauda" disabled="true" onchange='sauda=this.checked'>
 					<label for="sauda">Sauda</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="psi" name="psi" value="Psi" checked="true" onchange='togglePsi()'>
+					<input type="checkbox" id="psi" name="psi" value="Psi" disabled="true" onchange='psi=this.checked'>
 					<label for="psi">Psi</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="gerry" name="gerry" value="Gerry" checked="true" onchange='toggleGerry()'>
+					<input type="checkbox" id="gerry" name="gerry" value="Gerry" disabled="true" onchange='gerry=this.checked'>
 					<label for="gerry">Geraldo</label><br>
 				</div>
 			</div>
@@ -90,32 +90,32 @@
 	<div class="grid-item">
 		<div class="checkbox-container">
 			<div>
-				<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='togglePrimary()'>
+				<input type="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='primary=this.checked;togglePrimary()'>
 				<label for="primary">Primary</label><br>
 			</div>
 			<div class="checkbox-sub-container">
 				<div>
-					<input type="checkbox" id="dart" name="primary" value="Dart" checked="true" onchange='toggleDart()'>
+					<input type="checkbox" id="dart" name="primary" value="Dart" checked="true" onchange='dart=this.checked'>
 					<label for="dart">Dart Monkey</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="boomerang" name="boomerang" value="Boomerang" checked="true" onchange='toggleBoomerang()'>
+					<input type="checkbox" id="boomerang" name="boomerang" value="Boomerang" checked="true" onchange='boomerang=this.checked'>
 					<label for="boomerang">Boomerang Monkey</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="bomb" name="bomb" value="Bomb" checked="true" onchange='toggleBomb()'>
+					<input type="checkbox" id="bomb" name="bomb" value="Bomb" checked="true" onchange='bomb=this.checked'>
 					<label for="bomb">Bomb Shooter</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="tack" name="tack" value="Tack" checked="true" onchange='toggleTack()'>
+					<input type="checkbox" id="tack" name="tack" value="Tack" checked="true" onchange='tack=this.checked'>
 					<label for="tack">Tack Shooter</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="ice" name="ice" value="Ice" checked="true" onchange='toggleIce()'>
+					<input type="checkbox" id="ice" name="ice" value="Ice" checked="true" onchange='ice=this.checked'>
 					<label for="ice">Ice Monkey</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="glue" name="glue" value="Glue" checked="true" onchange='toggleGlue()'>
+					<input type="checkbox" id="glue" name="glue" value="Glue" checked="true" onchange='glue=this.checked'>
 					<label for="glue">Glue Gunner</label><br>
 				</div>
 			</div>
@@ -124,36 +124,36 @@
 	<div class="grid-item">
 		<div class="checkbox-container">
 			<div>
-				<input type="checkbox" id="military" name="military" value="Military" checked="true" onchange='toggleMilitary()'>
+				<input type="checkbox" id="military" name="military" value="Military" checked="true" onchange='military=this.checked;toggleMilitary()'>
 				<label for="military">Military</label><br>
 			</div>
 			<div class="checkbox-sub-container">
 				<div>
-					<input type="checkbox" id="sniper" name="sniper" value="Sniper" checked="true" onchange='toggleSniper()'>
+					<input type="checkbox" id="sniper" name="sniper" value="Sniper" checked="true" onchange='sniper=this.checked;toggleMilitary()'>
 					<label for="sniper">Sniper Monkey</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="sub" name="sub" value="Sub" checked="true" onchange='toggleSub()'>
+					<input type="checkbox" id="sub" name="sub" value="Sub" checked="true" onchange='sub=this.checked;toggleMilitary()'>
 					<label for="sub">Monkey Sub</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="bucc" name="bucc" value="Bucc" checked="true" onchange='toggleBucc()'>
+					<input type="checkbox" id="bucc" name="bucc" value="Bucc" checked="true" onchange='bucc=this.checked;toggleMilitary()'>
 					<label for="bucc">Monkey Buccaneer</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="ace" name="ace" value="Ace" checked="true" onchange='toggleAce()'>
+					<input type="checkbox" id="ace" name="ace" value="Ace" checked="true" onchange='ace=this.checked;toggleMilitary()'>
 					<label for="ace">Monkey Ace</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="heli" name="heli" value="Heli" checked="true" onchange='toggleHeli()'>
+					<input type="checkbox" id="heli" name="heli" value="Heli" checked="true" onchange='heli=this.checked;toggleMilitary()'>
 					<label for="heli">Heli Pilot</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="mortar" name="mortar" value="Mortar" checked="true" onchange='toggleMortar()'>
+					<input type="checkbox" id="mortar" name="mortar" value="Mortar" checked="true" onchange='mortar=this.checked;toggleMilitary()'>
 					<label for="mortar">Mortar Monkey</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="dartling" name="dartling" value="Dartling" checked="true" onchange='toggleDartling()'>
+					<input type="checkbox" id="dartling" name="dartling" value="Dartling" checked="true" onchange='dartling=this.checked;toggleMilitary()'>
 					<label for="dartling">Dartling Gunner</label><br>
 				</div>
 			</div>
@@ -162,28 +162,28 @@
 	<div class="grid-item">
 		<div class="checkbox-container">
 			<div>
-				<input type="checkbox" id="magic" name="magic" value="Magic" checked="true" onchange='toggleMagic()'>
+				<input type="checkbox" id="magic" name="magic" value="Magic" checked="true" onchange='magic=this.checked;toggleMagic()'>
 				<label for="magic">Magic</label><br>
 			</div>
 			<div class="checkbox-sub-container">
 				<div>
-					<input type="checkbox" id="wiz" name="wiz" value="Wiz" checked="true" onchange='toggleWiz()'>
+					<input type="checkbox" id="wiz" name="wiz" value="Wiz" checked="true" onchange='wiz=this.checked;toggleMagic()'>
 					<label for="wiz">Wizard Monkey</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="superm" name="superm" value="Superm" checked="true" onchange='toggleSuperm()'>
+					<input type="checkbox" id="superm" name="superm" value="Superm" checked="true" onchange='superm=this.checked;toggleMagic()'>
 					<label for="superm">Super Monkey</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="ninja" name="ninja" value="Ninja" checked="true" onchange='toggleNinja()'>
+					<input type="checkbox" id="ninja" name="ninja" value="Ninja" checked="true" onchange='ninja=this.checked;toggleMagic()'>
 					<label for="ninja">Ninja Monkey</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="alch" name="alch" value="Alch" checked="true" onchange='toggleAlch()'>
+					<input type="checkbox" id="alch" name="alch" value="Alch" checked="true" onchange='alch=this.checked;toggleMagic()'>
 					<label for="alch">Alchemist</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="druid" name="druid" value="Druid" checked="true" onchange='toggleDruid()'>
+					<input type="checkbox" id="druid" name="druid" value="Druid" checked="true" onchange='druid=this.checked;toggleMagic()'>
 					<label for="druid">Druid</label><br>
 				</div>
 			</div>
@@ -192,28 +192,28 @@
 	<div class="grid-item">
 		<div class="checkbox-container">
 			<div>
-				<input type="checkbox" id="support" name="support" value="Support" checked="true" onchange='toggleSupport()'>
+				<input type="checkbox" id="support" name="support" value="Support" checked="true" onchange='support=this.checked;toggleSupport()'>
 				<label for="support">Support</label><br>
 			</div>
 			<div class="checkbox-sub-container">
 				<div>
-					<input type="checkbox" id="farm" name="farm" value="Farm" checked="true" onchange='toggleFarm()'>
+					<input type="checkbox" id="farm" name="farm" value="Farm" checked="true" onchange='farm=this.checked;toggleSupport()'>
 					<label for="farm">Banana Farm</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="spac" name="spac" value="Spac" checked="true" onchange='toggleSpac()'>
+					<input type="checkbox" id="spac" name="spac" value="Spac" checked="true" onchange='spac=this.checked;toggleSupport()'>
 					<label for="spac">Spike Factory</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="village" name="village" value="Village" checked="true" onchange='toggleVillage()'>
+					<input type="checkbox" id="village" name="village" value="Village" checked="true" onchange='village=this.checked;toggleSupport()'>
 					<label for="village">Monkey Village</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="engi" name="engi" value="Engi" checked="true" onchange='toggleEngi()'>
+					<input type="checkbox" id="engi" name="engi" value="Engi" checked="true" onchange='engi=this.checked;toggleSupport()'>
 					<label for="engi">Engineer Monkey</label><br>
 				</div>
 				<div>
-					<input type="checkbox" id="beast" name="beast" value="Beast" checked="true" onchange='toggleBeast()'>
+					<input type="checkbox" id="beast" name="beast" value="Beast" checked="true" onchange='beast=this.checked;toggleSupport()'>
 					<label for="beast">Beast Handler</label><br>
 				</div>
 			</div>
