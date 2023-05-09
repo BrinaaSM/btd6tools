@@ -37,8 +37,8 @@ h1 {
 }
 
 .footer {
+	position: absolute;
 	text-shadow: 3px 3px #000000;
-	margin-top: 5em;
 	left: 0;
 	bottom: 0;
 	width: 100%;

@@ -14,8 +14,7 @@ p {
 
 .output {
 	display: block;
-	margin-left: 30%;
-	margin-right: 30%;
+	text-align: center;
 }
 
 .output.text {

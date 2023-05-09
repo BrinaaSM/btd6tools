@@ -1,9 +1,7 @@
-const source = document.getElementById("count-input");
 const team = document.getElementById("output-text");
+const heroOutput = document.getElementById("output-hero");
 
 const content = [];
-
-var count = 1;
 
 var primary;
 const primaryBox = document.getElementById("primary");
@@ -306,19 +304,69 @@ function roll() {
 	if(beast === true) {
 		content.push("Beast Handler");
 	}
-	var output = "";
+	var output = " - ";
 	
-	for(let i = 0; i < count; i++) {
+	for(let i = 0; i < 3; i++) {
 		let choice = content[Math.floor(Math.random()*content.length)];
 		if(!choice) {
 			return;
 		}
-		output += choice + " ";
+		output += choice + " - ";
 		content.splice(content.indexOf(choice), 1);
 	}
 	
 	team.innerHTML = output;
+	
+	content.length = 0;
+	
+	if(quincy === true) {
+		content.push("Quincy");
+	}
+	if(gwen === true) {
+		content.push("Gwendolin");
+	}
+	if(striker === true) {
+		content.push("Striker Jones");
+	}
+	if(obyn === true) {
+		content.push("Obyn Greenfoot");
+	}
+	if(churchill === true) {
+		content.push("Captain Churchill");
+	}
+	if(ben === true) {
+		content.push("Benjamin");
+	}
+	if(ezili === true) {
+		content.push("Ezili");
+	}
+	if(pat === true) {
+		content.push("Pat Fusty");
+	}
+	if(adora === true) {
+		content.push("Adora");
+	}
+	if(brickell === true) {
+		content.push("Admiral Brickell");
+	}
+	if(etienne === true) {
+		content.push("Etienne");
+	}
+	if(sauda === true) {
+		content.push("Sauda");
+	}
+	if(psi === true) {
+		content.push("Psi");
+	}
+	if(gerry === true) {
+		content.push("Geraldo");
+	}
+	
+	choice = content[Math.floor(Math.random()*content.length)];
+	if(!choice) {
+		heroOutput.innerHTML = "Any Hero";
+		return;
+	}
+	heroOutput.innerHTML = choice;
 	return;
 }
-
-source.addEventListener("input", inputHandler);
