@@ -10,7 +10,7 @@ var knowledge;
 var doubleHP;
 var fortified;
 var challenge;
-var modifier;
+var modifier = 100;
 var round;
 
 function inputHandlerRound(e) {
@@ -21,7 +21,7 @@ function inputHandlerRound(e) {
 function inputHandlerModifier(e) {
 	modifier = e.target.value;
 	if(modifier < 0) {
-		modifierSource.value = 0;
+		modifierSource.value = 5;
 	}
 	if(modifier < 5) {
 		modifier = 5;
@@ -32,12 +32,28 @@ function inputHandlerModifier(e) {
 	calcAll(round, modifier);
 }
 
+function checkValidModifier() {
+	modifier = modifierSource.value;
+	if(modifier <= 0) {
+		modifier = 100;
+		modifierSource.value = "";
+	} else if(modifier < 5) {
+		modifier = 5;
+		modifierSource.value = 5;
+	} else if(modifier > 2000) {
+		modifierSource.value = 2000;
+		modifier = 2000;
+	}
+}
+
 function toggleChallenge(){
 	var div = document.getElementById("modifier-div");
 	if (challenge === true) {
 		div.style.display = "block";
 	} else {
 		div.style.display = "none";
+		modifierSource.value = "";
+		modifier = 100;
 	}
 }
 
@@ -47,15 +63,8 @@ function calcAll(round, modifier) {
 		round = source.value;
 	}
 	
-	if(modifier === undefined) {
-		modifierSource.value = 100;
-		modifier = 100;
-	}
-	
-	if(round < 0) {
-		source.value = 0;
-	}
 	if(round <= 0) {
+		source.value = "";
 		round = 1;
 	} else if(round > Number.MAX_SAFE_INTEGER) {
 		source.value = Number.MAX_SAFE_INTEGER;
