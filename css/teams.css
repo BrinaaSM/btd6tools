@@ -39,17 +39,9 @@ p {
 	text-align: left;
 }
 
-.grid-item {
-	text-align: center;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .grid-container {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr;
 	row-gap: 1em;
-	column-gap: 1em;
 }

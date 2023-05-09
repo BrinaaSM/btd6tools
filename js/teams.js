@@ -82,6 +82,52 @@ var beast;
 const beastBox = document.getElementById("beast");
 
 
+var hero;
+const heroBox = document.getElementById("hero");
+
+var quincy;
+const quincyBox = document.getElementById("quincy");
+
+var gwen;
+const gwenBox = document.getElementById("gwen");
+
+var striker;
+const strikerBox = document.getElementById("striker");
+
+var obyn;
+const obynBox = document.getElementById("obyn");
+
+var churchill;
+const churchillBox = document.getElementById("churchill");
+
+var ben;
+const benBox = document.getElementById("ben");
+
+var ezili;
+const eziliBox = document.getElementById("ezili");
+
+var pat;
+const patBox = document.getElementById("pat");
+
+var adora;
+const adoraBox = document.getElementById("adora");
+
+var brickell;
+const brickellBox = document.getElementById("brickell");
+
+var etienne;
+const etienneBox = document.getElementById("etienne");
+
+var sauda;
+const saudaBox = document.getElementById("sauda");
+
+var psi;
+const psiBox = document.getElementById("psi");
+
+var gerry;
+const gerryBox = document.getElementById("gerry");
+
+
 function togglePrimary() {
 	dartBox.checked = primaryBox.checked;
 	boomerangBox.checked = primaryBox.checked;
@@ -115,6 +161,23 @@ function toggleSupport() {
 	villageBox.checked = supportBox.checked;
 	engiBox.checked = supportBox.checked;
 	beastBox.checked = supportBox.checked;
+}
+
+function toggleHero() {
+	quincyBox.checked = heroBox.checked;
+	gwenBox.checked = heroBox.checked;
+	strikerBox.checked = heroBox.checked;
+	obynBox.checked = heroBox.checked;
+	churchillBox.checked = heroBox.checked;
+	benBox.checked = heroBox.checked;
+	eziliBox.checked = heroBox.checked;
+	patBox.checked = heroBox.checked;
+	adoraBox.checked = heroBox.checked;
+	brickellBox.checked = heroBox.checked;
+	etienneBox.checked = heroBox.checked;
+	saudaBox.checked = heroBox.checked;
+	psiBox.checked = heroBox.checked;
+	gerryBox.checked = heroBox.checked;
 }
 
 function inputHandlerRound(e) {
