@@ -15,7 +15,7 @@ function inputHandler(e) {
 }
 
 function calcAll(round) {
-	if(round === null) {
+	if(round === undefined) {
 		round = document.getElementById("current-round-input").value;
 	}
 	result1.innerHTML = calcHP(200, round);
