@@ -45,3 +45,13 @@ p {
 	grid-template-rows: 1fr;
 	row-gap: 1em;
 }
+
+.roll-button-div {
+	display: block;
+	text-align: center;
+}
+
+.roll-button {
+	font-size: 42px;
+	background-color: #000069;
+}
