@@ -46,9 +46,8 @@ p {
 }
 
 .checkbox-container {
-	position: relative;
 	display: block;
 	padding: 1em;
 	text-align: left;
-	left: 20%;
+	margin-left: 30%;
 }
