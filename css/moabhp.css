@@ -59,8 +59,8 @@
 .checkbox-container {
 	display: grid;
 	text-align: center;
-	margin-left: 1vw;
-	margin-right: 1vw;
+	margin-left: 20vw;
+	margin-right: 20vw;
 	font-size: 2vw;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: 1fr;
