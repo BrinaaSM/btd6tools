@@ -12,14 +12,6 @@ p {
 	text-align: center;
 }
 
-.output {
-	display: block;
-	text-align: center;
-}
-
-.output.text {
-}
-
 .count-input {
 	text-shadow: 2px 2px #000000;
 	background-color: #000069;
