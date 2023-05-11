@@ -76,14 +76,9 @@ a {
 	border-top: 3px black solid;
 }
 
-#footer > p {
+#footer > a {
 	display: inline-block;
-	padding-left: 1em;
-	padding-right: 1em;
+	margin-left: 1em;
+	margin-right: 1em;
 	float: left;
-}
-
-#github {
-	display: inline-block;
-	float: right;
 }
