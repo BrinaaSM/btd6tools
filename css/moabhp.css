@@ -61,10 +61,10 @@
 	text-align: center;
 	margin-left: 1vw;
 	margin-right: 1vw;
-	font-size: 2em;
+	font-size: 2vw;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: 1fr;
-	column-gap: 1em;
+	column-gap: 1vw;
 }
 
 .checkbox-div {
@@ -75,8 +75,7 @@
 }
 
 .checkbox-label {
-	padding-left: 1vw;
-	padding-right: 1vw;
+	width: 100%;
 }
 
 .checkbox {
