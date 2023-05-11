@@ -7,6 +7,8 @@
 
 body {
 	margin-top: 69px;
+	margin-left: 0px;
+	margin-right: 0px;
 	background-color: #00003f;
 }
 
@@ -57,19 +59,31 @@ a {
 
 .content {
 	padding-top: 2.5rem;
-	padding-bottom: 2.5rem;
+	padding-bottom: 1.5rem;
 }
 
 #footer {
 	position: absolute;
 	text-shadow: 3px 3px #000000;
 	display: block;
-	height: 2.5rem;
+	height: 1.5rem;
 	left: 0;
 	bottom: 0;
-	background-color: #000069;
 	width: 100%;
+	background-color: #000069;
 	color: #87CEEB;
 	text-align: center;
 	border-top: 3px black solid;
+}
+
+#footer > p {
+	display: inline-block;
+	padding-left: 1em;
+	padding-right: 1em;
+	float: left;
+}
+
+#github {
+	display: inline-block;
+	float: right;
 }
