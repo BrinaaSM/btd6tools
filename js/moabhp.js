@@ -5,6 +5,7 @@ const result2 = document.getElementById("bfb-hp-output");
 const result3 = document.getElementById("zomg-hp-output");
 const result4 = document.getElementById("ddt-hp-output");
 const result5 = document.getElementById("bad-hp-output");
+const result6 = document.getElementById("ceram-hp-output");
 
 var knowledge;
 var doubleHP;
@@ -76,6 +77,27 @@ function calcAll(round, modifier) {
 	result3.innerHTML = calcHP(4000, round);
 	result4.innerHTML = calcHP(400, round);
 	result5.innerHTML = calcHP(20000, round);
+	result6.innerHTML = calcHPCeram(round);
+}
+
+function calcHPCeram(round) {
+	var hp;
+	
+	if (round >= 1 && round <= 80) {
+		hp = 10;
+	} else {
+		hp = 60;
+	}
+	
+	if(fortified === true) {
+		hp = hp * 2;
+	}
+	
+	if(challenge === true) {
+		hp = Math.floor(hp * (modifier / 100));
+	}
+	
+	return hp.toLocaleString();
 }
 
 function calcHP(baseHP, round) {
