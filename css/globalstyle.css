@@ -54,7 +54,7 @@ a {
 
 .page-container {
 	position: relative;
-	min-height: 93vh;
+	min-height: 94vh;
 }
 
 .content {
@@ -64,16 +64,17 @@ a {
 
 #footer {
 	position: absolute;
+	margin-top: auto;
 	text-shadow: 0.2vw 0.2vw #000000;
 	display: block;
 	height: 1.5vw;
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	background-color: #000069;
 	color: #87CEEB;
 	text-align: center;
 	border-top: 3px black solid;
+	font-size: 1vw;
 }
 
 .footer-element {
