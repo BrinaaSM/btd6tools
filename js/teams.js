@@ -65,32 +65,46 @@ var hero;
 const heroBox = document.getElementById("hero");
 var quincy;
 const quincyBox = document.getElementById("quincy");
+const quincyLabel = document.getElementById("quincy-label");
 var gwen;
 const gwenBox = document.getElementById("gwen");
+const gwenLabel = document.getElementById("gwen-label");
 var striker;
 const strikerBox = document.getElementById("striker");
+const strikerLabel = document.getElementById("striker-label");
 var obyn;
 const obynBox = document.getElementById("obyn");
+const obynLabel = document.getElementById("obyn-label");
 var churchill;
 const churchillBox = document.getElementById("churchill");
+const churchillLabel = document.getElementById("churchill-label");
 var ben;
 const benBox = document.getElementById("ben");
+const benLabel = document.getElementById("ben-label");
 var ezili;
 const eziliBox = document.getElementById("ezili");
+const eziliLabel = document.getElementById("ezili-label");
 var pat;
 const patBox = document.getElementById("pat");
+const patLabel = document.getElementById("pat-label");
 var adora;
 const adoraBox = document.getElementById("adora");
+const adoraLabel = document.getElementById("adora-label");
 var brickell;
 const brickellBox = document.getElementById("brickell");
+const brickellLabel = document.getElementById("brickell-label");
 var etienne;
 const etienneBox = document.getElementById("etienne");
+const etienneLabel = document.getElementById("etienne-label");
 var sauda;
 const saudaBox = document.getElementById("sauda");
+const saudaLabel = document.getElementById("sauda-label");
 var psi;
 const psiBox = document.getElementById("psi");
+const psiLabel = document.getElementById("psi-label");
 var gerry;
 const gerryBox = document.getElementById("gerry");
+const gerryLabel = document.getElementById("gerry-label");
 
 function togglePrimary() {
 	dartBox.checked = primary;
@@ -320,46 +334,46 @@ function roll() {
 	content.length = 0;
 	
 	if(quincy === true) {
-		content.push("Quincy");
+		content.push(quincyLabel);
 	}
 	if(gwen === true) {
-		content.push("Gwendolin");
+		content.push(gwenLabel);
 	}
 	if(striker === true) {
-		content.push("Striker Jones");
+		content.push(strikerLabel);
 	}
 	if(obyn === true) {
-		content.push("Obyn Greenfoot");
+		content.push(obynLabel);
 	}
 	if(churchill === true) {
-		content.push("Captain Churchill");
+		content.push(churchillLabel);
 	}
 	if(ben === true) {
-		content.push("Benjamin");
+		content.push(benLabel);
 	}
 	if(ezili === true) {
-		content.push("Ezili");
+		content.push(eziliLabel);
 	}
 	if(pat === true) {
-		content.push("Pat Fusty");
+		content.push(patLabel);
 	}
 	if(adora === true) {
-		content.push("Adora");
+		content.push(adoraLabel);
 	}
 	if(brickell === true) {
-		content.push("Admiral Brickell");
+		content.push(brickellLabel);
 	}
 	if(etienne === true) {
-		content.push("Etienne");
+		content.push(etienneLabel);
 	}
 	if(sauda === true) {
-		content.push("Sauda");
+		content.push(saudaLabel);
 	}
 	if(psi === true) {
-		content.push("Psi");
+		content.push(psiLabel);
 	}
 	if(gerry === true) {
-		content.push("Geraldo");
+		content.push(gerryLabel);
 	}
 	
 	choice = content[Math.floor(Math.random()*content.length)];
@@ -367,6 +381,7 @@ function roll() {
 		heroOutput.innerHTML = "Any Hero";
 		return;
 	}
-	heroOutput.innerHTML = choice;
+	console.log(choice);
+	choice.style.color = "yellow";
 	return;
 }

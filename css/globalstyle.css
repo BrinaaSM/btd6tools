@@ -6,7 +6,7 @@
 }
 
 body {
-	margin-top: 69px;
+	margin-top: 2.5rem;
 	margin-left: 0px;
 	margin-right: 0px;
 	background-color: #00003f;
@@ -81,6 +81,10 @@ a {
 	padding-left: 1em;
 	padding-right: 1em;
 	float: left;
+}
+
+.footer-element > a {
+	text-shadow: 3px 3px #000000;
 }
 
 #copyright-link {
