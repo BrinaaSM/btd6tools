@@ -7,59 +7,82 @@ var primary;
 const primaryBox = document.getElementById("primary");
 var dart;
 const dartBox = document.getElementById("dart");
+const dartLabel = document.getElementById("dart-label");
 var boomerang;
 const boomerangBox = document.getElementById("boomerang");
+const boomerangLabel = document.getElementById("boomerang-label");
 var bomb;
 const bombBox = document.getElementById("bomb");
+const bombLabel = document.getElementById("bomb-label");
 var tack;
 const tackBox = document.getElementById("tack");
+const tackLabel = document.getElementById("tack-label");
 var ice;
 const iceBox = document.getElementById("ice");
+const iceLabel = document.getElementById("ice-label");
 var glue;
 const glueBox = document.getElementById("glue");
+const glueLabel = document.getElementById("glue-label");
 
 var military;
 const militaryBox = document.getElementById("military");
 var sniper;
 const sniperBox = document.getElementById("sniper");
+const sniperLabel = document.getElementById("sniper-label");
 var sub;
 const subBox = document.getElementById("sub");
+const subLabel = document.getElementById("sub-label");
 var bucc;
 const buccBox = document.getElementById("bucc");
+const buccLabel = document.getElementById("bucc-label");
 var ace;
 const aceBox = document.getElementById("ace");
+const aceLabel = document.getElementById("ace-label");
 var heli;
 const heliBox = document.getElementById("heli");
+const heliLabel = document.getElementById("heli-label");
 var mortar;
 const mortarBox = document.getElementById("mortar");
+const mortarLabel = document.getElementById("mortar-label");
 var dartling;
 const dartlingBox = document.getElementById("dartling");
+const dartlingLabel = document.getElementById("dartling-label");
 
 var magic;
 const magicBox = document.getElementById("magic");
 var wiz;
 const wizBox = document.getElementById("wiz");
+const wizLabel = document.getElementById("wiz-label");
 var superm;
 const supermBox = document.getElementById("superm");
+const supermLabel = document.getElementById("superm-label");
 var ninja;
 const ninjaBox = document.getElementById("ninja");
+const ninjaLabel = document.getElementById("ninja-label");
 var alch;
 const alchBox = document.getElementById("alch");
+const alchLabel = document.getElementById("alch-label");
 var druid;
 const druidBox = document.getElementById("druid");
+const druidLabel = document.getElementById("druid-label");
 
 var support;
 const supportBox = document.getElementById("support");
 var farm;
 const farmBox = document.getElementById("farm");
+const farmLabel = document.getElementById("farm-label");
 var spac;
 const spacBox = document.getElementById("spac");
+const spacLabel = document.getElementById("spac-label");
 var village;
 const villageBox = document.getElementById("village");
+const villageLabel = document.getElementById("village-label");
 var engi;
 const engiBox = document.getElementById("engi");
+const engiLabel = document.getElementById("engi-label");
 var beast;
 const beastBox = document.getElementById("beast");
+const beastLabel = document.getElementById("beast-label");
 
 var hero;
 const heroBox = document.getElementById("hero");
@@ -246,86 +269,88 @@ function roll() {
 	content.length = 0;
 	
 	if(dart === true) {
-		content.push("Dart Monkey");
+		content.push(dartLabel);
 	}
 	if(boomerang === true) {
-		content.push("Boomerang Monkey");
+		content.push(boomerangLabel);
 	}
 	if(bomb === true) {
-		content.push("Bomb Shooter");
+		content.push(bombLabel);
 	}
 	if(tack === true) {
-		content.push("Tack Shooter");
+		content.push(tackLabel);
 	}
 	if(ice === true) {
-		content.push("Ice Monkey");
+		content.push(iceLabel);
 	}
 	if(glue === true) {
-		content.push("Glue Gunner");
+		content.push(glueLabel);
 	}
 	
 
 	if(sniper === true) {
-		content.push("Sniper Monkey");
+		content.push(sniperLabel);
 	}
 	if(sub === true) {
-		content.push("Monkey Sub");
+		content.push(subLabel);
 	}
 	if(bucc === true) {
-		content.push("Monkey Buccaneer");
+		content.push(buccLabel);
 	}
 	if(ace === true) {
-		content.push("Monkey Ace");
+		content.push(aceLabel);
 	}
 	if(heli === true) {
-		content.push("Heli Pilot");
+		content.push(heliLabel);
 	}
 	if(mortar === true) {
-		content.push("Mortar Monkey");
+		content.push(mortarLabel);
 	}
 	if(dartling === true) {
-		content.push("Dartling Gunner");
+		content.push(dartlingLabel);
 	}
 	
 	if(wiz === true) {
-		content.push("Wizard Monkey");
+		content.push(wizLabel);
 	}
 	if(superm === true) {
-		content.push("Super Monkey");
+		content.push(supermLabel);
 	}
 	if(ninja === true) {
-		content.push("Ninja Monkey");
+		content.push(ninjaLabel);
 	}
 	if(alch === true) {
-		content.push("Alchemist");
+		content.push(alchLabel);
 	}
 	if(druid === true) {
-		content.push("Druid");
+		content.push(druidLabel);
 	}
 	
 	if(farm === true) {
-		content.push("Banana Farm");
+		content.push(farmLabel);
 	}
 	if(spac === true) {
-		content.push("Spike Factory");
+		content.push(spacLabel);
 	}
 	if(village === true) {
-		content.push("Monkey Village");
+		content.push(villageLabel);
 	}
 	if(engi === true) {
-		content.push("Engineer Monkey");
+		content.push(engiLabel);
 	}
 	if(beast === true) {
-		content.push("Beast Handler");
+		content.push(beastLabel);
 	}
-	var output = " - ";
+	
+	let choice;
+	
+	for(let i = 0; i < content.length; i++) {
+		content[i].style.color = "#87CEEB";
+	}
 	
 	for(let i = 0; i < 3; i++) {
-		let choice = content[Math.floor(Math.random()*content.length)];
-		if(!choice) {
-			return;
-		}
-		output += choice + " - ";
+		choice = content[Math.floor(Math.random()*content.length)];
+		choice.style.color = "yellow";
 		content.splice(content.indexOf(choice), 1);
 	}
 	
@@ -376,12 +401,11 @@ function roll() {
 		content.push(gerryLabel);
 	}
 	
-	choice = content[Math.floor(Math.random()*content.length)];
-	if(!choice) {
-		heroOutput.innerHTML = "Any Hero";
-		return;
+	for(let i = 0; i < content.length; i++) {
+		content[i].style.color = "#87CEEB";
 	}
-	console.log(choice);
+	
+	choice = content[Math.floor(Math.random()*content.length)];
 	choice.style.color = "yellow";
 	return;
 }
