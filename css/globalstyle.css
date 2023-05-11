@@ -15,7 +15,7 @@ a {
 	text-decoration: none;
 }
 
-.header {
+#header {
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -23,39 +23,52 @@ a {
 	display: block;
 	text-align: center;
 	font-size: 30px;
+	height: 2.5rem;
 	border-bottom: 3px black solid;
 	background-color: #000069;
 }
 
-.header > div > a {
+#header > div > a {
 	padding-left: 10px;
 	padding-right: 10px;
 	text-shadow: 3px 3px #000000;
 }
 
-.header > .home-button {
+#header > .home-button {
 	display: inline-block;
 	float: left;
 }
 
-.header > .site-text {
+#header > .site-text {
 	display: inline-block;
 	text-align: center;
 	text-shadow: 3px 3px #000000;
 }
 
-.header > .back-button {
+#header > .back-button {
 	display: inline-block;
 	float: right;
 }
 
-.footer {
-	position: fixed;
+.page-container {
+	position: relative;
+	min-height: 100vh;
+}
+
+.content {
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+
+#footer {
+	position: absolute;
 	text-shadow: 3px 3px #000000;
+	display: block;
+	height: 2.5rem;
 	left: 0;
 	bottom: 0;
-	width: 100%;
 	background-color: #000069;
+	width: 100%;
 	color: #87CEEB;
 	text-align: center;
 	border-top: 3px black solid;
