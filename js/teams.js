@@ -3,260 +3,249 @@ const heroOutput = document.getElementById("output-hero");
 
 const content = [];
 
+const heroBoxes = [];
+const primaryBoxes = [];
+const militaryBoxes = [];
+const magicBoxes = [];
+const supportBoxes = [];
+const heroLabels = [];
+const primaryLabels = [];
+const militaryLabels = [];
+const magicLabels = [];
+const supportLabels = [];
+
 var primary;
 const primaryBox = document.getElementById("primary");
-var dart;
 const dartBox = document.getElementById("dart");
 const dartLabel = document.getElementById("dart-label");
-var boomerang;
 const boomerangBox = document.getElementById("boomerang");
 const boomerangLabel = document.getElementById("boomerang-label");
-var bomb;
 const bombBox = document.getElementById("bomb");
 const bombLabel = document.getElementById("bomb-label");
-var tack;
 const tackBox = document.getElementById("tack");
 const tackLabel = document.getElementById("tack-label");
-var ice;
 const iceBox = document.getElementById("ice");
 const iceLabel = document.getElementById("ice-label");
-var glue;
 const glueBox = document.getElementById("glue");
 const glueLabel = document.getElementById("glue-label");
 
 var military;
 const militaryBox = document.getElementById("military");
-var sniper;
 const sniperBox = document.getElementById("sniper");
 const sniperLabel = document.getElementById("sniper-label");
-var sub;
 const subBox = document.getElementById("sub");
 const subLabel = document.getElementById("sub-label");
-var bucc;
 const buccBox = document.getElementById("bucc");
 const buccLabel = document.getElementById("bucc-label");
-var ace;
 const aceBox = document.getElementById("ace");
 const aceLabel = document.getElementById("ace-label");
-var heli;
 const heliBox = document.getElementById("heli");
 const heliLabel = document.getElementById("heli-label");
-var mortar;
 const mortarBox = document.getElementById("mortar");
 const mortarLabel = document.getElementById("mortar-label");
-var dartling;
 const dartlingBox = document.getElementById("dartling");
 const dartlingLabel = document.getElementById("dartling-label");
 
 var magic;
 const magicBox = document.getElementById("magic");
-var wiz;
 const wizBox = document.getElementById("wiz");
 const wizLabel = document.getElementById("wiz-label");
-var superm;
 const supermBox = document.getElementById("superm");
 const supermLabel = document.getElementById("superm-label");
-var ninja;
 const ninjaBox = document.getElementById("ninja");
 const ninjaLabel = document.getElementById("ninja-label");
-var alch;
 const alchBox = document.getElementById("alch");
 const alchLabel = document.getElementById("alch-label");
-var druid;
 const druidBox = document.getElementById("druid");
 const druidLabel = document.getElementById("druid-label");
 
 var support;
 const supportBox = document.getElementById("support");
-var farm;
 const farmBox = document.getElementById("farm");
 const farmLabel = document.getElementById("farm-label");
-var spac;
 const spacBox = document.getElementById("spac");
 const spacLabel = document.getElementById("spac-label");
-var village;
 const villageBox = document.getElementById("village");
 const villageLabel = document.getElementById("village-label");
-var engi;
 const engiBox = document.getElementById("engi");
 const engiLabel = document.getElementById("engi-label");
-var beast;
 const beastBox = document.getElementById("beast");
 const beastLabel = document.getElementById("beast-label");
 
 var hero;
 const heroBox = document.getElementById("hero");
-var quincy;
 const quincyBox = document.getElementById("quincy");
 const quincyLabel = document.getElementById("quincy-label");
-var gwen;
 const gwenBox = document.getElementById("gwen");
 const gwenLabel = document.getElementById("gwen-label");
-var striker;
 const strikerBox = document.getElementById("striker");
 const strikerLabel = document.getElementById("striker-label");
-var obyn;
 const obynBox = document.getElementById("obyn");
 const obynLabel = document.getElementById("obyn-label");
-var churchill;
 const churchillBox = document.getElementById("churchill");
 const churchillLabel = document.getElementById("churchill-label");
-var ben;
 const benBox = document.getElementById("ben");
 const benLabel = document.getElementById("ben-label");
-var ezili;
 const eziliBox = document.getElementById("ezili");
 const eziliLabel = document.getElementById("ezili-label");
-var pat;
 const patBox = document.getElementById("pat");
 const patLabel = document.getElementById("pat-label");
-var adora;
 const adoraBox = document.getElementById("adora");
 const adoraLabel = document.getElementById("adora-label");
-var brickell;
 const brickellBox = document.getElementById("brickell");
 const brickellLabel = document.getElementById("brickell-label");
-var etienne;
 const etienneBox = document.getElementById("etienne");
 const etienneLabel = document.getElementById("etienne-label");
-var sauda;
 const saudaBox = document.getElementById("sauda");
 const saudaLabel = document.getElementById("sauda-label");
-var psi;
 const psiBox = document.getElementById("psi");
 const psiLabel = document.getElementById("psi-label");
-var gerry;
 const gerryBox = document.getElementById("gerry");
 const gerryLabel = document.getElementById("gerry-label");
 
+heroBoxes.push(quincyBox);
+heroBoxes.push(gwenBox);
+heroBoxes.push(strikerBox);
+heroBoxes.push(obynBox);
+heroBoxes.push(churchillBox);
+heroBoxes.push(benBox);
+heroBoxes.push(eziliBox);
+heroBoxes.push(patBox);
+heroBoxes.push(adoraBox);
+heroBoxes.push(brickellBox);
+heroBoxes.push(etienneBox);
+heroBoxes.push(saudaBox);
+heroBoxes.push(psiBox);
+heroBoxes.push(gerryBox);
+
+heroLabels.push(quincyLabel);
+heroLabels.push(gwenLabel);
+heroLabels.push(strikerLabel);
+heroLabels.push(obynLabel);
+heroLabels.push(churchillLabel);
+heroLabels.push(benLabel);
+heroLabels.push(eziliLabel);
+heroLabels.push(patLabel);
+heroLabels.push(adoraLabel);
+heroLabels.push(brickellLabel);
+heroLabels.push(etienneLabel);
+heroLabels.push(saudaLabel);
+heroLabels.push(psiLabel);
+heroLabels.push(gerryLabel);
+
+primaryBoxes.push(dartBox);
+primaryBoxes.push(boomerangBox);
+primaryBoxes.push(bombBox);
+primaryBoxes.push(tackBox);
+primaryBoxes.push(iceBox);
+primaryBoxes.push(glueBox);
+
+primaryLabels.push(dartLabel);
+primaryLabels.push(boomerangLabel);
+primaryLabels.push(bombLabel);
+primaryLabels.push(tackLabel);
+primaryLabels.push(iceLabel);
+primaryLabels.push(glueLabel);
+
+militaryBoxes.push(sniperBox);
+militaryBoxes.push(subBox);
+militaryBoxes.push(buccBox);
+militaryBoxes.push(aceBox);
+militaryBoxes.push(heliBox);
+militaryBoxes.push(mortarBox);
+militaryBoxes.push(dartlingBox);
+
+militaryLabels.push(sniperLabel);
+militaryLabels.push(subLabel);
+militaryLabels.push(buccLabel);
+militaryLabels.push(aceLabel);
+militaryLabels.push(heliLabel);
+militaryLabels.push(mortarLabel);
+militaryLabels.push(dartlingLabel);
+
+magicBoxes.push(wizBox);
+magicBoxes.push(supermBox);
+magicBoxes.push(ninjaBox);
+magicBoxes.push(alchBox);
+magicBoxes.push(druidBox);
+
+magicLabels.push(wizLabel);
+magicLabels.push(supermLabel);
+magicLabels.push(ninjaLabel);
+magicLabels.push(alchLabel);
+magicLabels.push(druidLabel);
+
+supportBoxes.push(farmBox);
+supportBoxes.push(spacBox);
+supportBoxes.push(villageBox);
+supportBoxes.push(engiBox);
+supportBoxes.push(beastBox);
+
+supportLabels.push(farmLabel);
+supportLabels.push(spacLabel);
+supportLabels.push(villageLabel);
+supportLabels.push(engiLabel);
+supportLabels.push(beastLabel);
+
+function resetColors() {
+	for(let i = 0; i < heroLabels.length; i++) {
+		heroLabels[i].style.color = "#87CEEB";
+	}
+	for(let i = 0; i < militaryLabels.length; i++) {
+		militaryLabels[i].style.color = "#87CEEB";
+	}
+	for(let i = 0; i < primaryLabels.length; i++) {
+		primaryLabels[i].style.color = "#87CEEB";
+	}
+	for(let i = 0; i < militaryLabels.length; i++) {
+		militaryLabels[i].style.color = "#87CEEB";
+	}
+	for(let i = 0; i < magicLabels.length; i++) {
+		magicLabels[i].style.color = "#87CEEB";
+	}
+	for(let i = 0; i < supportLabels.length; i++) {
+		supportLabels[i].style.color = "#87CEEB";
+	}
+	return;
+}
+
 function togglePrimary() {
-	dartBox.checked = primary;
-	dartBox.disabled = !primary;
-	dart = primary;
-	boomerangBox.checked = primary;
-	boomerangBox.disabled = !primary;
-	boomerang = primary;
-	bombBox.checked = primary;
-	bombBox.disabled = !primary;
-	bomb = primary;
-	tackBox.checked = primary;
-	tackBox.disabled = !primary;
-	tack = primary;
-	iceBox.checked = primary;
-	iceBox.disabled = !primary;
-	ice = primary;
-	glueBox.checked = primary;
-	glueBox.disabled = !primary;
-	glue = primary;
+	for(let i = 0; i < primaryBoxes.length; i++) {
+		primaryBoxes[i].checked = primary;
+		primaryBoxes[i].disabled = !primary;
+	}
 	return;
 }
 
 function toggleMilitary() {
-	sniperBox.checked = military;
-	sniperBox.disabled = !military;
-	sniper = military;
-	subBox.checked = military;
-	subBox.disabled = !military;
-	sub = military;
-	buccBox.checked = military;
-	buccBox.disabled = !military;
-	bucc = military;
-	aceBox.checked = military;
-	aceBox.disabled = !military;
-	ace = military;
-	heliBox.checked = military;
-	heliBox.disabled = !military;
-	heli = military;
-	mortarBox.checked = military;
-	mortarBox.disabled = !military;
-	mortar = military;
-	dartlingBox.checked = military;
-	dartlingBox.disabled = !military;
-	dartling = military;
+	for(let i = 0; i < militaryBoxes.length; i++) {
+		militaryBoxes[i].checked = military;
+		militaryBoxes[i].disabled = !military;
+	}
 	return;
 }
 
 function toggleMagic() {
-	wizBox.checked = magic;
-	wizBox.disabled = !magic;
-	wiz = magic;
-	supermBox.checked = magic;
-	supermBox.disabled = !magic;
-	superm = magic;
-	ninjaBox.checked = magic;
-	ninjaBox.disabled = !magic;
-	ninja = magic;
-	alchBox.checked = magic;
-	alchBox.disabled = !magic;
-	alch = magic;
-	druidBox.checked = magic;
-	druidBox.disabled = !magic;
-	druid = magic;
+	for(let i = 0; i < magicBoxes.length; i++) {
+		magicBoxes[i].checked = magic;
+		magicBoxes[i].disabled = !magic;
+	}
 	return;
 }
 
 function toggleSupport() {
-	farmBox.checked = support;
-	farmBox.disabled = !support;
-	farm = support;
-	spacBox.checked = support;
-	spacBox.disabled = !support;
-	spac = support;
-	villageBox.checked = support;
-	villageBox.disabled = !support;
-	village = support;
-	engiBox.checked = support;
-	engiBox.disabled = !support;
-	engi = support;
-	beastBox.checked = support;
-	beastBox.disabled = !support;
-	beast = support;
+	for(let i = 0; i < supportBoxes.length; i++) {
+		supportBoxes[i].checked = support;
+		supportBoxes[i].disabled = !support;
+	}
 	return;
 }
 
 function toggleHero() {
-	quincyBox.checked = hero;
-	quincyBox.disabled = !hero;
-	quincy = hero;
-	gwenBox.checked = hero;
-	gwenBox.disabled = !hero;
-	gwen = hero;
-	strikerBox.checked = hero;
-	strikerBox.disabled = !hero;
-	striker = hero;
-	obynBox.checked = hero;
-	obynBox.disabled = !hero;
-	obyn = hero;
-	churchillBox.checked = hero;
-	churchillBox.disabled = !hero;
-	churchill = hero;
-	benBox.checked = hero;
-	benBox.disabled = !hero;
-	ben = hero;
-	eziliBox.checked = hero;
-	eziliBox.disabled = !hero;
-	ezili = hero;
-	patBox.checked = hero;
-	patBox.disabled = !hero;
-	pat = hero;
-	adoraBox.checked = hero;
-	adoraBox.disabled = !hero;
-	adora = hero;
-	brickellBox.checked = hero;
-	brickellBox.disabled = !hero;
-	brickell = hero;
-	etienneBox.checked = hero;
-	etienneBox.disabled = !hero;
-	etienne = hero;
-	saudaBox.checked = hero;
-	saudaBox.disabled = !hero;
-	sauda = hero;
-	psiBox.checked = hero;
-	psiBox.disabled = !hero;
-	psi = hero;
-	gerryBox.checked = hero;
-	gerryBox.disabled = !hero;
-	gerry = hero;
+	for(let i = 0; i < heroBoxes.length; i++) {
+		heroBoxes[i].checked = hero;
+		heroBoxes[i].disabled = !hero;
+	}
 	return;
 }
 
@@ -268,77 +257,77 @@ function inputHandler(e) {
 function roll() {
 	content.length = 0;
 	
-	if(dart === true) {
+	if(dartBox.checked === true) {
 		content.push(dartLabel);
 	}
-	if(boomerang === true) {
+	if(boomerangBox.checked === true) {
 		content.push(boomerangLabel);
 	}
-	if(bomb === true) {
+	if(bombBox.checked === true) {
 		content.push(bombLabel);
 	}
-	if(tack === true) {
+	if(tackBox.checked === true) {
 		content.push(tackLabel);
 	}
-	if(ice === true) {
+	if(iceBox.checked === true) {
 		content.push(iceLabel);
 	}
-	if(glue === true) {
+	if(glueBox.checked === true) {
 		content.push(glueLabel);
 	}
 	
 
-	if(sniper === true) {
+	if(sniperBox.checked === true) {
 		content.push(sniperLabel);
 	}
-	if(sub === true) {
+	if(subBox.checked === true) {
 		content.push(subLabel);
 	}
-	if(bucc === true) {
+	if(buccBox.checked === true) {
 		content.push(buccLabel);
 	}
-	if(ace === true) {
+	if(aceBox.checked === true) {
 		content.push(aceLabel);
 	}
-	if(heli === true) {
+	if(heliBox.checked === true) {
 		content.push(heliLabel);
 	}
-	if(mortar === true) {
+	if(mortarBox.checked === true) {
 		content.push(mortarLabel);
 	}
-	if(dartling === true) {
+	if(dartlingBox.checked === true) {
 		content.push(dartlingLabel);
 	}
 	
-	if(wiz === true) {
+	if(wizBox.checked === true) {
 		content.push(wizLabel);
 	}
-	if(superm === true) {
+	if(supermBox.checked === true) {
 		content.push(supermLabel);
 	}
-	if(ninja === true) {
+	if(ninjaBox.checked === true) {
 		content.push(ninjaLabel);
 	}
-	if(alch === true) {
+	if(alchBox.checked === true) {
 		content.push(alchLabel);
 	}
-	if(druid === true) {
+	if(druidBox.checked === true) {
 		content.push(druidLabel);
 	}
 	
-	if(farm === true) {
+	if(farmBox.checked === true) {
 		content.push(farmLabel);
 	}
-	if(spac === true) {
+	if(spacBox.checked === true) {
 		content.push(spacLabel);
 	}
-	if(village === true) {
+	if(villageBox.checked === true) {
 		content.push(villageLabel);
 	}
-	if(engi === true) {
+	if(engiBox.checked === true) {
 		content.push(engiLabel);
 	}
-	if(beast === true) {
+	if(beastBox.checked === true) {
 		content.push(beastLabel);
 	}
 	
@@ -358,46 +347,46 @@ function roll() {
 	
 	content.length = 0;
 	
-	if(quincy === true) {
+	if(quincyBox.checked === true) {
 		content.push(quincyLabel);
 	}
-	if(gwen === true) {
+	if(gwenBox.checked === true) {
 		content.push(gwenLabel);
 	}
-	if(striker === true) {
+	if(strikerBox.checked === true) {
 		content.push(strikerLabel);
 	}
-	if(obyn === true) {
+	if(obynBox.checked === true) {
 		content.push(obynLabel);
 	}
-	if(churchill === true) {
+	if(churchillBox.checked === true) {
 		content.push(churchillLabel);
 	}
-	if(ben === true) {
+	if(benBox.checked === true) {
 		content.push(benLabel);
 	}
-	if(ezili === true) {
+	if(eziliBox.checked === true) {
 		content.push(eziliLabel);
 	}
-	if(pat === true) {
+	if(patBox.checked === true) {
 		content.push(patLabel);
 	}
-	if(adora === true) {
+	if(adoraBox.checked === true) {
 		content.push(adoraLabel);
 	}
-	if(brickell === true) {
+	if(brickellBox.checked === true) {
 		content.push(brickellLabel);
 	}
-	if(etienne === true) {
+	if(etienneBox.checked === true) {
 		content.push(etienneLabel);
 	}
-	if(sauda === true) {
+	if(saudaBox.checked === true) {
 		content.push(saudaLabel);
 	}
-	if(psi === true) {
+	if(psiBox.checked === true) {
 		content.push(psiLabel);
 	}
-	if(gerry === true) {
+	if(gerryBox.checked === true) {
 		content.push(gerryLabel);
 	}
 	
