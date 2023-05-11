@@ -1,6 +1,3 @@
-const team = document.getElementById("output-text");
-const heroOutput = document.getElementById("output-hero");
-
 const content = [];
 
 const heroBoxes = [];
@@ -255,80 +252,104 @@ function inputHandler(e) {
 }
 
 function roll() {
+	let count = 0;
 	content.length = 0;
 	
 	if(dartBox.checked === true) {
 		content.push(dartLabel);
+		count++;
 	}
 	if(boomerangBox.checked === true) {
 		content.push(boomerangLabel);
+		count++;
 	}
 	if(bombBox.checked === true) {
 		content.push(bombLabel);
+		count++;
 	}
 	if(tackBox.checked === true) {
 		content.push(tackLabel);
+		count++;
 	}
 	if(iceBox.checked === true) {
 		content.push(iceLabel);
+		count++;
 	}
 	if(glueBox.checked === true) {
 		content.push(glueLabel);
+		count++;
 	}
 	
 
 	if(sniperBox.checked === true) {
 		content.push(sniperLabel);
+		count++;
 	}
 	if(subBox.checked === true) {
 		content.push(subLabel);
+		count++;
 	}
 	if(buccBox.checked === true) {
 		content.push(buccLabel);
+		count++;
 	}
 	if(aceBox.checked === true) {
 		content.push(aceLabel);
+		count++;
 	}
 	if(heliBox.checked === true) {
 		content.push(heliLabel);
+		count++;
 	}
 	if(mortarBox.checked === true) {
 		content.push(mortarLabel);
+		count++;
 	}
 	if(dartlingBox.checked === true) {
 		content.push(dartlingLabel);
+		count++;
 	}
 	
 	if(wizBox.checked === true) {
 		content.push(wizLabel);
+		count++;
 	}
 	if(supermBox.checked === true) {
 		content.push(supermLabel);
+		count++;
 	}
 	if(ninjaBox.checked === true) {
 		content.push(ninjaLabel);
+		count++;
 	}
 	if(alchBox.checked === true) {
 		content.push(alchLabel);
+		count++;
 	}
 	if(druidBox.checked === true) {
 		content.push(druidLabel);
+		count++;
 	}
 	
 	if(farmBox.checked === true) {
 		content.push(farmLabel);
+		count++;
 	}
 	if(spacBox.checked === true) {
 		content.push(spacLabel);
+		count++;
 	}
 	if(villageBox.checked === true) {
 		content.push(villageLabel);
+		count++;
 	}
 	if(engiBox.checked === true) {
 		content.push(engiLabel);
+		count++;
 	}
 	if(beastBox.checked === true) {
 		content.push(beastLabel);
+		count++;
 	}
 	
 	let choice;
@@ -337,13 +358,15 @@ function roll() {
 		content[i].style.color = "#87CEEB";
 	}
 	
-	for(let i = 0; i < 3; i++) {
+	if(count > 3) {
+		count = 3;
+	}
+	
+	for(let i = 0; i < count; i++) {
 		choice = content[Math.floor(Math.random()*content.length)];
 		choice.style.color = "yellow";
 		content.splice(content.indexOf(choice), 1);
 	}
-	
-	team.innerHTML = output;
 	
 	content.length = 0;
 	
