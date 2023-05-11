@@ -417,6 +417,10 @@ function roll() {
 		content[i].style.color = "#87CEEB";
 	}
 	
+	if(content.length === 0) {
+		return;
+	}
+	
 	choice = content[Math.floor(Math.random()*content.length)];
 	choice.style.color = "yellow";
 	return;
