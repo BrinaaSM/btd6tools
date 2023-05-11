@@ -76,9 +76,15 @@ a {
 	border-top: 3px black solid;
 }
 
-#footer > a {
+.footer-element {
 	display: inline-block;
-	margin-left: 1em;
-	margin-right: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
 	float: left;
+}
+
+#copyright-link {
+	display: inline-block;
+	text-align: right;
+	float: right;
 }
