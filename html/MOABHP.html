@@ -26,21 +26,21 @@
 <div class="content">
 
 <div class="checkbox-container">
-	<div>
-		<input type="checkbox" id="knowledge" name="knowledge" value="Monkey Knowledge" onchange='knowledge=this.checked;calcAll()'>
-		<label for="knowledge">Monkey Knowledge</label><br>
+	<div class="checkbox-div">
+		<input type="checkbox" class="checkbox" id="knowledge" name="knowledge" value="Monkey Knowledge" onchange='knowledge=this.checked;selectCheckbox(this);calcAll()'>
+		<label class="checkbox-label" for="knowledge">Monkey Knowledge</label><br>
 	</div>
-	<div>
-		<input type="checkbox" id="fortified" name="fortified" value="Fortified" onchange='fortified=this.checked;calcAll()'>
-		<label for="fortified">Fortified</label><br>
+	<div class="checkbox-div">
+		<input type="checkbox" class="checkbox" id="fortified" name="fortified" value="Fortified" onchange='fortified=this.checked;selectCheckbox(this);calcAll()'>
+		<label class="checkbox-label" for="fortified">Fortified</label><br>
 	</div>
-	<div>
-		<input type="checkbox" id="double" name="double" value="Double HP" onchange='doubleHP=this.checked;calcAll()'>
-		<label for="double">Double HP</label><br>
+	<div class="checkbox-div">
+		<input type="checkbox" class="checkbox" id="double" name="double" value="Double HP" onchange='doubleHP=this.checked;selectCheckbox(this);calcAll()'>
+		<label class="checkbox-label" for="double">Double HP</label><br>
 	</div>
-	<div>
-		<input type="checkbox" id="challenge" name="challenge" value="Custom Challenge HP Modifier" onchange='challenge=this.checked;toggleChallenge();calcAll();'>
-		<label for="challenge">Custom Challenge HP Modifier</label><br>
+	<div class="checkbox-div">
+		<input type="checkbox" class="checkbox" id="challenge" name="challenge" value="Custom HP Modifier" onchange='challenge=this.checked;toggleChallenge();selectCheckbox(this);calcAll();'>
+		<label class="checkbox-label" for="challenge">Custom HP Modifier</label><br>
 	</div>
 	
 </div>
@@ -54,24 +54,24 @@
 </div>
 
 <div class="output"> 
-	<p>M.O.A.B. HP:</p>
-	<p class="moab-output" id="moab-hp-output">200<p/>
+	<div class="output-desc"><p>M.O.A.B. HP:</p></div>
+	<div class="output-text"><p class="moab-output" id="moab-hp-output">200<p/></div>
 </div>
 <div class="output"> 
-	<p>B.F.B. HP:</p>
-	<p class="moab-output" id="bfb-hp-output">700<p/>
+	<div class="output-desc"><p>B.F.B. HP:</p></div>
+	<div class="output-text"><p class="moab-output" id="bfb-hp-output">700<p/></div>
 </div>
 <div class="output"> 
-	<p>Z.O.M.G. HP:</p>
-	<p class="moab-output" id="zomg-hp-output">4000<p/>
+	<div class="output-desc"><p>Z.O.M.G. HP:</p></div>
+	<div class="output-text"><p class="moab-output" id="zomg-hp-output">4000<p/></div>
 </div>
 <div class="output"> 
-	<p>D.D.T. HP:</p>
-	<p class="moab-output" id="ddt-hp-output">400<p/>
+	<div class="output-desc"><p>D.D.T. HP:</p></div>
+	<div class="output-text"><p class="moab-output" id="ddt-hp-output">400<p/></div>
 </div>
 <div class="output"> 
-	<p>B.A.D. HP:</p>
-	<p class="moab-output" id="bad-hp-output">20000<p/>
+	<div class="output-desc"><p>B.A.D. HP:</p></div>
+	<div class="output-text"><p class="moab-output" id="bad-hp-output">20000<p/></div>
 </div>
 
 </div>
@@ -85,13 +85,13 @@
 	<a href="https://twitch.tv/Kyufoxy" target="_blank">Twitch</a>
 </div>
 <div class="footer-element">
-<a href="https://youtube.com/@Kyufoxy" target="_blank">YouTube</a>
+	<a href="https://youtube.com/@Kyufoxy" target="_blank">YouTube</a>
 </div>
 <div class="footer-element">
-<a href="https://twitter.com/Kyufoxy" target="_blank">Twitter</a>
+	<a href="https://twitter.com/Kyufoxy" target="_blank">Twitter</a>
 </div>
 <div class="footer-element" id="copyright-link">
-<a href="https://github.com/Kyufoxy" target="_blank">©2023 @github/Kyufoxy</a>
+	<a href="https://github.com/Kyufoxy" target="_blank">©2023 @github/Kyufoxy</a>
 </div>
 
 </footer>
