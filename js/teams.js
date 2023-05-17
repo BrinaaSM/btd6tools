@@ -1,3 +1,7 @@
+const sizeInput = document.getElementById("team-size-input");
+
+var teamSize = 3;
+
 const content = [];
 
 const heroBoxes = [];
@@ -184,6 +188,19 @@ supportLabels.push(villageLabel);
 supportLabels.push(engiLabel);
 supportLabels.push(beastLabel);
 
+function inputHandlerSize(e) {
+	teamSize = e.target.value;
+	if(teamSize < 0) {
+		sizeInput.value = 3;
+	}
+	if(teamSize === 0) {
+		teamSize = 3;
+	} else if(teamSize > 23) {
+		sizeInput.value = 23;
+		teamSize = 23;
+	}
+}
+
 function resetColors() {
 	for(let i = 0; i < heroLabels.length; i++) {
 		heroLabels[i].style.color = "#87CEEB";
@@ -358,14 +375,22 @@ function roll() {
 		content[i].style.color = "#87CEEB";
 	}
 	
-	if(count > 3) {
-		count = 3;
+	if (teamSize.length === 0) {
+		sizeInput.value = 3;
+		teamSize = 3;
 	}
 	
-	for(let i = 0; i < count; i++) {
-		choice = content[Math.floor(Math.random()*content.length)];
-		choice.style.color = "yellow";
-		content.splice(content.indexOf(choice), 1);
+	if(count < teamSize) {
+		sizeInput.value = count;
+		teamSize = count;
+	}
+	
+	if(count >= 1) {		
+		for(let i = 0; i < teamSize; i++) {
+			choice = content[Math.floor(Math.random()*content.length)];
+			choice.style.color = "yellow";
+			content.splice(content.indexOf(choice), 1);
+		}
 	}
 	
 	content.length = 0;
@@ -425,3 +450,5 @@ function roll() {
 	choice.style.color = "yellow";
 	return;
 }
+
+sizeInput.addEventListener("input", inputHandlerSize);

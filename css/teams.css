@@ -44,3 +44,12 @@
 	font-size: 3vw;
 	background-color: #000069;
 }
+
+.team-size-input {
+	text-shadow: 0.1vw 0.1vw #000000;
+	background-color: #000069;
+	text-align: center;
+	font-size: 2vw;
+	width: 60vw;
+	height: 2vw;
+}
