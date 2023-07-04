@@ -1,4 +1,7 @@
 const sizeInput = document.getElementById("team-size-input");
+const teamOutput = document.getElementById("team-output");
+
+var output;
 
 var teamSize = 3;
 
@@ -269,7 +272,66 @@ function inputHandler(e) {
 }
 
 function roll() {
+	let heroFound = 0;
 	let count = 0;
+	let choice;
+	content.length = 0;
+	output = "";
+	
+	if(quincyBox.checked === true) {
+		content.push(quincyLabel);
+	}
+	if(gwenBox.checked === true) {
+		content.push(gwenLabel);
+	}
+	if(strikerBox.checked === true) {
+		content.push(strikerLabel);
+	}
+	if(obynBox.checked === true) {
+		content.push(obynLabel);
+	}
+	if(churchillBox.checked === true) {
+		content.push(churchillLabel);
+	}
+	if(benBox.checked === true) {
+		content.push(benLabel);
+	}
+	if(eziliBox.checked === true) {
+		content.push(eziliLabel);
+	}
+	if(patBox.checked === true) {
+		content.push(patLabel);
+	}
+	if(adoraBox.checked === true) {
+		content.push(adoraLabel);
+	}
+	if(brickellBox.checked === true) {
+		content.push(brickellLabel);
+	}
+	if(etienneBox.checked === true) {
+		content.push(etienneLabel);
+	}
+	if(saudaBox.checked === true) {
+		content.push(saudaLabel);
+	}
+	if(psiBox.checked === true) {
+		content.push(psiLabel);
+	}
+	if(gerryBox.checked === true) {
+		content.push(gerryLabel);
+	}
+	
+	for(let i = 0; i < content.length; i++) {
+		content[i].style.color = "#87CEEB";
+	}
+
+	if(content.length > 0) {
+		choice = content[Math.floor(Math.random()*content.length)];
+		output += choice.innerHTML + " ";
+		choice.style.color = "yellow";
+		heroFound = 1;
+	}
+	
 	content.length = 0;
 	
 	if(dartBox.checked === true) {
@@ -369,8 +431,6 @@ function roll() {
 		count++;
 	}
 	
-	let choice;
-	
 	for(let i = 0; i < content.length; i++) {
 		content[i].style.color = "#87CEEB";
 	}
@@ -385,69 +445,22 @@ function roll() {
 		teamSize = count;
 	}
 	
-	if(count >= 1) {		
+	if(count >= 1) {
+		if(heroFound === 1) {
+			output += "> "
+		}
 		for(let i = 0; i < teamSize; i++) {
 			choice = content[Math.floor(Math.random()*content.length)];
+			output += choice.innerHTML + " ";
 			choice.style.color = "yellow";
 			content.splice(content.indexOf(choice), 1);
 		}
-	}
-	
-	content.length = 0;
-	
-	if(quincyBox.checked === true) {
-		content.push(quincyLabel);
-	}
-	if(gwenBox.checked === true) {
-		content.push(gwenLabel);
-	}
-	if(strikerBox.checked === true) {
-		content.push(strikerLabel);
-	}
-	if(obynBox.checked === true) {
-		content.push(obynLabel);
-	}
-	if(churchillBox.checked === true) {
-		content.push(churchillLabel);
-	}
-	if(benBox.checked === true) {
-		content.push(benLabel);
-	}
-	if(eziliBox.checked === true) {
-		content.push(eziliLabel);
-	}
-	if(patBox.checked === true) {
-		content.push(patLabel);
-	}
-	if(adoraBox.checked === true) {
-		content.push(adoraLabel);
-	}
-	if(brickellBox.checked === true) {
-		content.push(brickellLabel);
-	}
-	if(etienneBox.checked === true) {
-		content.push(etienneLabel);
-	}
-	if(saudaBox.checked === true) {
-		content.push(saudaLabel);
-	}
-	if(psiBox.checked === true) {
-		content.push(psiLabel);
-	}
-	if(gerryBox.checked === true) {
-		content.push(gerryLabel);
-	}
-	
-	for(let i = 0; i < content.length; i++) {
-		content[i].style.color = "#87CEEB";
+		teamOutput.value = output;	
 	}
 	
 	if(content.length === 0) {
-		return;
+		teamOutput.value = output;
 	}
-	
-	choice = content[Math.floor(Math.random()*content.length)];
-	choice.style.color = "yellow";
 	return;
 }
 

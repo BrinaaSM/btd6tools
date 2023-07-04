@@ -52,4 +52,15 @@
 	font-size: 2vw;
 	width: 60vw;
 	height: 2vw;
+	padding: 0.3vw;
+}
+
+.team-output {
+	text-shadow: 0.1vw 0.1vw #000000;
+	background-color: #000069;
+	text-align: left;
+	font-size: 2vw;
+	width: 60vw;
+	height: 2vw;
+	padding: 0.3vw;
 }
