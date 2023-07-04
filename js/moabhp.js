@@ -95,6 +95,9 @@ function calcHPCeram(round) {
 	
 	if(challenge === true) {
 		hp = Math.floor(hp * (modifier / 100));
+		if(hp < 1) {
+			hp = 1;
+		}
 	}
 	
 	return hp.toLocaleString();
