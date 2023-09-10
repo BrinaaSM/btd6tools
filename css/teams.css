@@ -56,9 +56,12 @@
 }
 
 .team-output {
+	-webkit-text-stroke: 1px black;
+	color: white;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow:
-	0.1vw 0.1vw 0 #000000,
-    -0.1vw 0.1vw 0 #000000,
+	0.1vw 0.15vw 0 #000000,
+    -0.1vw 0.15vw 0 #000000,
     -0.1vw -0.1vw 0 #000000,
     0.1vw -0.1vw 0 #000000;
 	background-color: #0000FF;

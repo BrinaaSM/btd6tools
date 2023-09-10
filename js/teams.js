@@ -276,7 +276,7 @@ function roll() {
 	let count = 0;
 	let choice;
 	content.length = 0;
-	output = "";
+	output = " ";
 	
 	if(quincyBox.checked === true) {
 		content.push(quincyLabel);
