@@ -56,7 +56,11 @@
 }
 
 .team-output {
-	text-shadow: 0.0vw 0.0vw #000000;
+	text-shadow:
+	0.1vw 0.1vw 0 #000000,
+    -0.1vw 0.1vw 0 #000000,
+    -0.1vw -0.1vw 0 #000000,
+    0.1vw -0.1vw 0 #000000;
 	background-color: #0000FF;
 	color: white;
 	text-align: left;
