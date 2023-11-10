@@ -2,8 +2,16 @@ const sizeInput = document.getElementById("team-size-input");
 const teamOutput = document.getElementById("team-output");
 
 var output;
+var outputHero;
+
+var chimpsCount = 0;
+
+var chimpsViable = 1;
 
 var teamSize = 3;
+
+const chimpsViableHeros = [];
+const chimpsViableTowers = [];
 
 const content = [];
 
@@ -20,6 +28,8 @@ const supportLabels = [];
 
 var primary;
 const primaryBox = document.getElementById("primary");
+const anyPrimaryBox = document.getElementById("any-primary");
+const anyPrimaryLabel = document.getElementById("any-primary-label");
 const dartBox = document.getElementById("dart");
 const dartLabel = document.getElementById("dart-label");
 const boomerangBox = document.getElementById("boomerang");
@@ -35,6 +45,8 @@ const glueLabel = document.getElementById("glue-label");
 
 var military;
 const militaryBox = document.getElementById("military");
+const anyMilitaryBox = document.getElementById("any-military");
+const anyMilitaryLabel = document.getElementById("any-military-label");
 const sniperBox = document.getElementById("sniper");
 const sniperLabel = document.getElementById("sniper-label");
 const subBox = document.getElementById("sub");
@@ -52,6 +64,8 @@ const dartlingLabel = document.getElementById("dartling-label");
 
 var magic;
 const magicBox = document.getElementById("magic");
+const anyMagicBox = document.getElementById("any-magic");
+const anyMagicLabel = document.getElementById("any-magic-label");
 const wizBox = document.getElementById("wiz");
 const wizLabel = document.getElementById("wiz-label");
 const supermBox = document.getElementById("superm");
@@ -65,6 +79,8 @@ const druidLabel = document.getElementById("druid-label");
 
 var support;
 const supportBox = document.getElementById("support");
+const anySupportBox = document.getElementById("any-support");
+const anySupportLabel = document.getElementById("any-support-label");
 const farmBox = document.getElementById("farm");
 const farmLabel = document.getElementById("farm-label");
 const spacBox = document.getElementById("spac");
@@ -78,6 +94,8 @@ const beastLabel = document.getElementById("beast-label");
 
 var hero;
 const heroBox = document.getElementById("hero");
+const anyHeroBox = document.getElementById("any-hero");
+const anyHeroLabel = document.getElementById("any-hero-label");
 const quincyBox = document.getElementById("quincy");
 const quincyLabel = document.getElementById("quincy-label");
 const gwenBox = document.getElementById("gwen");
@@ -107,6 +125,7 @@ const psiLabel = document.getElementById("psi-label");
 const gerryBox = document.getElementById("gerry");
 const gerryLabel = document.getElementById("gerry-label");
 
+heroBoxes.push(anyHeroBox);
 heroBoxes.push(quincyBox);
 heroBoxes.push(gwenBox);
 heroBoxes.push(strikerBox);
@@ -122,6 +141,7 @@ heroBoxes.push(saudaBox);
 heroBoxes.push(psiBox);
 heroBoxes.push(gerryBox);
 
+heroLabels.push(anyHeroLabel);
 heroLabels.push(quincyLabel);
 heroLabels.push(gwenLabel);
 heroLabels.push(strikerLabel);
@@ -137,6 +157,7 @@ heroLabels.push(saudaLabel);
 heroLabels.push(psiLabel);
 heroLabels.push(gerryLabel);
 
+primaryBoxes.push(anyPrimaryBox);
 primaryBoxes.push(dartBox);
 primaryBoxes.push(boomerangBox);
 primaryBoxes.push(bombBox);
@@ -144,6 +165,7 @@ primaryBoxes.push(tackBox);
 primaryBoxes.push(iceBox);
 primaryBoxes.push(glueBox);
 
+primaryLabels.push(anyPrimaryLabel);
 primaryLabels.push(dartLabel);
 primaryLabels.push(boomerangLabel);
 primaryLabels.push(bombLabel);
@@ -151,6 +173,7 @@ primaryLabels.push(tackLabel);
 primaryLabels.push(iceLabel);
 primaryLabels.push(glueLabel);
 
+militaryBoxes.push(anyMilitaryBox);
 militaryBoxes.push(sniperBox);
 militaryBoxes.push(subBox);
 militaryBoxes.push(buccBox);
@@ -159,6 +182,7 @@ militaryBoxes.push(heliBox);
 militaryBoxes.push(mortarBox);
 militaryBoxes.push(dartlingBox);
 
+militaryLabels.push(anyMilitaryLabel);
 militaryLabels.push(sniperLabel);
 militaryLabels.push(subLabel);
 militaryLabels.push(buccLabel);
@@ -167,29 +191,44 @@ militaryLabels.push(heliLabel);
 militaryLabels.push(mortarLabel);
 militaryLabels.push(dartlingLabel);
 
+magicBoxes.push(anyMagicBox);
 magicBoxes.push(wizBox);
 magicBoxes.push(supermBox);
 magicBoxes.push(ninjaBox);
 magicBoxes.push(alchBox);
 magicBoxes.push(druidBox);
 
+magicLabels.push(anyMagicLabel);
 magicLabels.push(wizLabel);
 magicLabels.push(supermLabel);
 magicLabels.push(ninjaLabel);
 magicLabels.push(alchLabel);
 magicLabels.push(druidLabel);
 
+supportBoxes.push(anySupportBox);
 supportBoxes.push(farmBox);
 supportBoxes.push(spacBox);
 supportBoxes.push(villageBox);
 supportBoxes.push(engiBox);
 supportBoxes.push(beastBox);
 
+supportLabels.push(anySupportLabel);
 supportLabels.push(farmLabel);
 supportLabels.push(spacLabel);
 supportLabels.push(villageLabel);
 supportLabels.push(engiLabel);
 supportLabels.push(beastLabel);
+
+function initPage() {
+	for(let i = 1; i < heroBoxes.length; i++) {
+		heroBoxes[i].checked = false;
+	}
+	hero = false;
+	primaryBoxes[0].checked = false;
+	militaryBoxes[0].checked = false;
+	magicBoxes[0].checked = false;
+	supportBoxes[0].checked = false;
+}
 
 function inputHandlerSize(e) {
 	teamSize = e.target.value;
@@ -231,6 +270,9 @@ function togglePrimary() {
 		primaryBoxes[i].checked = primary;
 		primaryBoxes[i].disabled = !primary;
 	}
+	if(primary) {
+		anyPrimaryBox.checked = false;
+	}
 	return;
 }
 
@@ -238,6 +280,9 @@ function toggleMilitary() {
 	for(let i = 0; i < militaryBoxes.length; i++) {
 		militaryBoxes[i].checked = military;
 		militaryBoxes[i].disabled = !military;
+	}
+	if(military) {
+		anyMilitaryBox.checked = false;
 	}
 	return;
 }
@@ -247,6 +292,9 @@ function toggleMagic() {
 		magicBoxes[i].checked = magic;
 		magicBoxes[i].disabled = !magic;
 	}
+	if(magic) {
+		anyMagicBox.checked = false;
+	}
 	return;
 }
 
@@ -254,6 +302,9 @@ function toggleSupport() {
 	for(let i = 0; i < supportBoxes.length; i++) {
 		supportBoxes[i].checked = support;
 		supportBoxes[i].disabled = !support;
+	}
+	if(support) {
+		anySupportBox.checked = false;
 	}
 	return;
 }
@@ -263,62 +314,114 @@ function toggleHero() {
 		heroBoxes[i].checked = hero;
 		heroBoxes[i].disabled = !hero;
 	}
+	if(hero) {
+		anyHeroBox.checked = false;
+	}
 	return;
+}
+
+function fillChimpsLists() {
+	chimpsViableHeros.length = 0;
+	chimpsCount = 0;
+	
+	if(anyHeroBox.checked) {
+		chimpsViableHeros.push(anyHeroLabel);
+		chimpsCount++;
+	}
+	if(quincyBox.checked) {
+		chimpsViableHeros.push(quincyLabel);
+		chimpsCount++;
+	}
+	if(saudaBox.checked) {
+		chimpsViableHeros.push(saudaLabel);
+		chimpsCount++;
+	}
+	
+	chimpsViableTowers.length = 0;
+	
+	if(anyPrimaryBox.checked) {
+		chimpsViableTowers.push(anyPrimaryLabel);
+		chimpsCount++;
+	}
+	if(dartBox.checked) {
+		chimpsViableTowers.push(dartLabel);
+		chimpsCount++;
+	}
+	if(boomerangBox.checked) {
+		chimpsViableTowers.push(boomerangLabel);
+		chimpsCount++;
+	}
+	if(anyMilitaryBox.checked) {
+		chimpsViableTowers.push(anyMilitaryLabel);
+		chimpsCount++;
+	}
+	if(subBox.checked) {
+		chimpsViableTowers.push(subLabel);
+		chimpsCount++;
+	}
+	if(anyMagicBox.checked) {
+		chimpsViableTowers.push(anyMagicLabel);
+		chimpsCount++;
+	}
+	if(wizBox.checked) {
+		chimpsViableTowers.push(wizLabel);
+		chimpsCount++;
+	}
+	if(ninjaBox.checked) {
+		chimpsViableTowers.push(ninjaLabel);
+		chimpsCount++;
+	}
+	if(druidBox.checked) {
+		chimpsViableTowers.push(druidLabel);
+		chimpsCount++;
+	}
+	if(anySupportBox.checked) {
+		chimpsViableTowers.push(anySupportLabel);
+		chimpsCount++;
+	}
+	if(engiBox.checked) {
+		chimpsViableTowers.push(engiLabel);
+		chimpsCount++;
+	}
 }
 
 function inputHandler(e) {
 	count = e.target.value;
 	return;
-}
+}	
 
 function roll() {
 	let heroFound = 0;
 	let count = 0;
-	let choice;
+	let choice;	
+	let viableChoice = 0;
+	let reduceCount = 0;
 	content.length = 0;
 	output = " ";
 	
-	if(quincyBox.checked === true) {
-		content.push(quincyLabel);
+	resetColors();
+	
+	if(chimpsViable) {
+		fillChimpsLists();		
+		viableChoice = Math.floor(Math.random()*5);
+		if (chimpsCount == 0) {
+			teamOutput.value = "Err: No C.H.I.M.P.S. viable combination found!"
+		}
 	}
-	if(gwenBox.checked === true) {
-		content.push(gwenLabel);
+	
+	if(chimpsViable && (teamSize == 0)) {
+		viableChoice = 0;
 	}
-	if(strikerBox.checked === true) {
-		content.push(strikerLabel);
-	}
-	if(obynBox.checked === true) {
-		content.push(obynLabel);
-	}
-	if(churchillBox.checked === true) {
-		content.push(churchillLabel);
-	}
-	if(benBox.checked === true) {
-		content.push(benLabel);
-	}
-	if(eziliBox.checked === true) {
-		content.push(eziliLabel);
-	}
-	if(patBox.checked === true) {
-		content.push(patLabel);
-	}
-	if(adoraBox.checked === true) {
-		content.push(adoraLabel);
-	}
-	if(brickellBox.checked === true) {
-		content.push(brickellLabel);
-	}
-	if(etienneBox.checked === true) {
-		content.push(etienneLabel);
-	}
-	if(saudaBox.checked === true) {
-		content.push(saudaLabel);
-	}
-	if(psiBox.checked === true) {
-		content.push(psiLabel);
-	}
-	if(gerryBox.checked === true) {
-		content.push(gerryLabel);
+		
+	if(chimpsViable == 1 && viableChoice == 0) {
+		choice = chimpsViableHeros[Math.floor(Math.random()*chimpsViableHeros.length)];
+		content.push(choice);				
+	} else {
+		for(let i = 0; i < heroBoxes.length; i++) {
+			if(heroBoxes[i].checked == true) {
+				content.push(heroLabels[i]);
+			}
+		}
 	}
 	
 	for(let i = 0; i < content.length; i++) {
@@ -327,114 +430,54 @@ function roll() {
 
 	if(content.length > 0) {
 		choice = content[Math.floor(Math.random()*content.length)];
-		output += choice.innerHTML + " ";
 		choice.style.color = "yellow";
 		heroFound = 1;
+		outputHero = choice.innerHTML;
 	}
 	
 	content.length = 0;
 	
-	if(dartBox.checked === true) {
-		content.push(dartLabel);
-		count++;
-	}
-	if(boomerangBox.checked === true) {
-		content.push(boomerangLabel);
-		count++;
-	}
-	if(bombBox.checked === true) {
-		content.push(bombLabel);
-		count++;
-	}
-	if(tackBox.checked === true) {
-		content.push(tackLabel);
-		count++;
-	}
-	if(iceBox.checked === true) {
-		content.push(iceLabel);
-		count++;
-	}
-	if(glueBox.checked === true) {
-		content.push(glueLabel);
-		count++;
+	for(let i = 0; i < primaryBoxes.length; i++) {
+		if(primaryBoxes[i].checked == true) {
+			content.push(primaryLabels[i]);
+			count++;
+		}
 	}
 	
-
-	if(sniperBox.checked === true) {
-		content.push(sniperLabel);
-		count++;
-	}
-	if(subBox.checked === true) {
-		content.push(subLabel);
-		count++;
-	}
-	if(buccBox.checked === true) {
-		content.push(buccLabel);
-		count++;
-	}
-	if(aceBox.checked === true) {
-		content.push(aceLabel);
-		count++;
-	}
-	if(heliBox.checked === true) {
-		content.push(heliLabel);
-		count++;
-	}
-	if(mortarBox.checked === true) {
-		content.push(mortarLabel);
-		count++;
-	}
-	if(dartlingBox.checked === true) {
-		content.push(dartlingLabel);
-		count++;
+	for(let i = 0; i < militaryBoxes.length; i++) {
+		if(militaryBoxes[i].checked == true) {
+			content.push(militaryLabels[i]);
+			count++;
+		}
 	}
 	
-	if(wizBox.checked === true) {
-		content.push(wizLabel);
-		count++;
-	}
-	if(supermBox.checked === true) {
-		content.push(supermLabel);
-		count++;
-	}
-	if(ninjaBox.checked === true) {
-		content.push(ninjaLabel);
-		count++;
-	}
-	if(alchBox.checked === true) {
-		content.push(alchLabel);
-		count++;
-	}
-	if(druidBox.checked === true) {
-		content.push(druidLabel);
-		count++;
+	for(let i = 0; i < magicBoxes.length; i++) {
+		if(magicBoxes[i].checked == true) {
+			content.push(magicLabels[i]);
+			count++;
+		}
 	}
 	
-	if(farmBox.checked === true) {
-		content.push(farmLabel);
-		count++;
-	}
-	if(spacBox.checked === true) {
-		content.push(spacLabel);
-		count++;
-	}
-	if(villageBox.checked === true) {
-		content.push(villageLabel);
-		count++;
-	}
-	if(engiBox.checked === true) {
-		content.push(engiLabel);
-		count++;
-	}
-	if(beastBox.checked === true) {
-		content.push(beastLabel);
-		count++;
+	for(let i = 0; i < supportBoxes.length; i++) {
+		if(supportBoxes[i].checked == true) {
+			if(chimpsViable) {
+				if(supportBoxes[i] != farmBox) {
+					content.push(supportLabels[i]);
+					count++;
+				} else {
+					supportBoxes[i].checked == false;
+				}		
+			} else {
+				content.push(supportLabels[i]);
+				count++;
+			}
+		}
 	}
 	
 	for(let i = 0; i < content.length; i++) {
 		content[i].style.color = "#87CEEB";
 	}
-	
+
 	if (teamSize.length === 0) {
 		sizeInput.value = 3;
 		teamSize = 3;
@@ -445,22 +488,35 @@ function roll() {
 		teamSize = count;
 	}
 	
-	if(count >= 1) {
-		if(heroFound === 1) {
-			output += "> "
+	if(teamSize >= 1) {
+		if(heroFound) {
+			output += outputHero + " > ";
 		}
-		for(let i = 0; i < teamSize; i++) {
+		if(chimpsViable == 1 && viableChoice >= 1) {
+			choice = chimpsViableTowers[Math.floor(Math.random()*chimpsViableTowers.length)];
+			output += choice.innerHTML + " ";
+			choice.style.color = "yellow";
+			content.splice(content.indexOf(choice), 1);
+			reduceCount = 1;
+		}
+		for(let i = 0; i < (teamSize - reduceCount); i++) {
+			content.removeChild
 			choice = content[Math.floor(Math.random()*content.length)];
 			output += choice.innerHTML + " ";
 			choice.style.color = "yellow";
 			content.splice(content.indexOf(choice), 1);
 		}
-		teamOutput.value = output;	
+		if (chimpsViable && (chimpsCount < teamSize)) {
+			teamOutput.value = "Err: No C.H.I.M.P.S. viable combination found!"
+		} else {
+			teamOutput.value = output;
+		}
+	} else if (heroFound == 0 || !hero) {
+		teamOutput.value = "Err: Team size is set to 0!"
+	} else {
+		teamOutput.value = outputHero;
 	}
-	
-	if(content.length === 0) {
-		teamOutput.value = output;
-	}
+		
 	return;
 }
 

@@ -38,6 +38,10 @@
 			</div>
 			<div class="checkbox-sub-container">
 				<div>
+					<input type="checkbox" class="checkbox" id="any-hero" name="any-hero" value="Any Hero" checked="true" onchange='resetColors();'>
+					<label id="any-hero-label" for="any-hero">Any Hero</label><br>
+				</div>
+				<div>
 					<input type="checkbox" class="checkbox" id="quincy" name="quincy" value="Quincy" checked="true" onchange='resetColors();'>
 					<label id="quincy-label" for="quincy">Quincy</label><br>
 				</div>
@@ -104,6 +108,10 @@
 			</div>
 			<div class="checkbox-sub-container">
 				<div>
+					<input type="checkbox" class="checkbox" id="any-primary" name="any-primary" value="Any Primary" checked="true" onchange='resetColors();'>
+					<label id="any-primary-label" for="any-primary">Any Primary</label><br>
+				</div>
+				<div>
 					<input type="checkbox" class="checkbox" id="dart" name="dart" value="Dart" checked="true" onchange='resetColors();'>
 					<label id="dart-label" for="dart">Dart</label><br>
 				</div>
@@ -137,6 +145,10 @@
 				<label for="military">Military</label><br>
 			</div>
 			<div class="checkbox-sub-container">
+				<div>
+					<input type="checkbox" class="checkbox" id="any-military" name="any-military" value="Any Military" checked="true" onchange='resetColors();'>
+					<label id="any-military-label" for="any-military">Any Military</label><br>
+				</div>
 				<div>
 					<input type="checkbox" class="checkbox" id="sniper" name="sniper" value="Sniper" checked="true" onchange='resetColors();'>
 					<label id="sniper-label" for="sniper">Sniper</label><br>
@@ -176,6 +188,10 @@
 			</div>
 			<div class="checkbox-sub-container">
 				<div>
+					<input type="checkbox" class="checkbox" id="any-magic" name="any-magic" value="Any Magic" checked="true" onchange='resetColors();'>
+					<label id="any-magic-label" for="any-magic">Any Magic</label><br>
+				</div>
+				<div>
 					<input type="checkbox" class="checkbox" id="wiz" name="wiz" value="Wiz" checked="true" onchange='resetColors();'>
 					<label id="wiz-label" for="wiz">Wizard</label><br>
 				</div>
@@ -206,6 +222,10 @@
 			</div>
 			<div class="checkbox-sub-container">
 				<div>
+					<input type="checkbox" class="checkbox" id="any-support" name="any-support" value="Any Support" checked="true" onchange='resetColors();'>
+					<label id="any-support-label" for="any-support">Any Support</label><br>
+				</div>
+				<div>
 					<input type="checkbox" class="checkbox" id="farm" name="farm" value="Farm" checked="true" onchange='resetColors();'>
 					<label id="farm-label" for="farm">Farm</label><br>
 				</div>
@@ -234,10 +254,15 @@
 	<input class="team-output" id="team-output" disabled="true"/>
 </div>
 
-<div class="roll-button-div">
-	<button class="roll-button" type="button" onclick="roll()">Roll</button>
+<div class=grid-container>
+	<div class="checkbox-div">
+		<input type="checkbox" class="checkbox" id="chimps-viable" name="chimps-viable" value="Force C.H.I.M.P.S. viable" checked="true" onchange='chimpsViable=this.checked;resetColors();'>
+		<label class="chimps-viable-label" for="chimps-viable">Force C.H.I.M.P.S. viable</label><br>
+	</div>
 </div>
 
+<div class="roll-button-div">
+	<button class="roll-button" type="button" onclick="roll()">Roll</button>
 </div>
 
 <footer id="footer">
@@ -264,4 +289,5 @@
 
 </body>
 <script src="../js/teams.js"></script>
+<script>window.onload = initPage();</script>
 </html>
