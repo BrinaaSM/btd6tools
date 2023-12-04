@@ -15,7 +15,7 @@
 	<a href="../index.html">Home</a>
 </div>
 <div class="site-text">
-	M.O.A.B. HP Calculator - BTD6 Tools
+	M.O.A.B. HP Calculator
 </div>
 <div class=back-button>
 	<a href="../index.html">Back</a>
@@ -28,19 +28,19 @@
 <div class="checkbox-container">
 	<div class="checkbox-div">
 		<input type="checkbox" class="checkbox" id="knowledge" name="knowledge" value="Monkey Knowledge" onchange='knowledge=this.checked;selectCheckbox(this);calcAll()'>
-		<label class="checkbox-label" for="knowledge">Monkey Knowledge</label><br>
+		<label class="checkbox-label" for="knowledge">Monkey Knowledge</label>
 	</div>
 	<div class="checkbox-div">
 		<input type="checkbox" class="checkbox" id="fortified" name="fortified" value="Fortified" onchange='fortified=this.checked;selectCheckbox(this);calcAll()'>
-		<label class="checkbox-label" for="fortified">Fortified</label><br>
+		<label class="checkbox-label" for="fortified">Fortified</label>
 	</div>
 	<div class="checkbox-div">
 		<input type="checkbox" class="checkbox" id="double" name="double" value="Double HP" onchange='doubleHP=this.checked;selectCheckbox(this);calcAll()'>
-		<label class="checkbox-label" for="double">Double HP</label><br>
+		<label class="checkbox-label" for="double">Double HP</label>
 	</div>
 	<div class="checkbox-div">
 		<input type="checkbox" class="checkbox" id="challenge" name="challenge" value="Custom HP Modifier" onchange='challenge=this.checked;toggleChallenge();selectCheckbox(this);calcAll();'>
-		<label class="checkbox-label" for="challenge">Custom HP Modifier</label><br>
+		<label class="checkbox-label" for="challenge">HP Modifier</label>
 	</div>
 	
 </div>
@@ -53,29 +53,29 @@
 	<input class="moab-input" id="current-round-input" type="number" placeholder="Current Round" min="1"/>
 </div>
 
-<div class="output"> 
-	<div class="output-desc"><p>M.O.A.B. HP:</p></div>
-	<div class="output-text"><p class="moab-output" id="moab-hp-output">200<p/></div>
+<div class="output-row"> 
+	<div class="output-desc">M.O.A.B. HP:</div>
+	<div class="output-text-box"><div class="moab-output" id="moab-hp-output">200</div></div>
 </div>
-<div class="output"> 
-	<div class="output-desc"><p>B.F.B. HP:</p></div>
-	<div class="output-text"><p class="moab-output" id="bfb-hp-output">700<p/></div>
+<div class="output-row"> 
+	<div class="output-desc">B.F.B. HP:</div>
+	<div class="output-text-box"><div class="moab-output" id="bfb-hp-output">700</div></div>
 </div>
-<div class="output"> 
-	<div class="output-desc"><p>Z.O.M.G. HP:</p></div>
-	<div class="output-text"><p class="moab-output" id="zomg-hp-output">4000<p/></div>
+<div class="output-row"> 
+	<div class="output-desc">Z.O.M.G. HP:</div>
+	<div class="output-text-box"><div class="moab-output" id="zomg-hp-output">4,000</div></div>
 </div>
-<div class="output"> 
-	<div class="output-desc"><p>D.D.T. HP:</p></div>
-	<div class="output-text"><p class="moab-output" id="ddt-hp-output">400<p/></div>
+<div class="output-row"> 
+	<div class="output-desc">D.D.T. HP:</div>
+	<div class="output-text-box"><div class="moab-output" id="ddt-hp-output">400</div></div>
 </div>
-<div class="output"> 
-	<div class="output-desc"><p>B.A.D. HP:</p></div>
-	<div class="output-text"><p class="moab-output" id="bad-hp-output">20000<p/></div>
+<div class="output-row"> 
+	<div class="output-desc">B.A.D. HP:</div>
+	<div class="output-text-box"><div class="moab-output" id="bad-hp-output">20,000</div></div>
 </div>
-<div class="output"> 
-	<div class="output-desc"><p>Ceramic HP:</p></div>
-	<div class="output-text"><p class="moab-output" id="ceram-hp-output">10<p/></div>
+<div class="output-row"> 
+	<div class="output-desc">Ceramic HP:</div>
+	<div class="output-text-box"><div class="moab-output" id="ceram-hp-output">10</div></div>
 </div>
 
 </div>
@@ -90,9 +90,6 @@
 </div>
 <div class="footer-element">
 <a href="https://youtube.com/@BrinaaSM" target="_blank">YouTube</a>
-</div>
-<div class="footer-element">
-<a href="https://twitter.com/BrinaaSM" target="_blank">Twitter</a>
 </div>
 <div class="footer-element" id="copyright-link">
 <a href="https://github.com/BrinaaSM" target="_blank">©2023 @github/BrinaaSM</a>

@@ -2,13 +2,14 @@
 * {
 	color: #87CEEB;
 	font-family: 'Luckiest Guy';
-	text-shadow: 0.3vw 0.3vw #000000;
+	text-shadow: 0.1em 0.1em #000000;
 }
 
+html,
 body {
-	margin-top: 2.5vw;
-	margin-left: 0px;
-	margin-right: 0px;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
 	background-color: #00003f;
 }
 
@@ -24,16 +25,16 @@ a {
 	left: 0;
 	display: block;
 	text-align: center;
-	font-size: 2vw;
-	height: 2.5vw;
+	font-size: 25px;
+	height: 30px;
 	border-bottom: 3px black solid;
 	background-color: #000069;
 }
 
 #header > div > a {
-	padding-left: 1vw;
-	padding-right: 1vw;
-	text-shadow: 0.2vw 0.2vw #000000;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-shadow: 0.1em 0.1em #000000;
 }
 
 #header > .home-button {
@@ -44,7 +45,7 @@ a {
 #header > .site-text {
 	display: inline-block;
 	text-align: center;
-	text-shadow: 0.2vw 0.2vw #000000;
+	text-shadow: 0.1em 0.1em #000000;
 }
 
 #header > .back-button {
@@ -52,29 +53,26 @@ a {
 	float: right;
 }
 
-.page-container {
-	position: relative;
-	min-height: 94vh;
-}
-
 .content {
-	padding-top: 2.5vw;
-	padding-bottom: 1.5vw;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	margin-top: 0px;
 }
 
 #footer {
-	position: absolute;
+	position: fixed;
 	margin-top: auto;
-	text-shadow: 0.2vw 0.2vw #000000;
+	text-shadow: 0.1em 0.1em #000000;
 	display: block;
-	height: 1.5vw;
+	height: 20px;
 	left: 0;
 	bottom: 0;
 	width: 100%;
 	color: #87CEEB;
 	text-align: center;
 	border-top: 3px black solid;
-	font-size: 1vw;
+	font-size: 15px;
+	background-color: #000069;
 }
 
 .footer-element {
@@ -85,7 +83,7 @@ a {
 }
 
 .footer-element > a {
-	text-shadow: 0.2vw 0.2vw #000000;
+	text-shadow: 0.1em 0.1em #000000;
 }
 
 #copyright-link {
