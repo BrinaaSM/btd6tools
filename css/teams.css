@@ -61,6 +61,15 @@
 	}
 }
 
+@media (pointer: coarse)  {
+	.grid-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.checkbox-container {
+		font-size: 30px;
+	}
+}
+
 .roll-button-div {
 	display: block;
 	text-align: center;
