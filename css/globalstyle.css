@@ -31,6 +31,18 @@ a {
 	background-color: #000069;
 }
 
+@media (pointer: coarse)  {
+	#header {
+		padding-top: 10px;
+	}
+}
+
+@media (hover: none) {
+	#header {
+		padding-top: 10px;
+	}
+}
+
 #header > div > a {
 	padding-left: 10px;
 	padding-right: 10px;
