@@ -230,15 +230,15 @@ function calcAll() {
 	var startRoundResult = getRound(startRound);
 	var endRoundResult = getRound(endRound);
 	var incomeSum = sumIncome();
-	cashOutputStart.value = "$"+ Math.floor(startRoundResult.income).toLocaleString();
-	cashOutputEnd.value = "$"+ Math.floor(endRoundResult.income).toLocaleString();
-	cashOutputTotal.value = "$"+ Math.floor(incomeSum).toLocaleString() + " + $" + currentCash.toLocaleString() + " = $" + parseInt(currentCash + incomeSum).toLocaleString();
-	rbeOutputStart.value = startRoundResult.rbe.toLocaleString() + " RBE";
-	rbeOutputEnd.value = endRoundResult.rbe.toLocaleString() + " RBE";
-	rbeOutputTotal.value = sumRBE().toLocaleString() + " RBE";
-	xpOutputStart.value = calcXP(startRound).toLocaleString() + " XP";
-	xpOutputEnd.value = calcXP(endRound).toLocaleString() + " XP";
-	xpOutputTotal.value = sumXP().toLocaleString() + " XP";
+	cashOutputStart.innerHTML = "$"+ Math.floor(startRoundResult.income).toLocaleString();
+	cashOutputEnd.innerHTML = "$"+ Math.floor(endRoundResult.income).toLocaleString();
+	cashOutputTotal.innerHTML = "$"+ Math.floor(incomeSum).toLocaleString() + " + $" + currentCash.toLocaleString() + " = $" + parseInt(currentCash + incomeSum).toLocaleString();
+	rbeOutputStart.innerHTML = startRoundResult.rbe.toLocaleString() + " RBE";
+	rbeOutputEnd.innerHTML = endRoundResult.rbe.toLocaleString() + " RBE";
+	rbeOutputTotal.innerHTML = sumRBE().toLocaleString() + " RBE";
+	xpOutputStart.innerHTML = calcXP(startRound).toLocaleString() + " XP";
+	xpOutputEnd.innerHTML = calcXP(endRound).toLocaleString() + " XP";
+	xpOutputTotal.innerHTML = sumXP().toLocaleString() + " XP";
 }
 
 function getRound(round) {

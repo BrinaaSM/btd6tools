@@ -52,29 +52,50 @@
 	max-width: 800px;
 }
 
-.output-bar {
-	padding-left: 15px;
-	padding-right: 15px;
+.output {
+	display: block;
 	text-shadow: 0.1em 0.1em #000000;
 	background-color: #000069;
-	text-align: center;
+	text-align: right;
+	width: 100%;
+	font-size: min(4vw, 40px);
+}
+
+
+.output-bar {
+	display: block;
+	float: left;
 	font-size: min(4vw, 30px);
-	width: 90%;
-	height: 30px;
-	max-width: 800px;
-	-webkit-text-stroke: 1px black;
-	color: white;
-	text-shadow:
-	0.05em 0.05em black,
-	0.05em 0.0em black,
-	0.05em -0.05em black,
-	0.0em 0.125em black,
-	0.0em -0.05em black,
-	-0.05em 0.05em black,
-	-0.05em 0.0em black,
-	-0.05em -0.05em black;
-	background-color: #0000FF;
-	color: white;
+	text-align: right;
+	text-shadow: 0.1em 0.1em #000000;
+	width: 80%;
+}
+
+.output-bar-full {
+	display: block;
+	float: left;
+	font-size: min(4vw, 30px);
+	text-align: right;
+	text-shadow: 0.1em 0.1em #000000;
+	width: 100%;
+}
+
+.output-desc {
+	display: block;
+	float: left;
+	font-size: min(4vw, 40px);
 	text-align: left;
-	padding: 0.3vw;
+	text-shadow: 0.1em 0.1em #000000;
+	width: 20%;
+	max-width: 800px;
+}
+
+.output-row {
+	display: block;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	height: min(7vw, 60px);
+	width: 90%;
+	max-width: 800px;
 }

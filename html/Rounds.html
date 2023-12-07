@@ -28,6 +28,7 @@
 <div class="input" id= "size-div">
 	<input class="input-bar" id="start-round-input" type="number" value="6" placeholder="Start Round" min="1" max="140"/>
 </div>
+
 <div class="input" id= "size-div">
 	<input class="input-bar" id="end-round-input" type="number" value="100" placeholder="End Round" min="1" max="140"/>
 </div>
@@ -35,39 +36,41 @@
 	<input class="input-bar" id="cash-input" type="number" value="0" placeholder="Current Cash" min="0"/>
 </div>
 
-<div class="input" id= "size-div">
-	<input class="output-bar" id="cash-output-start" disabled="true"/>
+<div class="output-row">
+	<div class="output-desc">Total:</div>
+	<div class="output-bar"><div class="output" id="rbe-output-total"/></div></div>
 </div>
-<div class="input" id= "size-div">
-	<input class="output-bar" id="cash-output-end" disabled="true"/>
+<div class="output-row">
+	<div class="output-desc"></div>
+	<div class="output-bar-full"><div class="output" id="xp-output-total"/></div></div>
 </div>
-<div class="input" id= "size-div">
-	<input class="output-bar" id="cash-output-total" disabled="true"/>
+<div class="output-row">
+	<div class="output-desc"></div>
+	<div class="output-bar-full"><div class="output" id="cash-output-total"/></div></div>
 </div>
-<div class="input" id= "size-div">
-	<input class="output-bar" id="rbe-output-start" disabled="true"/>
+<div class="output-row">
+	<div class="output-desc">Start:</div>
+	<div class="output-bar"><div class="output" id="rbe-output-start"/></div></div>
 </div>
-<div class="input" id= "size-div">
-	<input class="output-bar" id="rbe-output-end" disabled="true"/>
+<div class="output-row">
+	<div class="output-desc"></div>
+	<div class="output-bar-full"><div class="output" id="xp-output-start"/></div></div>
 </div>
-<div class="input" id= "size-div">
-	<input class="output-bar" id="rbe-output-total" disabled="true"/>
+<div class="output-row">
+	<div class="output-desc"></div>
+	<div class="output-bar-full"><div class="output" id="cash-output-start"/></div></div>
 </div>
-<div class="input" id= "size-div">
-	<input class="output-bar" id="xp-output-start" disabled="true"/>
+<div class="output-row">
+	<div class="output-desc">End:</div>
+	<div class="output-bar"><div class="output" id="rbe-output-end"/></div></div>
 </div>
-<div class="input" id= "size-div">
-	<input class="output-bar" id="xp-output-end" disabled="true"/>
+<div class="output-row">
+	<div class="output-desc"></div>
+	<div class="output-bar-full"><div class="output" id="xp-output-end"/></div></div>
 </div>
-<div class="input" id= "size-div">
-	<input class="output-bar" id="xp-output-total" disabled="true"/>
-</div>
-
-<div class=grid-container>
-	<div class="checkbox-div">
-		<input type="checkbox" class="checkbox" id="chimps-viable" name="chimps-viable" value="Force C.H.I.M.P.S. viable" checked="true" onchange='chimpsViable=this.checked;resetColors();'>
-		<label class="chimps-viable-label" for="chimps-viable">Force C.H.I.M.P.S. viable</label><br>
-	</div>
+<div class="output-row">
+	<div class="output-desc"></div>
+	<div class="output-bar-full"><div class="output" id="cash-output-end"/></div></div>
 </div>
 
 <footer id="footer">
