@@ -4,4 +4,4 @@ Bloons TD 6 Tools maybe.
 Almost no functionality so far, please ignore lol  
  - MOAB HP Calc  
  - Monkey Teams  
- - Round Calc (XP, RBE, Income)
+ - Round Calc (RBE, XP, Income, Duration)  
