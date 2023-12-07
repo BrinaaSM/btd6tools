@@ -39,7 +39,7 @@ const bloonStructure = [
 	{id: "yellow", childs: {green: 1}},
 	{id: "green", childs: {blue: 1}},
 	{id: "blue", childs: {red: 1}},
-	{id: "purples", childs: {pink: 2}},
+	{id: "purple", childs: {pink: 2}},
 	{id: "flead", childs: {black: 2}},
 	{id: "lead", childs: {black: 2}},
 	{id: "red"}
@@ -66,7 +66,7 @@ const bloonStructureFreeplay = [
 	{id: "yellow", childs: {green: 1}},
 	{id: "green", childs: {blue: 1}},
 	{id: "blue", childs: {red: 1}},
-	{id: "purples", childs: {pink: 1}},
+	{id: "purple", childs: {pink: 1}},
 	{id: "flead", childs: {black: 1}},
 	{id: "lead", childs: {black: 1}},
 	{id: "red"}
@@ -95,7 +95,7 @@ const rounds = [
 	{id: 19, duration: 15.76, bloons: {green: 10, yellow: 9, pink: 15}},
 	{id: 20, duration: 5.25, bloons: {black: 6}},
 	
-	{id: 21, duration: 18.12, bloons: {yellow: 40, pink: 15}},
+	{id: 21, duration: 18.12, bloons: {yellow: 40, pink: 14}},
 	{id: 22, duration: 8, bloons: {white: 16}},
 	{id: 23, duration: 6.82, bloons: {black: 7, white: 7}},
 	{id: 24, duration: 9, bloons: {blue: 20, green: 1}},
@@ -126,7 +126,7 @@ const rounds = [
 	{id: 47, duration: 24.65, bloons: {pink: 70, ceramic: 12}},
 	{id: 48, duration: 55.72, bloons: {pink: 40, purple: 30, rainbow: 40, fceramic: 3}},
 	{id: 49, duration: 50, bloons: {green: 343, zebra: 20, rainbow: 30, ceramic: 18}},
-	{id: 50, duration: 28.98, bloons: {red: 10, flead: 8, ceramic: 20, moab: 2}},
+	{id: 50, duration: 28.98, bloons: {red: 20, flead: 8, ceramic: 20, moab: 2}},
 	
 	{id: 51, duration: 24.14, bloons: {rainbow: 10, ceramic: 15}},
 	{id: 52, duration: 20.56, bloons: {rainbow: 25, ceramic: 10, moab: 2}},
@@ -148,7 +148,7 @@ const rounds = [
 	{id: 67, duration: 26.44, bloons: {fceramic: 13, moab: 8}},
 	{id: 68, duration: 8.44, bloons: {moab: 4, bfb: 1}},
 	{id: 69, duration: 42.13, bloons: {black: 40, flead: 40, ceramic: 50}},
-	{id: 70, duration: 41.14, bloons: {zebra: 120, rainbow: 200, moab: 4}},
+	{id: 70, duration: 41.14, bloons: {white: 120, rainbow: 200, moab: 4}},
 	
 	{id: 71, duration: 16.55, bloons: {ceramic: 30, moab: 10}},
 	{id: 72, duration: 21.7, bloons: {ceramic: 38, bfb: 2}},
@@ -157,7 +157,7 @@ const rounds = [
 	{id: 75, duration: 22.59, bloons: {lead: 14, flead: 14, fmoab: 3, bfb: 7}},
 	{id: 76, duration: 1.78, bloons: {ceramic: 60}},
 	{id: 77, duration: 58.92, bloons: {moab: 11, bfb: 5}},
-	{id: 78, duration: 90, bloons: {purple: 80, rainbow: 150, ceramic: 147}},
+	{id: 78, duration: 90, bloons: {purple: 80, rainbow: 150, ceramic: 147, bfb: 1}},
 	{id: 79, duration: 60, bloons: {rainbow: 500, bfb: 4, fbfb: 2}},
 	{id: 80, duration: 2, bloons: {zomg: 1}},
 	
@@ -209,12 +209,12 @@ const rounds = [
 	{id: 122, duration: 20, bloons: { flead: 225, bfb: 40, fbfb: 20}},
 	{id: 123, duration: 40, bloons: {moab: 200, fzomg: 8}},
 	{id: 124, duration: 30, bloons: {fbfb: 75}},
-	{id: 125, duration: 40, bloons: {moab: 63, bfb: 32, zomg: 21}},
+	{id: 125, duration: 40, bloons: {moab: 63, bfb: 42, zomg: 21}},
 	{id: 126, duration: 27, bloons: {flead: 1, ddt: 99}},
 	{id: 127, duration: 14, bloons: {moab: 48, bfb: 24}},
 	{id: 128, duration: 28, bloons: {fceramic: 200, fddt: 39, bfb: 30}},
 	{id: 129, duration: 28, bloons: {purple: 77, flead: 77, ceramic: 77, zomg: 7, fzomg: 7, ddt: 18}},
-	{id: 130, duration: 40, bloons: {moab: 96, fmoab: 66, ddt: 48, fddt: 6}},
+	{id: 130, duration: 40, bloons: {moab: 84, fmoab: 66, ddt: 48, fddt: 6}},
 	
 	{id: 131, duration: 39, bloons: {fzomg: 18}},
 	{id: 132, duration: 41, bloons: {purple: 200, zomg: 18, fzomg: 6}},
@@ -316,12 +316,18 @@ function getRound(round) {
   }
 }
 
-function getBloonStructure(bloonLayerTop) {
-  for (var i = 0; i < bloonStructure.length; i++) {
-    if (bloonStructure[i].id === bloonLayerTop) {
-		return bloonStructure[i];
+function getBloonStructure(bloonLayerTop, round) {
+	var structure;
+	if(round > 80) {
+		structure = bloonStructureFreeplay;
+	} else {
+		structure = bloonStructure;
 	}
-  }
+	for (var i = 0; i < structure.length; i++) {
+		if (structure[i].id === bloonLayerTop) {
+			return structure[i];
+		}
+	}
 }
 
 function sumIncome() {
@@ -381,9 +387,9 @@ function convertDuration(duration) {
 	return converted;
 }
 
-function calcLayerCount(bloonLayerTop) {
+function calcLayerCount(bloonLayerTop, round) {
 	var layerCount = 1;
-	var currentLayer = getBloonStructure(bloonLayerTop);
+	var currentLayer = getBloonStructure(bloonLayerTop, round);
 	var childs = currentLayer.childs;
 	if(childs === undefined) {
 		return 1;
@@ -394,7 +400,32 @@ function calcLayerCount(bloonLayerTop) {
 		function(bloon) {
 			var bloonCount = childs[bloon];
 			for (var i = 0; i < bloonCount; i++) {
-				layerCount += calcLayerCount(bloon);
+				layerCount += calcLayerCount(bloon, round);
+			}
+		}
+	);
+	return layerCount;
+}
+
+function calcLayerMoney(bloonLayerTop, round) {
+	var layerCount = 1;
+	var currentLayer = getBloonStructure(bloonLayerTop, round);
+	var childs = currentLayer.childs;
+	if(childs === undefined) {
+		return 1;
+	}
+	
+	if(round > 80) {
+		if(bloonLayerTop === 'fceramic') layerCount += 86;
+		if(bloonLayerTop === 'ceramic') layerCount += 86;
+	}
+	
+	var keys = Object.keys(childs);
+	keys.forEach(
+		function(bloon) {
+			var bloonCount = childs[bloon];
+			for (var i = 0; i < bloonCount; i++) {
+				layerCount += calcLayerMoney(bloon, round);
 			}
 		}
 	);
@@ -412,9 +443,8 @@ function calcIncome(round) {
 	keys.forEach(
 		function(bloon) {
 			var bloonCount = bloons[bloon];
-			console.log(bloonCount);
 			for (var i = 0; i < bloonCount; i++) {
-				income += calcLayerCount(bloon);
+				income += calcLayerMoney(bloon, round);
 			}
 		}
 	);
@@ -438,54 +468,6 @@ function calcIncome(round) {
 	income += (parseInt(round) + 100);
 	
 	return income;
-	
-	if('red' in roundResult) count = getRound(round).red;
-	for (var i = 1; i <= count; i++) {
-		income += calcLayerCount("red");
-	}
-	
-	if('red' in roundResult) income += getRound(round).red;
-	if('blue' in roundResult) income += getRound(round).blue;
-	if('green' in roundResult) income += getRound(round).green;
-	if('yellow' in roundResult) income += getRound(round).yellow;
-	if('pink' in roundResult) income += getRound(round).pink;
-	if('purple' in roundResult) income += getRound(round).purple;
-	if('black' in roundResult) income += getRound(round).black;
-	if('white' in roundResult) income += getRound(round).white;
-	if('lead' in roundResult) income += getRound(round).lead;
-	if('flead' in roundResult) income += getRound(round).flead;
-	if('zebra' in roundResult) income += getRound(round).zebra;
-	if('rainbow' in roundResult) income += getRound(round).rainbow;
-	if('ceramic' in roundResult) income += getRound(round).ceramic;
-	if('fceramic' in roundResult) income += getRound(round).fceramic;
-	if('moab' in roundResult) income += getRound(round).moab;
-	if('fmoab' in roundResult) income += getRound(round).fmoab;
-	if('bfb' in roundResult) income += getRound(round).bfb;
-	if('fbfb' in roundResult) income += getRound(round).fbfb;
-	if('zomg' in roundResult) income += getRound(round).zomg;
-	if('fzomg' in roundResult) income += getRound(round).fzomg;
-	if('ddt' in roundResult) income += getRound(round).ddt;
-	if('fddt' in roundResult) income += getRound(round).fddt;
-	if('bad' in roundResult) income += getRound(round).bad;
-	if('fbad' in roundResult) income += getRound(round).fbad;
-	
-	income += (parseInt(round) + 100);
-	
-	if (round > 120) {
-		multiplier = 0.02;
-	} else if (round > 100) {
-		multiplier = 0.05;
-	} else if (round > 85) {
-		multiplier = 0.1;
-	} else if (round > 60) {
-		multiplier = 0.2;
-	} else if (round > 50) {
-		multiplier = 0.5;
-	} else {
-		multiplier = 1;
-	}
-	
-	return (income * multiplier);
 }
 
 function calcRBE(round) {
