@@ -1,3 +1,5 @@
+roundType = "default";
+
 const rounds = [
 	{id: 1, duration: 17.51, bloons: {red: 20}},
 	{id: 2, duration: 19, bloons: {red: 35}},
