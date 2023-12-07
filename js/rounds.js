@@ -20,27 +20,46 @@ const durationOutputEnd = document.getElementById("duration-output-end");
 var startRound = 1;
 var endRound = 1;
 var currentCash = 0;
+var roundType;
 
 // input handling
 
 function inputHandlerStart(e) {
+	var maxRound;
 	startRound = e.target.value;
+	if(roundType === "default") {
+		maxRound = 140;
+	} else if(roundType === "abr") {
+		maxRound = 100;
+	} else {
+		maxRound = 100;
+	}
+		
 	if(startRound < 1) {
 		startRound = "";
 	}
-	if(startRound > 140) {
-		startRound = 140;
+	if(startRound > maxRound) {
+		startRound = maxRound;
 	}
 	startInput.value = startRound;
 }
 
 function inputHandlerEnd(e) {
+	var maxRound;
 	endRound = e.target.value;
+	if(roundType === "default") {
+		maxRound = 140;
+	} else if(roundType === "abr") {
+		maxRound = 100;
+	} else {
+		maxRound = 100;
+	}
+	
 	if(endRound < 1) {
 		endRound = "";
 	}
-	if(endRound > 140) {
-		endRound = 140;
+	if(endRound > maxRound) {
+		endRound = maxRound;
 	}
 	endInput.value = endRound;
 }
