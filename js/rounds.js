@@ -240,17 +240,17 @@ function calcAll() {
 	rbeOutputTotal.innerHTML = sumRBE().toLocaleString() + " RBE";
 	xpOutputTotal.innerHTML = sumXP().toLocaleString() + " XP";
 	cashOutputTotal.innerHTML = "$"+ Math.floor(incomeSum).toLocaleString() + " + $" + currentCash.toLocaleString() + " = $" + (parseInt(currentCash) + parseInt(incomeSum)).toLocaleString();
-	durationOutputTotal.innerHTML = sumDuration().toLocaleString() + "s";
+	durationOutputTotal.innerHTML = convertDuration(sumDuration()) + "s";
 	
 	rbeOutputStart.innerHTML = startRoundResult.rbe.toLocaleString() + " RBE";
 	xpOutputStart.innerHTML = calcXP(startRound).toLocaleString() + " XP";
 	cashOutputStart.innerHTML = "$"+ Math.floor(startRoundResult.income).toLocaleString();
-	durationOutputStart.innerHTML = startRoundResult.duration.toLocaleString() + "s";
+	durationOutputStart.innerHTML = convertDuration(startRoundResult.duration) + "s";
 	
 	rbeOutputEnd.innerHTML = endRoundResult.rbe.toLocaleString() + " RBE";
 	xpOutputEnd.innerHTML = calcXP(endRound).toLocaleString() + " XP";
 	cashOutputEnd.innerHTML = "$"+ Math.floor(endRoundResult.income).toLocaleString();
-	durationOutputEnd.innerHTML = endRoundResult.duration.toLocaleString() + "s";
+	durationOutputEnd.innerHTML = convertDuration(endRoundResult.duration) + "s";
 }
 
 function getRound(round) {
@@ -311,6 +311,19 @@ function calcXP(round) {
 	}
 	return xp;
 }
+
+function convertDuration(duration) {
+	var converted = "";
+	if(duration > 60) {
+		var min = Math.floor(duration/60);
+		converted += min + "m ";
+		converted += Math.floor(duration - (min * 60));
+	} else {
+		converted = Math.floor(duration);
+	}
+	return converted;
+}
+	
 
 startInput.addEventListener("input", inputHandlerStart);
 endInput.addEventListener("input", inputHandlerEnd);
