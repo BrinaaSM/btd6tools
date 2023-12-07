@@ -61,7 +61,7 @@ const rounds = [
 	{id: 43, income: 1278, rbe: 1198},
 	{id: 44, income: 1294, rbe: 1150},
 	{id: 45, income: 2422, rbe: 2289},
-	{id: 46, income: 716, rbe: 648},
+	{id: 46, income: 716, rbe: 684},
 	{id: 47, income: 1637, rbe: 1598},
 	{id: 48, income: 2843, rbe: 2752},
 	{id: 49, income: 4758, rbe: 4771},
@@ -107,7 +107,7 @@ const rounds = [
 	{id: 85, income: 2625.4, rbe: 30704},
 	{id: 86, income: 948.5, rbe: 27040},
 	{id: 87, income: 2627.4, rbe: 63008},
-	{id: 88, income: 3314, rbe: 60600},
+	{id: 88, income: 3314, rbe: 63600},
 	{id: 89, income: 2171, rbe: 64384},
 	{id: 90, income: 339.3, rbe: 2756},
 	
@@ -119,7 +119,7 @@ const rounds = [
 	{id: 96, income: 9955.6, rbe: 238952},
 	{id: 97, income: 1417.2, rbe: 69984},
 	{id: 98, income: 9653.8, rbe: 327456},
-	{id: 99, income: 2829.9, rbe: 7424},
+	{id: 99, income: 2829.9, rbe: 47424},
 	{id: 100, income: 1534.6, rbe: 67200},
 	
 	{id: 101, income: 764, rbe: 20020},
