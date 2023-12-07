@@ -130,7 +130,7 @@ function calcHP(baseHP, round) {
 	else if(round >= 401 && round <= 500) {
 		hp = baseHP * (241.5 + (round - 400) * 2.5);
 	}
-	else if(round > 500 && round <= Number.MAX_SAFE_INTEGER) {
+	else {
 		hp = baseHP * (491.5 + (round - 500) * 5.0);
 	}
 	

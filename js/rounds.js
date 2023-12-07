@@ -209,12 +209,19 @@ function checkValidRounds() {
 
 function inputHandlerCash(e) {
 	var regex=/^[0-9]+$/; // only numbers valid
+	var max_integer = 2147483647;
 	currentCash = e.target.value;
 	if(currentCash < 0) {
-		cashInput.value = 0;
+		cashInput.value = currentCash;
+		currentCash = 0;
 	}
 	if (!currentCash.match(regex)) {
 		cashInput.value = "";
+		currentCash = 0;
+	}
+	if(currentCash > max_integer) {
+		currentCash = max_integer;
+		cashInput.value = currentCash;
 	}
 }
 
@@ -222,15 +229,16 @@ function calcAll() {
 	checkValidRounds();
 	var startRoundResult = getRound(startRound);
 	var endRoundResult = getRound(endRound);
-	cashOutputStart.value = "$"+ Math.floor(startRoundResult.income);
-	cashOutputEnd.value = "$"+ Math.floor(endRoundResult.income);
-	cashOutputTotal.value = "$"+ Math.floor(startRoundResult.income);
-	rbeOutputStart.value = startRoundResult.rbe + " RBE";
-	rbeOutputEnd.value = endRoundResult.rbe + " RBE";
-	rbeOutputTotal.value = startRoundResult.rbe + " RBE";
-	xpOutputStart.value = calcXP(startRound) + " XP";
-	xpOutputEnd.value = calcXP(endRound) + " XP";
-	xpOutputTotal.value = calcXP(startRound) + " XP";
+	var incomeSum = sumIncome();
+	cashOutputStart.value = "$"+ Math.floor(startRoundResult.income).toLocaleString();
+	cashOutputEnd.value = "$"+ Math.floor(endRoundResult.income).toLocaleString();
+	cashOutputTotal.value = "$"+ Math.floor(incomeSum).toLocaleString() + " + $" + currentCash.toLocaleString() + " = $" + parseInt(currentCash + incomeSum).toLocaleString();
+	rbeOutputStart.value = startRoundResult.rbe.toLocaleString() + " RBE";
+	rbeOutputEnd.value = endRoundResult.rbe.toLocaleString() + " RBE";
+	rbeOutputTotal.value = sumRBE().toLocaleString() + " RBE";
+	xpOutputStart.value = calcXP(startRound).toLocaleString() + " XP";
+	xpOutputEnd.value = calcXP(endRound).toLocaleString() + " XP";
+	xpOutputTotal.value = sumXP().toLocaleString() + " XP";
 }
 
 function getRound(round) {
@@ -239,6 +247,30 @@ function getRound(round) {
 		return rounds[i];
 	}
   }
+}
+
+function sumIncome() {
+	sum = 0;
+	for (var i = startRound; i <= endRound; i++) {
+		sum += getRound(i).income;
+	}
+	return sum;
+}
+	
+function sumRBE() {
+	sum = 0;
+	for (var i = startRound; i <= endRound; i++) {
+		sum += getRound(i).rbe;
+	}
+	return sum;
+}
+
+function sumXP() {
+	sum = 0;
+	for (var i = startRound; i <= endRound; i++) {
+		sum += calcXP(i);
+	}
+	return sum;
 }
 
 function calcXP(round) {
@@ -265,3 +297,4 @@ endInput.addEventListener("input", inputHandlerEnd);
 cashInput.addEventListener("input", inputHandlerCash);
 startInput.addEventListener("blur", calcAll);
 endInput.addEventListener("blur", calcAll);
+cashInput.addEventListener("blur", calcAll);
