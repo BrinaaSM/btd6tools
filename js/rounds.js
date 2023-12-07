@@ -232,7 +232,7 @@ function calcAll() {
 	var incomeSum = sumIncome();
 	cashOutputStart.innerHTML = "$"+ Math.floor(startRoundResult.income).toLocaleString();
 	cashOutputEnd.innerHTML = "$"+ Math.floor(endRoundResult.income).toLocaleString();
-	cashOutputTotal.innerHTML = "$"+ Math.floor(incomeSum).toLocaleString() + " + $" + currentCash.toLocaleString() + " = $" + parseInt(currentCash + incomeSum).toLocaleString();
+	cashOutputTotal.innerHTML = "$"+ Math.floor(incomeSum).toLocaleString() + " + $" + currentCash.toLocaleString() + " = $" + (parseInt(currentCash) + parseInt(incomeSum)).toLocaleString();
 	rbeOutputStart.innerHTML = startRoundResult.rbe.toLocaleString() + " RBE";
 	rbeOutputEnd.innerHTML = endRoundResult.rbe.toLocaleString() + " RBE";
 	rbeOutputTotal.innerHTML = sumRBE().toLocaleString() + " RBE";
