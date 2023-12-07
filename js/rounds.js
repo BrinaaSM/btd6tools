@@ -167,8 +167,8 @@ const rounds = [
 	{id: 140, income: 773.84, rbe: 645440}
 	];
 	
-var startRound = 6;
-var endRound = 100;
+var startRound = 1;
+var endRound = 1;
 var currentCash = 0;
 
 function inputHandlerStart(e) {
