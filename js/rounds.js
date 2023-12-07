@@ -119,7 +119,7 @@ const rounds = [
 	{id: 96, income: 9955.6, rbe: 238952},
 	{id: 97, income: 1417.2, rbe: 69984},
 	{id: 98, income: 9653.8, rbe: 327456},
-	{id: 99, income: 2829.9, rbe: 47424},
+	{id: 99, income: 2827.9, rbe: 47424},
 	{id: 100, income: 1534.6, rbe: 67200},
 	
 	{id: 101, income: 764, rbe: 20020},
