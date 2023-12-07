@@ -79,11 +79,13 @@
 	grid-template-rows: 1fr;
 	column-gap: 1vw;
 	max-width: 800px;
+	height: 100px;
 }
 
 .checkbox-div {
 	display: flex;
 	justify-content: center;
+	text-align: center;
 	align-items: center;
 	border: 3px #00003f solid;
 }
@@ -93,7 +95,7 @@
 }
 
 .checkbox-label {
-	width: 90%;
+	width: 100%;
 }
 
 .checkbox {

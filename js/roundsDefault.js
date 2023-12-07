@@ -132,7 +132,7 @@ const rounds = [
 	{id: 120, duration: 51, bloons: {fmoab: 24, fbfb: 12, zomg: 12}},
 	
 	{id: 121, duration: 15, bloons: {fmoab: 28, fbfb: 14, fzomg: 6}},
-	{id: 122, duration: 20, bloons: { flead: 225, bfb: 40, fbfb: 20}},
+	{id: 122, duration: 20, bloons: {flead: 225, bfb: 40, fbfb: 20}},
 	{id: 123, duration: 40, bloons: {moab: 200, fzomg: 8}},
 	{id: 124, duration: 30, bloons: {fbfb: 75}},
 	{id: 125, duration: 40, bloons: {moab: 63, bfb: 42, zomg: 21}},
@@ -153,3 +153,20 @@ const rounds = [
 	{id: 139, duration: 45, bloons: {moab: 181, fmoab: 72}},
 	{id: 140, duration: 46, bloons: {bad: 1, fbad: 1}}
 	];
+	
+	
+function getDuration(round) {
+  for (var i = 0; i < rounds.length; i++) {
+    if (parseInt(rounds[i].id) === parseInt(round)) {
+		return rounds[i].duration;
+	}
+  }
+}
+
+function getBloons(round) {
+  for (var i = 0; i < rounds.length; i++) {
+    if (parseInt(rounds[i].id) === parseInt(round)) {
+		return rounds[i].bloons;
+	}
+  }
+}
