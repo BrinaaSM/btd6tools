@@ -29,7 +29,7 @@ w white
 l lead
 fl fortified lead
 z zebra
-r rainbow
+rb rainbow
 c ceramic
 fc fortified ceramic
 m moab
@@ -44,159 +44,159 @@ a B.A.D.
 fa fortified B.A.D.
 */
 const rounds = [
-	{id: 1, income: 121, rbe: 20, duration: 17.51, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 2, income: 137, rbe: 35, duration: 19, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 3, income: 138, rbe: 35, duration: 16.71, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 4, income: 175, rbe: 71, duration: 17.31, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 5, income: 164, rbe: 59, duration: 16.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 6, income: 163, rbe: 57, duration: 18.7, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 7, income: 182, rbe: 75, duration: 26.8, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 8, income: 200, rbe: 92, duration: 28.87, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 9, income: 199, rbe: 90, duration: 18.95, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 10, income: 314, rbe: 204, duration: 47.99, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 1, duration: 17.51, r: 20, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 2, duration: 19, r: 35, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 3, duration: 16.71, r: 25, b: 5, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 4, duration: 17.31, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 5, duration: 16.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 6, duration: 18.7, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 7, duration: 26.8, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 8, duration: 28.87, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 9, duration: 18.95, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 10, duration: 47.99, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 11, income: 189, rbe: 78, duration: 19.16, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 12, income: 192, rbe: 80, duration: 17.39, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 13, income: 282, rbe: 169, duration: 32.21, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 14, income: 259, rbe: 145, duration: 26.63, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 15, income: 266, rbe: 151, duration: 25, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 16, income: 268, rbe: 152, duration: 16.02, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 17, income: 165, rbe: 48, duration: 5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 18, income: 358, rbe: 240, duration: 26.82, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 19, income: 260, rbe: 141, duration: 15.76, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 20, income: 186, rbe: 66, duration: 5.25, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 11, duration: 19.16, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 12, duration: 17.39, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 13, duration: 32.21, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 14, duration: 26.63, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 15, duration: 25, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 16, duration: 16.02, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 17, duration: 5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 18, duration: 26.82, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 19, duration: 15.76, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 20, duration: 5.25, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 21, income: 351, rbe: 230, duration: 18.12, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 22, income: 298, rbe: 176, duration: 8, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 23, income: 277, rbe: 154, duration: 6.82, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 24, income: 167, rbe: 43, duration: 9, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 25, income: 335, rbe: 210, duration: 21.14, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 26, income: 333, rbe: 207, duration: 14.51, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 27, income: 662, rbe: 535, duration: 34.26, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 28, income: 266, rbe: 138, duration: 5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 29, income: 389, rbe: 260, duration: 15.25, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 30, income: 337, rbe: 207, duration: 13.07, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 21, duration: 18.12, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 22, duration: 8, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 23, duration: 6.82, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 24, duration: 9, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 25, duration: 21.14, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 26, duration: 14.51, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 27, duration: 34.26, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 28, duration: 5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 29, duration: 15.25, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 30, duration: 13.07, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 31, income: 537, rbe: 406, duration: 15.91, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 32, income: 627, rbe: 495, duration: 27.96, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 33, income: 205, rbe: 72, duration: 25.34, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 34, income: 912, rbe: 778, duration: 36, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 35, income: 1150, rbe: 1015, duration: 33.76, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 36, income: 896, rbe: 760, duration: 20.99, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 37, income: 1339, rbe: 1202, duration: 43.51, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 38, income: 1277, rbe: 1157, duration: 29.06, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 39, income: 1759, rbe: 1620, duration: 37.93, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 40, income: 521, rbe: 616, duration: 1, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 31, duration: 15.91, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 32, duration: 27.96, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 33, duration: 25.34, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 34, duration: 36, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 35, duration: 33.76, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 36, duration: 20.99, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 37, duration: 43.51, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 38, duration: 29.06, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 39, duration: 37.93, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 40, duration: 1, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 41, income: 2181, rbe: 2040, duration: 46.2, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 42, income: 659, rbe: 517, duration: 11.6, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 43, income: 1278, rbe: 1198, duration: 9.26, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 44, income: 1294, rbe: 1150, duration: 23.67, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 45, income: 2422, rbe: 2289, duration: 53.1, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 46, income: 716, rbe: 684, duration: 7, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 47, income: 1637, rbe: 1598, duration: 24.65, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 48, income: 2843, rbe: 2752, duration: 55.72, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 49, income: 4758, rbe: 4771, duration: 50, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 50, income: 3016, rbe: 3540, duration: 28.98, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 41, duration: 46.2, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 42, duration: 11.6, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 43, duration: 9.26, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 44, duration: 23.67, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 45, duration: 53.1, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 46, duration: 7, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 47, duration: 24.65, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 48, duration: 55.72, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 49, duration: 50, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 50, duration: 28.98, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 51, income: 1098.5, rbe: 2030, duration: 24.14, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 52, income: 1595.5, rbe: 3447, duration: 20.56, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 53, income: 924.5, rbe: 2248, duration: 35, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 54, income: 2197.5, rbe: 4872, duration: 19.41, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 55, income: 2483, rbe: 5296, duration: 29.78, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 56, income: 1286.5, rbe: 2496, duration: 16.18, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 57, income: 1859, rbe: 4344, duration: 26.23, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 58, income: 2298, rbe: 5780, duration: 43.98, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 59, income: 2159, rbe: 4270, duration: 26.16, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 60, income: 922.5, rbe: 3164, duration: 1, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 51, duration: 24.14, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 52, duration: 20.56, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 53, duration: 35, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 54, duration: 19.41, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 55, duration: 29.78, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 56, duration: 16.18, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 57, duration: 26.23, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 58, duration: 43.98, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 59, duration: 26.16, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 60, duration: 1, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 61, income: 1232, rbe: 6530, duration: 20, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 62, income: 1386.4, rbe: 8247, duration: 48.29, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 63, income: 2826, rbe: 14413, duration: 42.25, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 64, income: 849.8, rbe: 6264, duration: 9.53, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 65, income: 3071.6, rbe: 18966, duration: 62, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 66, income: 1004.2, rbe: 7496, duration: 22.75, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 67, income: 1023.6, rbe: 6410, duration: 26.44, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 68, income: 777.8, rbe: 5628, duration: 8.44, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 69, income: 1391, rbe: 6680, duration: 42.13, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 70, income: 2618.8, rbe: 13184, duration: 41.14, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 61, duration: 20, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 62, duration: 48.29, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 63, duration: 42.25, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 64, duration: 9.53, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 65, duration: 62, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 66, duration: 22.75, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 67, duration: 26.44, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 68, duration: 8.44, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 69, duration: 42.13, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 70, duration: 41.14, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 71, income: 1503, rbe: 9280, duration: 16.55, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 72, income: 1504, rbe: 10280, duration: 21.7, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 73, income: 1392.6, rbe: 11256, duration: 26.95, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 74, income: 3044, rbe: 18054, duration: 82.39, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 75, income: 2667.4, rbe: 25402, duration: 22.59, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 76, income: 1316, rbe: 6240, duration: 1.78, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 77, income: 2540.2, rbe: 22596, duration: 58.92, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 78, income: 4862, rbe: 26382, duration: 90, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 79, income: 6709, rbe: 45804, duration: 60, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 80, income: 1400.2, rbe: 16656, duration: 2, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 71, duration: 16.55, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 72, duration: 21.7, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 73, duration: 26.95, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 74, duration: 82.39, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 75, duration: 22.59, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 76, duration: 1.78, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 77, duration: 58.92, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 78, duration: 90, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 79, duration: 60, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 80, duration: 2, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 81, income: 5366, rbe: 44506, duration: 26.47, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 82, income: 4757, rbe: 52320, duration: 35.68, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 83, income: 4749, rbe: 25080, duration: 60.2, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 84, income: 7044, rbe: 51480, duration: 25, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 85, income: 2625.4, rbe: 30704, duration: 10, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 86, income: 948.5, rbe: 27040, duration: 20.85, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 87, income: 2627.4, rbe: 63008, duration: 10, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 88, income: 3314, rbe: 63600, duration: 14.55, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 89, income: 2171, rbe: 64384, duration: 20.74, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 90, income: 339.3, rbe: 2756, duration: 11.9, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 81, duration: 26.47, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 82, duration: 35.68, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 83, duration: 60.2, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 84, duration: 25, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 85, duration: 10, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 86, duration: 20.85, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 87, duration: 10, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 88, duration: 14.55, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 89, duration: 20.74, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 90, duration: 11.9, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 91, income: 4191, rbe: 71160, duration: 30, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 92, income: 4537.4, rbe: 117408, duration: 35, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 93, income: 1946.6, rbe: 62936, duration: 20, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 94, income: 7667.1, rbe: 178112, duration: 15, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 95, income: 3718, rbe: 80860, duration: 50.81, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 96, income: 9955.6, rbe: 238952, duration: 32.12, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 97, income: 1417.2, rbe: 69984, duration: 5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 98, income: 9653.8, rbe: 327456, duration: 30, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 99, income: 2827.9, rbe: 47424, duration: 12, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 100, income: 1534.6, rbe: 67200, duration: 0.1, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 91, duration: 30, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 92, duration: 35, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 93, duration: 20, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 94, duration: 15, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 95, duration: 50.81, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 96, duration: 32.12, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 97, duration: 5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 98, duration: 30, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 99, duration: 12, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 100, duration: 0.1, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 101, income: 764, rbe: 20020, duration: 9.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 102, income: 2451.2, rbe: 199826, duration: 46.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 103, income: 6170.4, rbe: 507908, duration: 19, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 104, income: 7591.5, rbe: 387472, duration: 22, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 105, income: 4401.25, rbe: 152340, duration: 9, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 106, income: 1977.65, rbe: 113376, duration: 33.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 107, income: 3865.7, rbe: 447384, duration: 10, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 108, income: 6003.95, rbe: 643088, duration: 24, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 109, income: 7648.25, rbe: 552345, duration: 18, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 110, income: 2687.75, rbe: 141410, duration: 36, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 101, duration: 9.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 102, duration: 46.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 103, duration: 19, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 104, duration: 22, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 105, duration: 9, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 106, duration: 33.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 107, duration: 10, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 108, duration: 24, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 109, duration: 18, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 110, duration: 36, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 111, income: 9667.55, rbe: 949472, duration: 18.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 112, income: 2670.8, rbe: 261648, duration: 20, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 113, income: 3184.5, rbe: 231102, duration: 21.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 114, income: 5608.15, rbe: 483416, duration: 30, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 115, income: 5609.15, rbe: 492396, duration: 30, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 116, income: 4148.9, rbe: 575600, duration: 15, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 117, income: 1161.75, rbe: 75010, duration: 14, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 118, income: 4450.1, rbe: 398784, duration: 16, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 119, income: 2220.9, rbe: 319020, duration: 26, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 120, income: 5252.8, rbe: 431808, duration: 51, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 111, duration: 18.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 112, duration: 20, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 113, duration: 21.5, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 114, duration: 30, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 115, duration: 30, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 116, duration: 15, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 117, duration: 14, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 118, duration: 16, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 119, duration: 26, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 120, duration: 51, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 121, income: 1593.48, rbe: 516500, duration: 15, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 122, income: 2083.5, rbe: 386730, duration: 20, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 123, income: 2723.16, rbe: 629936, duration: 40, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 124, income: 2511.5, rbe: 738600, duration: 30, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 125, income: 4548.48, rbe: 939624, duration: 40, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 126, income: 980.52, rbe: 141778, duration: 27, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 127, income: 1324.76, rbe: 178248, duration: 14, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 128, income: 1820.18, rbe: 322048, duration: 28, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 129, income: 2240.76, rbe: 826792, duration: 28, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 130, income: 1784.48, rbe: 307968, duration: 40, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 121, duration: 15, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 122, duration: 20, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 123, duration: 40, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 124, duration: 30, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 125, duration: 40, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 126, duration: 27, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 127, duration: 14, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 128, duration: 28, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 129, duration: 28, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 130, duration: 40, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
 	
-	{id: 131, income: 2427.6, rbe: 1461456, duration: 39, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 132, income: 3184.48, rbe: 1268688, duration: 41, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 133, income: 3305.94, rbe: 1153341, duration: 43, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 134, income: 1454, rbe: 374840, duration: 24.01, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 135, income: 2103.3, rbe: 1386840, duration: 24, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 136, income: 1699.52, rbe: 402624, duration: 45, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 137, income: 3531.12, rbe: 1143984, duration: 8.1, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 138, income: 1198.12, rbe: 442872, duration: 40, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 139, income: 2166.86, rbe: 401346, duration: 45, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
-	{id: 140, income: 773.84, rbe: 645440, duration: 46, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, r: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0}
+	{id: 131, duration: 39, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 132, duration: 41, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 133, duration: 43, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 134, duration: 24.01, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 135, duration: 24, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 136, duration: 45, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 137, duration: 8.1, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 138, duration: 40, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 139, duration: 45, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0},
+	{id: 140, duration: 46, r: 0, b: 0, g: 0, y: 0, p: 0, pu: 0, bl: 0, w: 0, l: 0, fl: 0, z:0, rb: 0, c: 0, fc: 0, m: 0, fm: 0, f: 0, ff: 0, z: 0, fz: 0, d: 0, fd: 0, a: 0, fa: 0}
 	];
 	
 var startRound = 1;
@@ -268,14 +268,14 @@ function calcAll() {
 	cashOutputTotal.innerHTML = "$"+ Math.floor(incomeSum).toLocaleString() + " + $" + currentCash.toLocaleString() + " = $" + (parseInt(currentCash) + parseInt(incomeSum)).toLocaleString();
 	durationOutputTotal.innerHTML = convertDuration(sumDuration()) + "s";
 	
-	rbeOutputStart.innerHTML = startRoundResult.rbe.toLocaleString() + " RBE";
+	rbeOutputStart.innerHTML = calcRBE(startRound).toLocaleString() + " RBE";
 	xpOutputStart.innerHTML = calcXP(startRound).toLocaleString() + " XP";
-	cashOutputStart.innerHTML = "$"+ Math.floor(startRoundResult.income).toLocaleString();
+	cashOutputStart.innerHTML = "$"+ Math.floor(calcIncome(startRound)).toLocaleString();
 	durationOutputStart.innerHTML = convertDuration(startRoundResult.duration) + "s";
 	
-	rbeOutputEnd.innerHTML = endRoundResult.rbe.toLocaleString() + " RBE";
+	rbeOutputEnd.innerHTML = calcRBE(endRound).toLocaleString() + " RBE";
 	xpOutputEnd.innerHTML = calcXP(endRound).toLocaleString() + " XP";
-	cashOutputEnd.innerHTML = "$"+ Math.floor(endRoundResult.income).toLocaleString();
+	cashOutputEnd.innerHTML = "$"+ Math.floor(calcIncome(endRound)).toLocaleString();
 	durationOutputEnd.innerHTML = convertDuration(endRoundResult.duration) + "s";
 }
 
@@ -290,7 +290,7 @@ function getRound(round) {
 function sumIncome() {
 	sum = 0;
 	for (var i = parseInt(startRound); i <= parseInt(endRound); i++) {
-		sum += getRound(i).income;
+		sum += calcIncome(i);
 	}
 	return sum;
 }
@@ -298,7 +298,7 @@ function sumIncome() {
 function sumRBE() {
 	sum = 0;
 	for (var i = parseInt(startRound); i <= parseInt(endRound); i++) {
-		sum += getRound(i).rbe;
+		sum += calcRBE(i);
 	}
 	return sum;
 }
@@ -344,8 +344,9 @@ function convertDuration(duration) {
 	return converted;
 }
 
-function calcIncomeBloons(round) {
+function calcIncome(round) {
 	var income = 0;
+	var multiplier = 1;
 	income += getRound(round).r;
 	income += getRound(round).b;
 	income += getRound(round).g;
@@ -357,7 +358,7 @@ function calcIncomeBloons(round) {
 	income += getRound(round).l;
 	income += getRound(round).fl;
 	income += getRound(round).z;
-	income += getRound(round).r;
+	income += getRound(round).rb;
 	income += getRound(round).c;
 	income += getRound(round).fc;
 	income += getRound(round).m;
@@ -371,8 +372,68 @@ function calcIncomeBloons(round) {
 	income += getRound(round).a;
 	income += getRound(round).fa;
 	
+	income += (parseInt(round) + 100);
 	
+	if (round > 120) {
+		multiplier = 0.02;
+	} else if (round > 100) {
+		multiplier = 0.05;
+	} else if (round > 85) {
+		multiplier = 0.1;
+	} else if (round > 60) {
+		multiplier = 0.2;
+	} else if (round > 50) {
+		multiplier = 0.5;
+	} else {
+		multiplier = 1;
+	}
 	
+	return (income * multiplier);
+}
+
+function calcRBE(round) {
+	var income = 0;
+	var multiplier = 1;
+	income += getRound(round).r;
+	income += getRound(round).b;
+	income += getRound(round).g;
+	income += getRound(round).y;
+	income += getRound(round).p;
+	income += getRound(round).pu;
+	income += getRound(round).bl;
+	income += getRound(round).w;
+	income += getRound(round).l;
+	income += getRound(round).fl;
+	income += getRound(round).z;
+	income += getRound(round).rb;
+	income += getRound(round).c;
+	income += getRound(round).fc;
+	income += getRound(round).m;
+	income += getRound(round).fm;
+	income += getRound(round).f;
+	income += getRound(round).ff;
+	income += getRound(round).z;
+	income += getRound(round).fz;
+	income += getRound(round).d;
+	income += getRound(round).fd;
+	income += getRound(round).a;
+	income += getRound(round).fa;
+	
+	if (round > 120) {
+		multiplier = 0.02;
+	} else if (round > 100) {
+		multiplier = 0.05;
+	} else if (round > 85) {
+		multiplier = 0.1;
+	} else if (round > 60) {
+		multiplier = 0.2;
+	} else if (round > 50) {
+		multiplier = 0.5;
+	} else {
+		multiplier = 1;
+	}
+	
+	return (income * multiplier);
 }
 	
 startInput.addEventListener("input", inputHandlerStart);
