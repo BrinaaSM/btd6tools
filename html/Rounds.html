@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="../css/globalstyle.css">
+<link rel="stylesheet" href="../css/rounds.css">
+<title>Round Calculator - Bloons TD 6 Tools</title>
+</head>
+<body>
+
+<div class="page-container">
+
+<header id="header">
+
+<div class=home-button>
+	<a href="../index.html">Home</a>
+</div>
+<div class="site-text">
+	Round Calculator
+</div>
+<div class=back-button>
+	<a href="../index.html">Back</a>
+</div>
+
+</header>
+
+<div class="content">
+
+<div class="input" id= "size-div">
+	<input class="input-bar" id="start-round-input" type="number" value="6" placeholder="Start Round" min="1" max="140"/>
+</div>
+<div class="input" id= "size-div">
+	<input class="input-bar" id="end-round-input" type="number" value="100" placeholder="End Round" min="1" max="140"/>
+</div>
+<div class="input" id= "size-div">
+	<input class="input-bar" id="cash-input" type="number" value="0" placeholder="Current Cash" min="0"/>
+</div>
+
+<div class="input" id= "size-div">
+	<input class="output-bar" id="cash-output-start" disabled="true"/>
+</div>
+<div class="input" id= "size-div">
+	<input class="output-bar" id="cash-output-end" disabled="true"/>
+</div>
+<div class="input" id= "size-div">
+	<input class="output-bar" id="cash-output-total" disabled="true"/>
+</div>
+<div class="input" id= "size-div">
+	<input class="output-bar" id="rbe-output-start" disabled="true"/>
+</div>
+<div class="input" id= "size-div">
+	<input class="output-bar" id="rbe-output-end" disabled="true"/>
+</div>
+<div class="input" id= "size-div">
+	<input class="output-bar" id="rbe-output-total" disabled="true"/>
+</div>
+<div class="input" id= "size-div">
+	<input class="output-bar" id="xp-output-start" disabled="true"/>
+</div>
+<div class="input" id= "size-div">
+	<input class="output-bar" id="xp-output-end" disabled="true"/>
+</div>
+<div class="input" id= "size-div">
+	<input class="output-bar" id="xp-output-total" disabled="true"/>
+</div>
+
+<div class=grid-container>
+	<div class="checkbox-div">
+		<input type="checkbox" class="checkbox" id="chimps-viable" name="chimps-viable" value="Force C.H.I.M.P.S. viable" checked="true" onchange='chimpsViable=this.checked;resetColors();'>
+		<label class="chimps-viable-label" for="chimps-viable">Force C.H.I.M.P.S. viable</label><br>
+	</div>
+</div>
+
+<footer id="footer">
+
+<div class="footer-element">
+	<a href="https://discord.com/invite/922ff2xKD2" target="_blank">Discord</a>
+</div>
+<div class="footer-element">
+	<a href="https://twitch.tv/BrinaaSM" target="_blank">Twitch</a>
+</div>
+<div class="footer-element">
+<a href="https://youtube.com/@BrinaaSM" target="_blank">YouTube</a>
+</div>
+<div class="footer-element" id="copyright-link">
+<a href="https://github.com/BrinaaSM" target="_blank">©2023 @github/BrinaaSM</a>
+</div>
+
+</footer>
+
+</div>
+
+</body>
+<script src="../js/rounds.js"></script>
+<script>window.onload = calcAll();</script>
+</html>
