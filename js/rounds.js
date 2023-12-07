@@ -222,12 +222,15 @@ function calcAll() {
 	checkValidRounds();
 	var startRoundResult = getRound(startRound);
 	var endRoundResult = getRound(endRound);
-	cashOutputStart.value = "Round: " + startRound + ": $"+ startRoundResult.income;
-	cashOutputEnd.value = "Round: " + endRound + ": $"+ endRoundResult.income;
-	cashOutputTotal.value = "Total: " + startRound + ": $"+ startRoundResult.income;
-	rbeOutputStart.value = "Round: " + startRound + ": "+ startRoundResult.rbe;
-	rbeOutputEnd.value = "Round: " + endRound + ": " + endRoundResult.rbe;
-	rbeOutputTotal.value = "Total: " + startRound + ": " + startRoundResult.rbe;
+	cashOutputStart.value = "$"+ Math.floor(startRoundResult.income);
+	cashOutputEnd.value = "$"+ Math.floor(endRoundResult.income);
+	cashOutputTotal.value = "$"+ Math.floor(startRoundResult.income);
+	rbeOutputStart.value = startRoundResult.rbe + " RBE";
+	rbeOutputEnd.value = endRoundResult.rbe + " RBE";
+	rbeOutputTotal.value = startRoundResult.rbe + " RBE";
+	xpOutputStart.value = calcXP(startRound) + " XP";
+	xpOutputEnd.value = calcXP(endRound) + " XP";
+	xpOutputTotal.value = calcXP(startRound) + " XP";
 }
 
 function getRound(round) {
@@ -236,7 +239,26 @@ function getRound(round) {
 		return rounds[i];
 	}
   }
-}	
+}
+
+function calcXP(round) {
+	var roundResult = getRound(round);
+	var xp = 20;
+	for (var i = 1; i <= round; i++) {
+		if (i < 21) {
+			xp += 20;
+		} else if (i === 21) {
+			xp += 250;
+		} else if (i < 51) {
+			xp += 50;
+		}  else if (i === 51) {
+			xp -= 410;
+		}  else{
+			xp += 90;
+		}
+	}
+	return xp;
+}
 
 startInput.addEventListener("input", inputHandlerStart);
 endInput.addEventListener("input", inputHandlerEnd);
