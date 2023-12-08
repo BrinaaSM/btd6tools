@@ -55,19 +55,19 @@ const bloonStructureFreeplay = [
 // structure
 
 function getBloon(bloon) {
-  for (var i = 0; i < bloonStructure.length; i++) {
-    if (bloonStructure[i].id === bloon) {
-		return bloonStructure[i];
+	for (var i = 0; i < bloonStructure.length; i++) {
+		if (bloonStructure[i].id === bloon) {
+			return bloonStructure[i];
+		}
 	}
-  }
 }
 
 function getBloonFreeplay(bloon) {
-  for (var i = 0; i < bloonStructureFreeplay.length; i++) {
-    if (bloonStructureFreeplay[i].id === bloon) {
-		return bloonStructureFreeplay[i];
+	for (var i = 0; i < bloonStructureFreeplay.length; i++) {
+		if (bloonStructureFreeplay[i].id === bloon) {
+			return bloonStructureFreeplay[i];
+		}
 	}
-  }
 }
 
 function getBloonStructure(bloonLayerTop, round) {
@@ -136,58 +136,63 @@ function getHP(bloon, round) {
 
 // RBE
 
-function getRBE(bloonLayerTop, round) {
-	var layerCount = 1;
-	var currentLayer = getBloonStructure(bloonLayerTop, round);
+function getRBE(bloon, structure, round) {
+	var rbe = 1;
+	var currentLayer = getBloonStructure(bloon, round);
 	var childs = currentLayer.childs;
-	var layerCountBefore;
+	var rbeBefore;
 	if(childs === undefined) {
 		return 1;
 	}
 	
-	layerCountBefore = layerCount;
+	rbeBefore = rbe;
 	
-	if(bloonLayerTop === 'fceramic') layerCount += getHP('fceramic', round);
-	if(bloonLayerTop === 'ceramic') layerCount += getHP('ceramic', round);
-	if(bloonLayerTop === 'flead') layerCount += getHP('flead', round);
-	if(bloonLayerTop === 'moab') layerCount += getHP('moab', round);
-	if(bloonLayerTop === 'fmoab') layerCount += getHP('moab', round) * 2;
-	if(bloonLayerTop === 'bfb') layerCount += getHP('bfb', round);
-	if(bloonLayerTop === 'fbfb') layerCount += getHP('bfb', round) * 2;
-	if(bloonLayerTop === 'zomg') layerCount += getHP('zomg', round);
-	if(bloonLayerTop === 'fzomg') layerCount += getHP('zomg', round) * 2;
-	if(bloonLayerTop === 'ddt') layerCount += getHP('ddt', round);
-	if(bloonLayerTop === 'fddt') layerCount += getHP('ddt', round) * 2;
-	if(bloonLayerTop === 'bad') layerCount += getHP('bad', round);
-	if(bloonLayerTop === 'fbad') layerCount += getHP('bad', round) * 2;
+	if(bloon === 'rainbow' || bloon === 'black') {
+		structure.fortified = 0;
+	}
 	
-	if(layerCountBefore !== layerCount) layerCount--; // subtract additional layer included in HP
-		
+	if(bloon === 'ceramic') rbe += getHP('ceramic', round);
+	if(bloon === 'moab') rbe += getHP('moab', round);
+	if(bloon === 'fmoab') rbe += getHP('moab', round) * 2;
+	if(bloon === 'bfb') rbe += getHP('bfb', round);
+	if(bloon === 'fbfb') rbe += getHP('bfb', round) * 2;
+	if(bloon === 'zomg') rbe += getHP('zomg', round);
+	if(bloon === 'fzomg') rbe += getHP('zomg', round) * 2;
+	if(bloon === 'ddt') rbe += getHP('ddt', round);
+	if(bloon === 'fddt') rbe += getHP('ddt', round) * 2;
+	if(bloon === 'bad') rbe += getHP('bad', round);
+	if(bloon === 'fbad') rbe += getHP('bad', round) * 2;
+	
+	if(rbeBefore !== rbe) rbe--; // remove 0-layer of HP-bloons
+
+	if(structure.fortified === 1) {
+		rbe *= 2;
+	}
+			
 	var keys = Object.keys(childs);
 	keys.forEach(
 		function(bloon) {
 			var bloonCount = childs[bloon];
 			for (var i = 0; i < bloonCount; i++) {
-				layerCount += getRBE(bloon, round);
+				rbe += getRBE(bloon, structure, round);
 			}
 		}
 	);
-	return layerCount;
+	return rbe;
 }
 	
 // Income
 	
-function getIncomeBloon(bloonLayerTop, round) {
-	var layerCount = 1;
-	var currentLayer = getBloonStructure(bloonLayerTop, round);
+function getIncomeBloon(bloon, round) {
+	var income = 1;
+	var currentLayer = getBloonStructure(bloon, round);
 	var childs = currentLayer.childs;
 	if(childs === undefined) {
 		return 1;
 	}
 	
 	if(round > 80) {
-		if(bloonLayerTop === 'fceramic') layerCount += 86;
-		if(bloonLayerTop === 'ceramic') layerCount += 86;
+		if(bloon === 'ceramic') income += 86;
 	}
 	
 	var keys = Object.keys(childs);
@@ -195,9 +200,9 @@ function getIncomeBloon(bloonLayerTop, round) {
 		function(bloon) {
 			var bloonCount = childs[bloon];
 			for (var i = 0; i < bloonCount; i++) {
-				layerCount += getIncomeBloon(bloon, round);
+				income += getIncomeBloon(bloon, round);
 			}
 		}
 	);
-	return layerCount;
+	return income;
 }

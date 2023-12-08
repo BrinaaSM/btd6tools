@@ -1,60 +1,60 @@
 roundType = "default";
 
 const rounds = [
-	{id: 1, duration: 17.51, bloons: {red: 20}},
-	{id: 2, duration: 19, bloons: {red: 35}},
-	{id: 3, duration: 16.71, bloons: {red: 25, blue: 5}},
-	{id: 4, duration: 17.31, bloons: {red: 35, blue: 18}},
-	{id: 5, duration: 16.5, bloons: {red: 5, blue: 27}},
-	{id: 6, duration: 18.7, bloons: {red: 15, blue: 15, green: 4}},
-	{id: 7, duration: 26.8, bloons: {red: 20, blue: 20, green: 5}},
-	{id: 8, duration: 28.87, bloons: {red: 10, blue: 20, green: 14}},
-	{id: 9, duration: 18.95, bloons: {green: 30}},
-	{id: 10, duration: 47.99, bloons: {blue: 102}},
+	{id: 1, duration: 17.51, bloons: {red: {count: 20}}},
+	{id: 2, duration: 19, bloons: {red: {count: 35}}},
+	{id: 3, duration: 16.71, bloons: {red: {count: 25}, blue: {count: 5}}},
+	{id: 4, duration: 17.31, bloons: {red: {count: 35}, blue: {count: 18}}},
+	{id: 5, duration: 16.5, bloons: {red: {count: 5}, blue: {count: 27}}},
+	{id: 6, duration: 18.7, bloons: {red: {count: 15}, blue: {count: 15}, green: {count: 4}}},
+	{id: 7, duration: 26.8, bloons: {red: {count: 20}, blue: {count: 20}, green: {count: 5}}},
+	{id: 8, duration: 28.87, bloons: {red: {count: 10}, blue: {count: 20}, green: {count: 14}}},
+	{id: 9, duration: 18.95, bloons: {green: {count: 30}}},
+	{id: 10, duration: 47.99, bloons: {blue: {count: 102}}},
 	
-	{id: 11, duration: 19.16, bloons: {red: 10, blue: 10, green: 12, yellow: 3}},
-	{id: 12, duration: 17.39, bloons: {blue: 15, green: 10, yellow: 5}},
-	{id: 13, duration: 32.21, bloons: {blue: 50, green: 23}},
-	{id: 14, duration: 26.63, bloons: {red: 49, blue: 15, green: 10, yellow: 9}},
-	{id: 15, duration: 25, bloons: {red: 20, blue: 15, green: 12, yellow: 10, pink: 5}},
-	{id: 16, duration: 16.02, bloons: {green: 40, yellow: 8}},
-	{id: 17, duration: 5, bloons: {yellow: 12}},
-	{id: 18, duration: 26.82, bloons: {green: 80}},
-	{id: 19, duration: 15.76, bloons: {green: 10, yellow: 9, pink: 15}},
-	{id: 20, duration: 5.25, bloons: {black: 6}},
+	{id: 11, duration: 19.16, bloons: {red: {count: 10}, blue: {count: 10}, green: {count: 12}, yellow: {count: 3}}},
+	{id: 12, duration: 17.39, bloons: {blue: {count: 15}, green: {count: 10}, yellow: {count: 5}}},
+	{id: 13, duration: 32.21, bloons: {blue: {count: 50}, green: {count: 23}}},
+	{id: 14, duration: 26.63, bloons: {red: {count: 49}, blue: {count: 15}, green: {count: 10}, yellow: {count: 9}}},
+	{id: 15, duration: 25, bloons: {red: {count: 20}, blue: {count: 15}, green: {count: 12}, yellow: {count: 10}, pink: {count: 5}}},
+	{id: 16, duration: 16.02, bloons: {green: {count: 40}, yellow: {count: 8}}},
+	{id: 17, duration: 5, bloons: {yellow: {count: 12}}},
+	{id: 18, duration: 26.82, bloons: {green: {count: 80}}},
+	{id: 19, duration: 15.76, bloons: {green: {count: 10}, yellow: {count: 9}, pink: {count: 15}}},
+	{id: 20, duration: 5.25, bloons: {black: {count: 6}}},
 	
-	{id: 21, duration: 18.12, bloons: {yellow: 40, pink: 14}},
-	{id: 22, duration: 8, bloons: {white: 16}},
-	{id: 23, duration: 6.82, bloons: {black: 7, white: 7}},
-	{id: 24, duration: 9, bloons: {blue: 20, green: 1}},
-	{id: 25, duration: 21.14, bloons: {yellow: 25, purple: 10}},
-	{id: 26, duration: 14.51, bloons: {pink: 23, zebra: 4}},
-	{id: 27, duration: 34.26, bloons: {red: 100, blue: 60, green: 45, yellow: 45}},
-	{id: 28, duration: 5, bloons: {lead: 6}},
-	{id: 29, duration: 15.25, bloons: {yellow: 65}},
-	{id: 30, duration: 13.07, bloons: {lead: 9}},
+	{id: 21, duration: 18.12, bloons: {yellow: {count: 40}, pink: {count: 14}}},
+	{id: 22, duration: 8, bloons: {white: {count: 16}}},
+	{id: 23, duration: 6.82, bloons: {black: {count: 7}, white: {count: 7}}},
+	{id: 24, duration: 9, bloons: {blue: {count: 20}, green: {count: 1}}},
+	{id: 25, duration: 21.14, bloons: {yellow: {count: 25}, purple: {count: 10}}},
+	{id: 26, duration: 14.51, bloons: {pink: {count: 23}, zebra: {count: 4}}},
+	{id: 27, duration: 34.26, bloons: {red: {count: 100}, blue: {count: 60}, green: {count: 45}, yellow: {count: 45}}},
+	{id: 28, duration: 5, bloons: {lead: {count: 6}}},
+	{id: 29, duration: 15.25, bloons: {yellow: {count: 65}}},
+	{id: 30, duration: 13.07, bloons: {lead: {count: 9}}},
 	
-	{id: 31, duration: 15.91, bloons: {black: 8, white: 8, zebra: 10}},
-	{id: 32, duration: 27.96, bloons: {purple: 10, black: 15, white: 20}},
-	{id: 33, duration: 25.34, bloons: {red: 20, yellow: 13}},
-	{id: 34, duration: 36, bloons: {yellow: 160, zebra: 6}},
-	{id: 35, duration: 33.76, bloons: {pink: 35, black: 30, white: 25, rainbow: 5}},
-	{id: 36, duration: 20.99, bloons: {green: 20, pink: 140}},
-	{id: 37, duration: 43.51, bloons: {black: 25, white: 32, lead: 15, zebra: 10}},
-	{id: 38, duration: 29.06, bloons: {pink: 42, white: 17, lead: 14, zebra: 10, ceramic: 2}},
-	{id: 39, duration: 37.93, bloons: {black: 10, white: 10, zebra: 20, rainbow: 20}},
-	{id: 40, duration: 1, bloons: {moab: 1}},
+	{id: 31, duration: 15.91, bloons: {black: {count: 8}, white: {count: 8}, zebra: {count: 10}}},
+	{id: 32, duration: 27.96, bloons: {purple: {count: 10}, black: {count: 15}, white: {count: 20}}},
+	{id: 33, duration: 25.34, bloons: {red: {count: 20}, yellow: {count: 13}}},
+	{id: 34, duration: 36, bloons: {yellow: {count: 160}, zebra: {count: 6}}},
+	{id: 35, duration: 33.76, bloons: {pink: {count: 35}, black: {count: 30}, white: {count: 25}, rainbow: {count: 5}}},
+	{id: 36, duration: 20.99, bloons: {green: {count: 20}, pink: {count: 140}}},
+	{id: 37, duration: 43.51, bloons: {black: {count: 25}, white: {count: 32}, lead: {count: 15}, zebra: {count: 10}}},
+	{id: 38, duration: 29.06, bloons: {pink: {count: 42}, white: {count: 17}, lead: {count: 14}, zebra: {count: 10}, ceramic: {count: 2}}},
+	{id: 39, duration: 37.93, bloons: {black: {count: 10}, white: {count: 10}, zebra: {count: 20}, rainbow: {count: 20}}},
+	{id: 40, duration: 1, bloons: {moab: {count: 1}}},
 	
 	{id: 41, duration: 46.2, bloons: {black: 60, zebra: 60}},
 	{id: 42, duration: 11.6, bloons: {rainbow: 11}},
 	{id: 43, duration: 9.26, bloons: {rainbow: 10, ceramic: 7}},
 	{id: 44, duration: 23.67, bloons: {zebra: 50}},
-	{id: 45, duration: 53.1, bloons: {pink: 180, purple: 10, flead: 4, rainbow: 25}},
-	{id: 46, duration: 7, bloons: {fceramic: 6}},
+	{id: 45, duration: 53.1, bloons: {pink: 180, purple: 10, lead: {count: 4, fortified: 1}, rainbow: 25}},
+	{id: 46, duration: 7, bloons: {ceramic: {count: 6, fortified: 1}}},
 	{id: 47, duration: 24.65, bloons: {pink: 70, ceramic: 12}},
-	{id: 48, duration: 55.72, bloons: {pink: 40, purple: 30, rainbow: 40, fceramic: 3}},
+	{id: 48, duration: 55.72, bloons: {pink: 40, purple: 30, rainbow: 40, ceramic: {count: 3, fortified: 1}}},
 	{id: 49, duration: 50, bloons: {green: 343, zebra: 20, rainbow: 30, ceramic: 18}},
-	{id: 50, duration: 28.98, bloons: {red: 20, flead: 8, ceramic: 20, moab: 2}},
+	{id: 50, duration: 28.98, bloons: {red: 20, lead: {count: 8, fortified: 1}, ceramic: 20, moab: 2}},
 	
 	{id: 51, duration: 24.14, bloons: {rainbow: 10, ceramic: 15}},
 	{id: 52, duration: 20.56, bloons: {rainbow: 25, ceramic: 10, moab: 2}},
@@ -63,7 +63,7 @@ const rounds = [
 	{id: 55, duration: 29.78, bloons: {ceramic: 45, moab: 1}},
 	{id: 56, duration: 16.18, bloons: {rainbow: 40, moab: 1}},
 	{id: 57, duration: 26.23, bloons: {rainbow: 40, moab: 4}},
-	{id: 58, duration: 43.98, bloons: {ceramic: 15, fceramic: 10, moab: 5}},
+	{id: 58, duration: 43.98, bloons: {ceramic: 15, ceramic: {count: 10, fortified: 1}, moab: 5}},
 	{id: 59, duration: 26.16, bloons: {lead: 50, ceramic: 30}},
 	{id: 60, duration: 1, bloons: {bfb: 1}},
 	
@@ -158,17 +158,17 @@ const rounds = [
 	
 	
 function getDuration(round) {
-  for (var i = 0; i < rounds.length; i++) {
-    if (parseInt(rounds[i].id) === parseInt(round)) {
-		return rounds[i].duration;
+	for (var i = 0; i < rounds.length; i++) {
+		if (parseInt(rounds[i].id) === parseInt(round)) {
+			return rounds[i].duration;
+		}
 	}
-  }
 }
 
 function getBloons(round) {
-  for (var i = 0; i < rounds.length; i++) {
-    if (parseInt(rounds[i].id) === parseInt(round)) {
-		return rounds[i].bloons;
+	for (var i = 0; i < rounds.length; i++) {
+		if (parseInt(rounds[i].id) === parseInt(round)) {
+			return rounds[i].bloons;
+		}
 	}
-  }
 }

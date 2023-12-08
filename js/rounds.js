@@ -139,7 +139,7 @@ function calcIncome(round) {
 	var keys = Object.keys(bloons);
 	keys.forEach(
 		function(bloon) {
-			var bloonCount = bloons[bloon];
+			var bloonCount = bloons[bloon].count;
 			for (var i = 0; i < bloonCount; i++) {
 				income += getIncomeBloon(bloon, round);
 			}
@@ -176,9 +176,10 @@ function calcRBE(round) {
 	var keys = Object.keys(bloons);
 	keys.forEach(
 		function(bloon) {
-			var bloonCount = bloons[bloon];
+			var	structure = bloons[bloon];
+			var bloonCount = structure.count;
 			for (var i = 0; i < bloonCount; i++) {
-				rbe += getRBE(bloon, round);
+				rbe += getRBE(bloon, Object.create(structure), round);
 			}
 		}
 	);
