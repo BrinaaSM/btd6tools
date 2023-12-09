@@ -84,7 +84,7 @@ function getHP(bloon, round) {
 		return 1;
 	}
 	
-	if (bloon === 'ceramic' || bloon === 'fceramic' || bloon === 'flead') {
+	if (bloon === 'ceramic' || bloon === 'lead') {
 		return baseHP;
 	}
 	
