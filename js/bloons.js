@@ -1,15 +1,9 @@
 const bloonStructure = [
-	{id: "fbad", childs: {fzomg: 2, fddt: 3}, hp: 40000},
 	{id: "bad", childs: {zomg: 2, ddt: 3}, hp: 20000},
-	{id: "fddt", childs: {fceramic: 4}, hp: 800},
 	{id: "ddt", childs: {ceramic: 4}, hp: 400},
-	{id: "fzomg", childs: {fbfb: 4}, hp: 8000},
 	{id: "zomg", childs: {bfb: 4}, hp: 4000},
-	{id: "fbfb", childs: {fmoab: 4}, hp: 1400},
 	{id: "bfb", childs: {moab: 4}, hp: 700},
-	{id: "fmoab", childs: {fceramic: 4}, hp: 400},
 	{id: "moab", childs: {ceramic: 4}, hp: 200},
-	{id: "fceramic", childs: {rainbow: 2}, hp: 20},
 	{id: "ceramic", childs: {rainbow: 2}, hp: 10},
 	{id: "rainbow", childs: {zebra: 2}},
 	{id: "zebra", childs: {black: 1, white: 1}},
@@ -20,23 +14,15 @@ const bloonStructure = [
 	{id: "green", childs: {blue: 1}},
 	{id: "blue", childs: {red: 1}},
 	{id: "purple", childs: {pink: 2}},
-	{id: "flead", childs: {black: 2}, hp: 4},
 	{id: "lead", childs: {black: 2}},
 	{id: "red"}
 ]
 
 const bloonStructureFreeplay = [
-	{id: "fbad", childs: {fzomg: 2, fddt: 3}, hp: 40000},
 	{id: "bad", childs: {zomg: 2, ddt: 3}, hp: 20000},
-	{id: "fddt", childs: {fceramic: 4}, hp: 800},
 	{id: "ddt", childs: {ceramic: 4}, hp: 400},
-	{id: "fzomg", childs: {fbfb: 4}, hp: 8000},
 	{id: "zomg", childs: {bfb: 4}, hp: 4000},
-	{id: "fbfb", childs: {fmoab: 4}, hp: 1400},
-	{id: "bfb", childs: {moab: 4}, hp: 700},
-	{id: "fmoab", childs: {fceramic: 4}, hp: 400},
 	{id: "moab", childs: {ceramic: 4}, hp: 200},
-	{id: "fceramic", childs: {rainbow: 1}, hp: 120},
 	{id: "ceramic", childs: {rainbow: 1}, hp: 60},
 	{id: "rainbow", childs: {zebra: 1}},
 	{id: "zebra", childs: {white: 1}},
@@ -47,7 +33,6 @@ const bloonStructureFreeplay = [
 	{id: "green", childs: {blue: 1}},
 	{id: "blue", childs: {red: 1}},
 	{id: "purple", childs: {pink: 1}},
-	{id: "flead", childs: {black: 1}, hp: 4},
 	{id: "lead", childs: {black: 1}},
 	{id: "red"}
 ]
@@ -136,7 +121,7 @@ function getHP(bloon, round) {
 
 // RBE
 
-function getRBE(bloon, structure, round) {
+function getRBE(bloon, isFortified, round) {
 	var rbe = 1;
 	var currentLayer = getBloonStructure(bloon, round);
 	var childs = currentLayer.childs;
@@ -148,7 +133,7 @@ function getRBE(bloon, structure, round) {
 	rbeBefore = rbe;
 	
 	if(bloon === 'rainbow' || bloon === 'black') {
-		structure.fortified = 0;
+		isFortified = 0;
 	}
 	
 	if(bloon === 'ceramic') rbe += getHP('ceramic', round);
@@ -165,8 +150,11 @@ function getRBE(bloon, structure, round) {
 	
 	if(rbeBefore !== rbe) rbe--; // remove 0-layer of HP-bloons
 
-	if(structure.fortified === 1) {
+	if(isFortified === 1 && bloon !== 'lead') {
 		rbe *= 2;
+	}
+	if(isFortified === 1 && bloon === 'lead') {
+		rbe *= 4;
 	}
 			
 	var keys = Object.keys(childs);
@@ -174,7 +162,7 @@ function getRBE(bloon, structure, round) {
 		function(bloon) {
 			var bloonCount = childs[bloon];
 			for (var i = 0; i < bloonCount; i++) {
-				rbe += getRBE(bloon, structure, round);
+				rbe += getRBE(bloon, isFortified, round);
 			}
 		}
 	);
