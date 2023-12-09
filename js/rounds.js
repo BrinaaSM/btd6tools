@@ -136,12 +136,10 @@ function calcIncome(round) {
 	var bloons = getBloons(round);
 	var count = 0;
 	
-	var keys = Object.keys(bloons);
-	keys.forEach(
+	bloons.forEach(
 		function(bloon) {
-			var bloonCount = bloons[bloon];
-			for (var i = 0; i < bloonCount; i++) {
-				income += getIncomeBloon(bloon, round);
+			for (var i = 0; i < bloon.count; i++) {
+				income += getIncomeBloon(bloon.type, round);
 			}
 		}
 	);
@@ -173,12 +171,14 @@ function calcRBE(round) {
 	var bloons = getBloons(round);
 	var count = 0;
 	
-	var keys = Object.keys(bloons);
-	keys.forEach(
+	bloons.forEach(
 		function(bloon) {
-			var bloonCount = bloons[bloon];
-			for (var i = 0; i < bloonCount; i++) {
-				rbe += getRBE(bloon, round);
+			for (var i = 0; i < bloon.count; i++) {
+				if ('fortified' in bloon) {
+					rbe += getRBE(bloon.type, 1, round);
+				} else {
+					rbe += getRBE(bloon.type, 0, round);
+				}
 			}
 		}
 	);
