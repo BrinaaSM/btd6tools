@@ -22,6 +22,7 @@ const bloonStructureFreeplay = [
 	{id: "bad", childs: {zomg: 2, ddt: 3}, hp: 20000},
 	{id: "ddt", childs: {ceramic: 4}, hp: 400},
 	{id: "zomg", childs: {bfb: 4}, hp: 4000},
+	{id: "bfb", childs: {moab: 4}, hp: 700},
 	{id: "moab", childs: {ceramic: 4}, hp: 200},
 	{id: "ceramic", childs: {rainbow: 1}, hp: 60},
 	{id: "rainbow", childs: {zebra: 1}},
