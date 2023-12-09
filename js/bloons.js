@@ -138,15 +138,10 @@ function getRBE(bloon, isFortified, round) {
 	
 	if(bloon === 'ceramic') rbe += getHP('ceramic', round);
 	if(bloon === 'moab') rbe += getHP('moab', round);
-	if(bloon === 'fmoab') rbe += getHP('moab', round) * 2;
 	if(bloon === 'bfb') rbe += getHP('bfb', round);
-	if(bloon === 'fbfb') rbe += getHP('bfb', round) * 2;
 	if(bloon === 'zomg') rbe += getHP('zomg', round);
-	if(bloon === 'fzomg') rbe += getHP('zomg', round) * 2;
 	if(bloon === 'ddt') rbe += getHP('ddt', round);
-	if(bloon === 'fddt') rbe += getHP('ddt', round) * 2;
 	if(bloon === 'bad') rbe += getHP('bad', round);
-	if(bloon === 'fbad') rbe += getHP('bad', round) * 2;
 	
 	if(rbeBefore !== rbe) rbe--; // remove 0-layer of HP-bloons
 
