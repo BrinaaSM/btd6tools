@@ -27,13 +27,12 @@ function showAll() {
 		bloonsArr.push(document.createElement('div'));
 		splitsArr.push(document.createElement('div'));
 		blimpsArr.push(document.createElement('div'));
-		emptyArr.push(document.createElement('div'));
-	roundsArr[i - 1].innerHTML = "< Round: " + i + " >";
+		emptyArr.push(document.createElement('empty'));
+	roundsArr[i - 1].innerHTML = "Round: " + i;
 		document.getElementById("content").appendChild(roundsArr[i - 1]);
 		bloonsArr[i - 1].innerHTML = showBloons(i, 'normal');
 		splitsArr[i - 1].innerHTML = showBloons(i, 'split');
 		blimpsArr[i - 1].innerHTML = showBloons(i, 'blimp');
-		emptyArr[i - 1].innerHTML = " - ";
 		roundsArr[i - 1].appendChild(bloonsArr[i - 1]);
 		bloonsArr[i - 1].appendChild(splitsArr[i - 1]);
 		splitsArr[i - 1].appendChild(blimpsArr[i - 1]);

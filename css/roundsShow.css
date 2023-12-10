@@ -6,13 +6,25 @@
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
+	background-color: #000069;
+	max-width: 800px;
+}
+
+.content empty {
+	display: block;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	background-color: #00003f;
+	padding: 10px;
 	max-width: 800px;
 }
 
 .content {
 	display: block;
 	text-shadow: 0.1em 0.1em #000000;
-	background-color: #000069;
+	background-color: #00003f;
 	text-align: left;
 	width: 100%;
 	font-size: min(4vw, 30px);
