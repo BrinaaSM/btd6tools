@@ -23,32 +23,7 @@
 
 </header>
 
-<div class="content">
-
-<div class="input" id= "size-div">
-	<input class="input-bar" id="start-round-input" type="number" placeholder="Start Round" min="1" max="140"/>
-</div>
-
-<div class="input" id= "size-div">
-	<input class="input-bar" id="end-round-input" type="number" placeholder="End Round" min="1" max="140"/>
-</div>
-
-<div class="output-row">
-	<div class="output-desc">Round:</div>
-	<div class="output-bar"><div class="output" id="round-output"/>0</div></div>
-</div>
-<div class="output-row">
-	<div class="output-desc"></div>
-	<div class="output-bar-full"><div class="output" id="bloon-output"/>0</div></div>
-</div>
-<div class="output-row">
-	<div class="output-desc"></div>
-	<div class="output-bar-full"><div class="output" id="split-bloon-output"/>0</div></div>
-</div>
-<div class="output-row">
-	<div class="output-desc"></div>
-	<div class="output-bar-full"><div class="output" id="bli	mp-output"/>0</div></div>
-</div>
+<div class="content", id="content">
 
 <footer id="footer">
 
@@ -73,4 +48,5 @@
 <script src="../js/roundsDefault.js"></script>
 <script src="../js/bloons.js"></script>
 <script src="../js/roundsShow.js"></script>
+<script>window.onload = showAll();</script>
 </html>

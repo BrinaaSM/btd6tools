@@ -1,65 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
 
-.input {
-	padding: 10px;
-	text-align: center;
-}
-
-.input-bar {
-	padding-left: 15px;
-	padding-right: 15px;
-	text-shadow: 0.1em 0.1em #000000;
-	background-color: #000069;
-	text-align: center;
-	font-size: min(5vw, 30px);
-	width: 90%;
-	height: 30px;
-	max-width: 800px;
-}
-
-.output {
-	display: block;
-	text-shadow: 0.1em 0.1em #000000;
-	background-color: #000069;
-	text-align: right;
-	width: 100%;
-	font-size: min(4vw, 30px);
-}
-
-.output-bar {
-	display: block;
-	float: left;
-	font-size: min(3vw, 30px);
-	text-align: right;
-	text-shadow: 0.1em 0.1em #000000;
-	width: 80%;
-}
-
-.output-bar-full {
-	display: block;
-	float: left;
-	font-size: min(3vw, 30px);
-	text-align: right;
-	text-shadow: 0.1em 0.1em #000000;
-	width: 100%;
-}
-
-.output-desc {
-	display: block;
-	float: left;
-	font-size: min(4vw, 40px);
-	text-align: left;
-	text-shadow: 0.1em 0.1em #000000;
-	width: 20%;
-	max-width: 800px;
-}
-
-.output-row {
+.content div {
 	display: block;
 	text-align: left;
 	margin-left: auto;
 	margin-right: auto;
-	height: min(6vw, 50px);
-	width: 90%;
+	width: 100%;
 	max-width: 800px;
+}
+
+.content {
+	display: block;
+	text-shadow: 0.1em 0.1em #000000;
+	background-color: #000069;
+	text-align: left;
+	width: 100%;
+	font-size: min(4vw, 30px);
 }
