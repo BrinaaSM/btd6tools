@@ -37,7 +37,7 @@ function showAll() {
 		
 		createBloonDiv(i + 1, bloonsArr, bloonsImages, roundsArr);
 		
-		rbeArr[i].innerHTML = "RBE: " + (calcRBE(parseInt(i) + 1)).toLocaleString();
+		rbeArr[i].innerHTML = (calcRBE(parseInt(i) + 1)).toLocaleString() + " RBE";
 		cashArr[i].innerHTML = Math.floor(calcIncome(parseInt(i) + 1)).toLocaleString() + "$";
 		xpArr[i].innerHTML = (calcXP(parseInt(i) + 1)).toLocaleString() + " XP";
 		durationArr[i].innerHTML = getDuration(parseInt(i) + 1) + "s";
