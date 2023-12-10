@@ -21,6 +21,13 @@
 	max-width: 800px;
 }
 
+.content img {
+	display: inline-block;
+	margin-left: 5px;
+	width: 3%;
+}
+
+
 .content {
 	display: block;
 	text-shadow: 0.1em 0.1em #000000;

@@ -18,48 +18,58 @@ function showAll() {
 	
 	var roundsArr = [];
 	var bloonsArr = [];
-	var splitsArr = [];
-	var blimpsArr = [];
+	var bloonsImages = [];
 	var emptyArr = [];
 	
-	for(var i = startRound; i <= endRound; i++) {
+	for(var i = startRound - 1; i < endRound; i++) {
 		roundsArr.push(document.createElement('div'));
-		bloonsArr.push(document.createElement('div'));
-		splitsArr.push(document.createElement('div'));
-		blimpsArr.push(document.createElement('div'));
 		emptyArr.push(document.createElement('empty'));
-	roundsArr[i - 1].innerHTML = "Round: " + i;
-		document.getElementById("content").appendChild(roundsArr[i - 1]);
-		bloonsArr[i - 1].innerHTML = showBloons(i, 'normal');
-		splitsArr[i - 1].innerHTML = showBloons(i, 'split');
-		blimpsArr[i - 1].innerHTML = showBloons(i, 'blimp');
-		roundsArr[i - 1].appendChild(bloonsArr[i - 1]);
-		bloonsArr[i - 1].appendChild(splitsArr[i - 1]);
-		splitsArr[i - 1].appendChild(blimpsArr[i - 1]);
-		blimpsArr[i - 1].appendChild(emptyArr[i - 1]);
+		roundsArr[i].innerHTML = "Round: " + (parseInt(i) + 1);
+		document.getElementById("content").appendChild(roundsArr[i]);
+		
+		createBloonDiv(i + 1, bloonsArr, bloonsImages, roundsArr);
+		
+		bloonsArr[bloonsArr.length - 1].appendChild(emptyArr[i]);
 	}
 }
 
-function showBloons(round, type) {
-	var bloonsStr = "";
+function createBloonDiv(round, bloonsArr, bloonsImages, roundsArr) {
 	var bloons = getBloons(round);
+	var firstEntry = 1;
 	
 	bloons.forEach(
 		function(bloon) {
-			if(getBloon(bloon.type).type == type) {
-				if('fortified' in bloon) {
-					bloonsStr += "Fortified ";
-				}
-				if('camo' in bloon) {
-					bloonsStr += "Camo ";
-				}
-				if('regrow' in bloon) {
-					bloonsStr += "Regrow ";
-				}				
-				bloonsStr += bloon.type + " x" + bloon.count + ", ";
+			var bloonsStr = "";
+			var imgStr = "../img/";
+			bloonsArr.push(document.createElement('div'));
+			bloonsImages.push(document.createElement('img'));
+			if('fortified' in bloon) {
+				imgStr += "f";
 			}
+			if('camo' in bloon) {
+				imgStr += "c";
+			}
+			if('regrow' in bloon) {
+				imgStr += "r";
+			}
+			imgStr += bloon.type + ".webp";
+			bloonsStr += bloon.count + " x";
+			bloonsImages[bloonsImages.length - 1].src = imgStr;
+			
+			bloonsArr[bloonsArr.length - 1].innerHTML = bloonsStr;
+			
+			console.log(round);
+			console.log(bloonsArr[bloonsArr.length - 1]);
+			
+			if(firstEntry === 1) {
+				firstEntry = 0;
+				roundsArr[round - 1].appendChild(bloonsArr[bloonsArr.length - 1])
+			} else {
+				bloonsArr[bloonsArr.length - 2].appendChild(bloonsArr[bloonsArr.length - 1])
+			}
+			bloonsArr[bloonsArr.length - 1].appendChild(bloonsImages[bloonsImages.length - 1]);
 		}
 	);
 		
-	return bloonsStr.substring(0, bloonsStr.length - 2);
+	return;
 }
