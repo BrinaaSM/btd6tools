@@ -1,3 +1,21 @@
+h2 {
+	font-family: Arial;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	max-width: 800px;
+	font-size: min(5vw, 20px);
+}
+
+h3 {
+	font-family: Arial;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	max-width: 800px;
+	font-size: min(5vw, 16px);
+}
+
 .grid-item {
 	border: 5px solid black;
 	background-color: #000069;
@@ -13,10 +31,13 @@
 }
 
 .grid-item > a {
-	display: block;
+	text-align: center;
+	vertical-align: middle;
 	background-color: #000069;
 	text-decoration: none;
-	padding: 10px;
+	display:inline-block;
+	width:100%;
+    height:100%;
 }
 
 .grid-container {
@@ -27,6 +48,19 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(3, 1fr);
+	row-gap: 10px;
+	column-gap: 10px;
+	max-width: 800px;
+}
+
+.grid-container-links {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(1, 1fr);
 	row-gap: 10px;
 	column-gap: 10px;
 	max-width: 800px;
