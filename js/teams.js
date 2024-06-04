@@ -126,6 +126,8 @@ const gerryBox = document.getElementById("gerry");
 const gerryLabel = document.getElementById("gerry-label");
 const corvusBox = document.getElementById("corvus");
 const corvusLabel = document.getElementById("corvus-label");
+const rosaliaBox = document.getElementById("rosalia");
+const rosaliaLabel = document.getElementById("rosalia-label");
 
 heroBoxes.push(anyHeroBox);
 heroBoxes.push(quincyBox);
@@ -142,7 +144,8 @@ heroBoxes.push(etienneBox);
 heroBoxes.push(saudaBox);
 heroBoxes.push(psiBox);
 heroBoxes.push(gerryBox);
-heroBoxes.push(corvusBox)
+heroBoxes.push(corvusBox);
+heroBoxes.push(rosaliaBox);
 
 heroLabels.push(anyHeroLabel);
 heroLabels.push(quincyLabel);
@@ -159,7 +162,8 @@ heroLabels.push(etienneLabel);
 heroLabels.push(saudaLabel);
 heroLabels.push(psiLabel);
 heroLabels.push(gerryLabel);
-heroLabels.push(corvusLabel)
+heroLabels.push(corvusLabel);
+heroLabels.push(rosaliaLabel);
 
 primaryBoxes.push(anyPrimaryBox);
 primaryBoxes.push(dartBox);
