@@ -6,3 +6,4 @@ Bloons TD 6 Tools maybe.
  - Round Calc (RBE, XP, Income, Duration)  
  - ABR Calc (RBE, XP, Income, Duration)
  - Round Information (Bloons and see above)
+ - Bloon Information (RBE / HP / Speed)
