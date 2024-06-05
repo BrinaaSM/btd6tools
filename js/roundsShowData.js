@@ -75,9 +75,6 @@ function createBloonDiv(round, bloonsArr, bloonsImages, roundsArr) {
 			
 			bloonsArr[bloonsArr.length - 1].innerHTML = bloonsStr;
 			
-			console.log(round);
-			console.log(bloonsArr[bloonsArr.length - 1]);
-			
 			if(firstEntry === 1) {
 				firstEntry = 0;
 				roundsArr[round - 1].appendChild(bloonsArr[bloonsArr.length - 1])
