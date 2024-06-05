@@ -1,16 +1,16 @@
 const bloonStructure = [
-	{id: "bad", childs: {zomg: 2, ddt: 3}, hp: 20000, type: 'blimp', speed: 0.18},
-	{id: "ddt", childs: {ceramic: 4}, hp: 400, type: 'blimp', speed: 2.64},
+	{id: "bad", childs: {zomg: 2, ddt: 3}, hp: 20000, type: 'blimp', speed: 0.18, immunities: {knockback: 1, slow: 1, stun: 1}},
+	{id: "ddt", childs: {ceramic: 4}, hp: 400, type: 'blimp', speed: 2.64, immunities: {energy: 1, explosion: 1, sharp: 1, shatter: 1}},
 	{id: "zomg", childs: {bfb: 4}, hp: 4000, type: 'blimp', speed: 0.18},
 	{id: "bfb", childs: {moab: 4}, hp: 700, type: 'blimp', speed: 0.25},
 	{id: "moab", childs: {ceramic: 4}, hp: 200, type: 'blimp', speed: 1},
 	{id: "ceramic", childs: {rainbow: 2}, hp: 10, type: 'split', speed: 2.5},
 	{id: "rainbow", childs: {zebra: 2}, type: 'split', speed: 2.2},
-	{id: "zebra", childs: {black: 1, white: 1}, type: 'split', speed: 1.8},
-	{id: "black", childs: {pink: 2}, type: 'split', speed: 1.8},
-	{id: "white", childs: {pink: 2}, type: 'split', speed: 2},
-	{id: "purple", childs: {pink: 2}, type: 'normal', speed: 3},
-	{id: "lead", childs: {black: 2}, type: 'normal', speed: 1},
+	{id: "zebra", childs: {black: 1, white: 1}, type: 'split', speed: 1.8, immunities: {cold: 1, explosion: 1}},
+	{id: "black", childs: {pink: 2}, type: 'split', speed: 1.8, immunities: {explosion: 1}},
+	{id: "white", childs: {pink: 2}, type: 'split', speed: 2, immunities: {cold: 1}},
+	{id: "purple", childs: {pink: 2}, type: 'normal', speed: 3, immunities: {energy: 1, plasma: 1}},
+	{id: "lead", childs: {black: 2}, type: 'normal', speed: 1, immunities: {energy: 1, sharp: 1, shatter: 1}},
 	{id: "pink", childs: {yellow: 1}, type: 'normal', speed: 3.5},
 	{id: "yellow", childs: {green: 1}, type: 'normal', speed: 3.2},
 	{id: "green", childs: {blue: 1}, type: 'normal', speed: 1.8},
@@ -19,18 +19,18 @@ const bloonStructure = [
 ]
 
 const bloonStructureFreeplay = [
-	{id: "bad", childs: {zomg: 2, ddt: 3}, hp: 20000, type: 'blimp', speed: 0.18},
-	{id: "ddt", childs: {ceramic: 4}, hp: 400, type: 'blimp', speed: 2.64},
+	{id: "bad", childs: {zomg: 2, ddt: 3}, hp: 20000, type: 'blimp', speed: 0.18, immunities: {knockback: 1, slow: 1, stun: 1}},
+	{id: "ddt", childs: {ceramic: 4}, hp: 400, type: 'blimp', speed: 2.64, immunities: {energy: 1, explosion: 1, sharp: 1, shatter: 1}},
 	{id: "zomg", childs: {bfb: 4}, hp: 4000, type: 'blimp', speed: 0.18},
 	{id: "bfb", childs: {moab: 4}, hp: 700, type: 'blimp', speed: 0.25},
 	{id: "moab", childs: {ceramic: 4}, hp: 200, type: 'blimp', speed: 1},
 	{id: "ceramic", childs: {rainbow: 1}, hp: 60, type: 'split', speed: 2.5},
 	{id: "rainbow", childs: {zebra: 1}, type: 'split', speed: 2.2},
-	{id: "zebra", childs: {white: 1}, type: 'split', speed: 1.8},
-	{id: "black", childs: {pink: 1}, type: 'split', speed: 1.8},
-	{id: "white", childs: {pink: 1}, type: 'split', speed: 2},
-	{id: "purple", childs: {pink: 1}, type: 'normal', speed: 3},
-	{id: "lead", childs: {black: 1}, type: 'normal', speed: 1},
+	{id: "zebra", childs: {white: 1}, type: 'split', speed: 1.8, immunities: {cold: 1, explosion: 1}},
+	{id: "black", childs: {pink: 1}, type: 'split', speed: 1.8, immunities: {explosion: 1}},
+	{id: "white", childs: {pink: 1}, type: 'split', speed: 2, immunities: {cold: 1}},
+	{id: "purple", childs: {pink: 1}, type: 'normal', speed: 3, immunities: {energy: 1, plasma: 1}},
+	{id: "lead", childs: {black: 1}, type: 'normal', speed: 1, immunities: {energy: 1, sharp: 1, shatter: 1}},
 	{id: "pink", childs: {yellow: 1}, type: 'normal', speed: 3.5},
 	{id: "yellow", childs: {green: 1}, type: 'normal', speed: 3.2},
 	{id: "green", childs: {blue: 1}, type: 'normal', speed: 1.8},
@@ -189,4 +189,20 @@ function getIncomeBloon(bloon, round) {
 		}
 	);
 	return income;
+}
+
+// Immunites
+
+function getImmunitiesBloonStr(bloon) {
+	var immuStr = "";
+	var currentLayer = getBloonStructure(bloon, 1);
+	var immunities = currentLayer.immunities;
+	
+	var keys = Object.keys(immunities);
+	keys.forEach(
+		function(immunity) {
+			immuStr += immunity + " ";
+		}
+	);
+	return immuStr;
 }

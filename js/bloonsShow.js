@@ -13,6 +13,7 @@ function showAll() {
 	var rbeArr = [];
 	var hpArr = [];
 	var speedArr = [];
+	var immuArr = [];
 	var bloonsImages = [];
 	var emptyArr = [];
 	
@@ -21,6 +22,7 @@ function showAll() {
 		rbeArr.push(document.createElement('div'));
 		hpArr.push(document.createElement('div'));
 		speedArr.push(document.createElement('div'));
+		immuArr.push(document.createElement('div'));
 		emptyArr.push(document.createElement('empty'));
 		bloonsArr[i].innerHTML = bloonStructure[(bloonStructure.length - 1) - i].id;
 		document.getElementById("default").appendChild(bloonsArr[i]);
@@ -51,10 +53,18 @@ function showAll() {
 		
 		speedArr[i].innerHTML = "Base RBS: " + bloonStructure[(bloonStructureFreeplay.length - 1) - i].speed;
 		
+		let immuStr = "";
+		if ('immunities' in bloonStructure[(bloonStructureFreeplay.length - 1) - i]) {
+			immuStr += "Immune to: " + getImmunitiesBloonStr(bloonStructure[(bloonStructureFreeplay.length - 1) - i].id);
+		}
+		
+		immuArr[i].innerHTML = immuStr;
+		
 		bloonsArr[bloonsArr.length - 1].appendChild(rbeArr[rbeArr.length - 1]);
 		rbeArr[i].appendChild(hpArr[i]);
 		hpArr[i].appendChild(speedArr[i]);
-		speedArr[i].appendChild(emptyArr[i]);
+		speedArr[i].appendChild(immuArr[i]);
+		immuArr[i].appendChild(emptyArr[i]);
 	}
 }
 
