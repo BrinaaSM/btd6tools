@@ -76,6 +76,8 @@ const alchBox = document.getElementById("alch");
 const alchLabel = document.getElementById("alch-label");
 const druidBox = document.getElementById("druid");
 const druidLabel = document.getElementById("druid-label");
+const mermonkeyBox = document.getElementById("mermonkey");
+const mermonkeyLabel = document.getElementById("mermonkey-label");
 
 var support;
 const supportBox = document.getElementById("support");
@@ -205,6 +207,7 @@ magicBoxes.push(supermBox);
 magicBoxes.push(ninjaBox);
 magicBoxes.push(alchBox);
 magicBoxes.push(druidBox);
+magicBoxes.push(mermonkeyBox);
 
 magicLabels.push(anyMagicLabel);
 magicLabels.push(wizLabel);
@@ -212,6 +215,7 @@ magicLabels.push(supermLabel);
 magicLabels.push(ninjaLabel);
 magicLabels.push(alchLabel);
 magicLabels.push(druidLabel);
+magicLabels.push(mermonkeyLabel);
 
 supportBoxes.push(anySupportBox);
 supportBoxes.push(farmBox);
