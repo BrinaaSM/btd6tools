@@ -10,8 +10,12 @@ const resultCeramic = document.getElementById("ceram-hp-output");
 var knowledge;
 var doubleHP;
 var fortified;
+var fortified_modifier = 2;
 var challenge;
 var modifier = 100;
+var min_modifier = 5;
+var max_modifier = 50000;
+var knowledge_modifier = 0.9;
 var round;
 
 // input handling
@@ -24,13 +28,13 @@ function inputHandlerRound(e) {
 function inputHandlerModifier(e) {
 	modifier = e.target.value;
 	if(modifier < 0) {
-		modifierInput.value = 5;
+		modifierInput.value = min_modifier;
 	}
-	if(modifier < 5) {
-		modifier = 5;
-	} else if(modifier > 2000) {
-		modifierInput.value = 2000;
-		modifier = 2000;
+	if(modifier < min_modifier) {
+		modifier = min_modifier;
+	} else if(modifier > max_modifier) {
+		modifierInput.value = max_modifier;
+		modifier = max_modifier;
 	}
 	calcAll(round, modifier);
 }
@@ -40,12 +44,12 @@ function checkValidModifier() {
 	if(modifier <= 0) {
 		modifier = 100;
 		modifierInput.value = "";
-	} else if(modifier < 5) {
-		modifier = 5;
-		modifierInput.value = 5;
-	} else if(modifier > 2000) {
-		modifierInput.value = 2000;
-		modifier = 2000;
+	} else if(modifier < min_modifier) {
+		modifier = min_modifier;
+		modifierInput.value = min_modifier;
+	} else if(modifier > max_modifier) {
+		modifierInput.value = max_modifier;
+		modifier = max_modifier;
 	}
 }
 
@@ -98,7 +102,7 @@ function calcHPCeram(baseHP) {
 	var hp = baseHP;
 	
 	if(fortified === true) {
-		hp = hp * 2;
+		hp = hp * fortified_modifier;
 	}
 	
 	if(challenge === true) {
@@ -115,10 +119,10 @@ function calcHP(baseHP) {
 	var hp = baseHP;
 	
 	if(knowledge === true) {
-		hp = Math.floor(parseInt(hp) * 0.9);
+		hp = Math.floor(parseInt(hp) * knowledge_modifier);
 	}
 	if(fortified === true) {
-		hp = hp * 2;
+		hp = hp * fortified_modifier;
 	}
 	if(doubleHP === true) {
 		hp = hp * 2;
