@@ -500,7 +500,7 @@ function roll() {
 	let reduceCount = 0;
 	let heroAllowed = 0;
 	chosenTowers.length = 0;
-	output = " ";
+	output = "";
 	
 	resetColors();
 	fillChimpsLists();
@@ -591,7 +591,14 @@ function roll() {
 		}
 		*/
 	}
-	console.log(chosenTowers);
+	output = "";
+	for (let i = 0; i < chosenTowers.length; i++) {
+		output += chosenTowers[i].innerHTML;
+		if (i < chosenTowers. length - 1) {
+			output += ", ";
+		}
+	}
+	teamOutput.value = output;
 	return;
 }
 
