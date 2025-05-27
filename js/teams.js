@@ -506,7 +506,7 @@ function roll() {
 		}
 		if(chimpsViable == 1 && viableChoice >= 1) {
 			choice = chimpsViableTowers[Math.floor(Math.random()*chimpsViableTowers.length)];
-			output += choice.innerHTML + " ";
+			output += choice.innerHTML + ", ";
 			choice.style.color = "yellow";
 			content.splice(content.indexOf(choice), 1);
 			reduceCount = 1;
@@ -514,7 +514,7 @@ function roll() {
 		for(let i = 0; i < (teamSize - reduceCount); i++) {
 			content.removeChild
 			choice = content[Math.floor(Math.random()*content.length)];
-			output += choice.innerHTML + " ";
+			output += choice.innerHTML + ", ";
 			choice.style.color = "yellow";
 			content.splice(content.indexOf(choice), 1);
 		}
