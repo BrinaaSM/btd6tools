@@ -13,8 +13,10 @@ const defaultTeamSize = 3;
 const maxMonkeyCount = 24;
 
 const chimpsViableTowers = [];
+const chimpsViableHeroes = [];
 
 const possibleTowers = [];
+const possibleHeroes = [];
 const chosenTowers = [];
 
 const heroBoxes = [];
@@ -341,14 +343,17 @@ function fillChimpsLists() {
 	// viable heroes	
 	if(anyHeroBox.checked) {
 		chimpsViableTowers.push(anyHeroLabel);
+		chimpsViableHeroes.push(anyHeroLabel);
 		chimpsCount++;
 	}
 	if(quincyBox.checked) {
 		chimpsViableTowers.push(quincyLabel);
+		chimpsViableHeroes.push(quincyLabel);
 		chimpsCount++;
 	}
 	if(saudaBox.checked) {
 		chimpsViableTowers.push(saudaLabel);
+		chimpsViableHeroes.push(saudaLabel);
 		chimpsCount++;
 	}
 	
@@ -411,6 +416,7 @@ function fillTowerList() {
 	for(let i = 0; i < heroBoxes.length; i++) {
 		if(heroBoxes[i].checked == true) {
 			possibleTowers.push(heroLabels[i]);
+			possibleHeroes.push(heroLabels[i]);
 			heroAllowed = 1;
 		}
 	}
@@ -466,8 +472,14 @@ function pickViableTower() {
 }
 
 // pick a random tower
-function pickRandomTower() {
-	choice = possibleTowers[Math.floor(Math.random()*possibleTowers.length)];
+function pickRandomTower(shouldBeHero) {
+	let choice;
+	
+	if (shouldBeHero === 1) {
+		choice = possibleHeroes[Math.floor(Math.random()*possibleHeroes.length)];
+	} else {
+		choice = possibleTowers[Math.floor(Math.random()*possibleTowers.length)];
+	}
 	possibleTowers.splice(possibleTowers.indexOf(choice), 1);
 	return choice;
 }
@@ -513,6 +525,7 @@ function roll() {
 	} else if(chimpsViable) {
 		choice = pickViableTower();
 		if (isHero(choice)) {
+			teamsize++;
 			removeHeroes();
 		}
 		chosenTowers.push(choice);
@@ -533,17 +546,20 @@ function roll() {
 		for (let i = 0; i < teamSize - 1; i++) {
 			choice = pickRandomTower();
 			if (isHero(choice)) {
+				teamsize++;
 				removeHeroes();
 			}
 			chosenTowers.push(choice);
 
 		}
 	} else {
+		if(heroAllowed === 1) {
+			choice = pickRandomTower(1);
+			removeHeroes();
+			chosenTowers.push(choice);
+		}
 		for (let i = 0; i < teamSize; i++) {
-			choice = pickRandomTower();
-			if (isHero(choice)) {
-				removeHeroes();
-			}
+			choice = pickRandomTower(0);
 			chosenTowers.push(choice);
 		}
 		/*
