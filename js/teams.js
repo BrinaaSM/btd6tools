@@ -26,7 +26,7 @@ const corvus = new Tower("Corvus", document.getElementById("corvus"), document.g
 const rosalia = new Tower("Rosalia", document.getElementById("rosalia"), document.getElementById("rosalia-label"), true);
 
 // create primary classes
-const anyPrimary = new Tower("Any Primary", document.getElementById("any-primary"), document.getElementById("any-primary-label"), false);
+const anyPrimary = new Tower("Any Primary Monkey", document.getElementById("any-primary"), document.getElementById("any-primary-label"), false);
 const dart = new Tower("Dart Monkey", document.getElementById("dart"), document.getElementById("dart-label"), false);
 const boomerang = new Tower("Boomerang Monkey", document.getElementById("boomerang"), document.getElementById("boomerang-label"), false);
 const bomb = new Tower("Bomb Shooter", document.getElementById("bomb"), document.getElementById("bomb-label"), false);
@@ -34,21 +34,32 @@ const tack = new Tower("Tack Shooter", document.getElementById("tack"), document
 const ice = new Tower("Ice Monkey", document.getElementById("ice"), document.getElementById("ice-label"), false);
 const glue = new Tower("Glue Gunner", document.getElementById("glue"), document.getElementById("glue-label"), false);
 
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const glue = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+// create military classes
+const anyMilitary = new Tower("Any Military Monkey", document.getElementById("any-military"), document.getElementById("any-military-label"), false);
+const sniper = new Tower("Sniper Monkey", document.getElementById("sniper"), document.getElementById("sniper-label"), false);
+const sub = new Tower("Monkey Sub", document.getElementById("sub"), document.getElementById("sub-label"), false);
+const bucc = new Tower("Monkey Buccaneer", document.getElementById("bucc"), document.getElementById("bucc-label"), false);
+const ace = new Tower("Monkey Ace", document.getElementById("ace"), document.getElementById("ace-label"), false);
+const heli = new Tower("Heli Pilot", document.getElementById("heli"), document.getElementById("heli-label"), false);
+const mortar = new Tower("Mortar Monkey", document.getElementById("mortar"), document.getElementById("mortar-label"), false);
+const dartling = new Tower("Dartling Gunner", document.getElementById("dartling"), document.getElementById("dartling-label"), false);
+
+// create magic classes
+const anyMMagic = new Tower("Any Magic Monkey", document.getElementById("any-magic"), document.getElementById("any-magic-label"), false);
+const wiz = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+const superm = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+const ninja = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+const alch = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+const druid = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+const mermonkey = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+
+// create support classes
+const anySupport = new Tower("Any Support Monkey", document.getElementById("any-support"), document.getElementById("any-support-label"), false);
+const farm = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+const spac = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+const village = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+const engi = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+const beast = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
 
 const sizeInput = document.getElementById("team-size-input");
 const teamOutput = document.getElementById("team-output");
@@ -90,54 +101,12 @@ const primaryBox = document.getElementById("primary");
 
 var military;
 const militaryBox = document.getElementById("military");
-const anyMilitaryBox = document.getElementById("any-military");
-const anyMilitaryLabel = document.getElementById("any-military-label");
-const sniperBox = document.getElementById("sniper");
-const sniperLabel = document.getElementById("sniper-label");
-const subBox = document.getElementById("sub");
-const subLabel = document.getElementById("sub-label");
-const buccBox = document.getElementById("bucc");
-const buccLabel = document.getElementById("bucc-label");
-const aceBox = document.getElementById("ace");
-const aceLabel = document.getElementById("ace-label");
-const heliBox = document.getElementById("heli");
-const heliLabel = document.getElementById("heli-label");
-const mortarBox = document.getElementById("mortar");
-const mortarLabel = document.getElementById("mortar-label");
-const dartlingBox = document.getElementById("dartling");
-const dartlingLabel = document.getElementById("dartling-label");
 
 var magic;
 const magicBox = document.getElementById("magic");
-const anyMagicBox = document.getElementById("any-magic");
-const anyMagicLabel = document.getElementById("any-magic-label");
-const wizBox = document.getElementById("wiz");
-const wizLabel = document.getElementById("wiz-label");
-const supermBox = document.getElementById("superm");
-const supermLabel = document.getElementById("superm-label");
-const ninjaBox = document.getElementById("ninja");
-const ninjaLabel = document.getElementById("ninja-label");
-const alchBox = document.getElementById("alch");
-const alchLabel = document.getElementById("alch-label");
-const druidBox = document.getElementById("druid");
-const druidLabel = document.getElementById("druid-label");
-const mermonkeyBox = document.getElementById("mermonkey");
-const mermonkeyLabel = document.getElementById("mermonkey-label");
 
 var support;
 const supportBox = document.getElementById("support");
-const anySupportBox = document.getElementById("any-support");
-const anySupportLabel = document.getElementById("any-support-label");
-const farmBox = document.getElementById("farm");
-const farmLabel = document.getElementById("farm-label");
-const spacBox = document.getElementById("spac");
-const spacLabel = document.getElementById("spac-label");
-const villageBox = document.getElementById("village");
-const villageLabel = document.getElementById("village-label");
-const engiBox = document.getElementById("engi");
-const engiLabel = document.getElementById("engi-label");
-const beastBox = document.getElementById("beast");
-const beastLabel = document.getElementById("beast-label");
 
 heroBoxes.push(anyHero.box);
 heroBoxes.push(quincyBox);
