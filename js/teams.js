@@ -1,7 +1,7 @@
 class Category {
 	constructor(name, towerList, checkBoxElem, labelElem) {
 		this.name = name;
-		this.Tower = towerList;
+		this.list = towerList;
 		this.box = checkBoxElem;
 		this.label = labelElem;
 	}
@@ -99,17 +99,17 @@ const militaryList = [];
 const magicList= [];
 const supportList= [];
 
-var heroCat;
-var primaryCat;
-var militaryCat;
-var magicCat;
-var supportCat;
+var heroCat = true;
+var primaryCat = true;
+var militaryCat = true;
+var magicCat = true;
+var supportCat = true;
 
-const heroes = new Category("Heroes", heroList, document.getElementById("hero"), []);
-const primary = new Category("Primary", primaryList, document.getElementById("primary"), []);
-const military = new Category("Military", militaryList, document.getElementById("military"), []);
-const magic = new Category("Magic", magicList, document.getElementById("magic"), []);
-const support = new Category("Support", supportList, document.getElementById("support"), []);
+const hero = new Category("Heroes", heroList, document.getElementById("hero"), heroCat);
+const primary = new Category("Primary", primaryList, document.getElementById("primary"), primaryCat);
+const military = new Category("Military", militaryList, document.getElementById("military"), militaryCat);
+const magic = new Category("Magic", magicList, document.getElementById("magic"), magicCat);
+const support = new Category("Support", supportList, document.getElementById("support"), supportCat);
 
 function fillCategoryLists() {
 	heroList.push(anyHero);
@@ -171,7 +171,7 @@ function initPage() {
 	for(let i = 1; i < heroList.length; i++) {
 		heroList[i].box.checked = false;
 	}
-	hero = false;
+	heroCat = false;
 	primaryList[0].box.checked = false;
 	militaryList[0].box.checked = false;
 	magicList[0].box.checked = false;
@@ -215,10 +215,19 @@ function resetColors() {
 }
 
 function toggleCategory(category) {
+	category.label = !category.label;
+	for(let i = 0; i < category.list.length; i++) {
+		category.list[i].box.checked = category.label;
+		category.list[i].box.disabled = !category.label;
+	}
+	if(category.label) {
+		category.list[0].box.checked = false;
+	}
+	
 	return;
 }
 
-function toggleHero() {
+/*function toggleHero() {
 	for(let i = 0; i < heroList.length; i++) {
 		heroList[i].box.checked = heroCat;
 		heroList[i].box.disabled = !heroCat;
@@ -277,6 +286,7 @@ function toggleSupport() {
 	
 	return;
 }
+*/
 
 // fill list with towers that can start C.H.I.M.P.S.
 function fillChimpsLists() {
