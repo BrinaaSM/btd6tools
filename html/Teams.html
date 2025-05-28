@@ -33,7 +33,7 @@
 	<div class="grid-item">
 		<div class="checkbox-container">
 			<div>
-				<input type="checkbox" class="checkbox" id="hero" name="hero" value="Hero" checked="true" onchange='hero=this.checked;toggleHero();resetColors();'>
+				<input type="checkbox" class="checkbox" id="hero" name="hero" value="Hero" checked="true" onchange='toggleCategory(heroCat);resetColors();'>
 				<label for="hero">Hero</label><br>
 			</div>
 			<div class="checkbox-sub-container">
@@ -111,7 +111,7 @@
 	<div class="grid-item">
 		<div class="checkbox-container">
 			<div>
-				<input type="checkbox" class="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='primary=this.checked;togglePrimary();resetColors();'>
+				<input type="checkbox" class="checkbox" id="primary" name="primary" value="Primary" checked="true" onchange='toggleCategory(primaryCat);resetColors();'>
 				<label for="primary">Primary</label><br>
 			</div>
 			<div class="checkbox-sub-container">
@@ -149,7 +149,7 @@
 	<div class="grid-item">
 		<div class="checkbox-container">
 			<div>
-				<input type="checkbox" class="checkbox" id="military" name="military" value="Military" checked="true" onchange='military=this.checked;toggleMilitary();resetColors();'>
+				<input type="checkbox" class="checkbox" id="military" name="military" value="Military" checked="true" onchange='toggleCategory(militaryCat);resetColors();'>
 				<label for="military">Military</label><br>
 			</div>
 			<div class="checkbox-sub-container">
@@ -191,7 +191,7 @@
 	<div class="grid-item">
 		<div class="checkbox-container">
 			<div>
-				<input type="checkbox" class="checkbox" id="magic" name="magic" value="Magic" checked="true" onchange='magic=this.checked;toggleMagic();resetColors();'>
+				<input type="checkbox" class="checkbox" id="magic" name="magic" value="Magic" checked="true" onchange='toggleCategory(magicCat);resetColors();'>
 				<label for="magic">Magic</label><br>
 			</div>
 			<div class="checkbox-sub-container">
@@ -229,7 +229,7 @@
 	<div class="grid-item">
 		<div class="checkbox-container">
 			<div>
-				<input type="checkbox" class="checkbox" id="support" name="support" value="Support" checked="true" onchange='support=this.checked;toggleSupport();resetColors();'>
+				<input type="checkbox" class="checkbox" id="support" name="support" value="Support" checked="true" onchange='toggleCategory(supportCat);resetColors();'>
 				<label for="support">Support</label><br>
 			</div>
 			<div class="checkbox-sub-container">
@@ -268,7 +268,7 @@
 
 <div class=grid-container>
 	<div class="checkbox-div">
-		<input type="checkbox" class="checkbox" id="chimps-viable" name="chimps-viable" value="Force C.H.I.M.P.S. viable" checked="true" onchange='chimpsViable=this.checked;resetColors();'>
+		<input type="checkbox" class="checkbox" id="chimps-viable" name="chimps-viable" value="Force C.H.I.M.P.S. viable" checked="true" onchange='toggleChimpsViable();resetColors();'>
 		<label class="chimps-viable-label" for="chimps-viable">Force C.H.I.M.P.S. viable</label><br>
 	</div>
 </div>
