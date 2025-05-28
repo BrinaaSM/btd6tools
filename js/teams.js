@@ -55,11 +55,11 @@ const mermonkey = new Tower("Mermonkey", document.getElementById("mermonkey"), d
 
 // create support classes
 const anySupport = new Tower("Any Support Monkey", document.getElementById("any-support"), document.getElementById("any-support-label"), false);
-const farm = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const spac = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const village = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const engi = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const beast = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+const farm = new Tower("Banana Farm", document.getElementById("farm"), document.getElementById("farm-label"), false);
+const spac = new Tower("Spike Factory", document.getElementById("spac"), document.getElementById("spac-label"), false);
+const village = new Tower("Monkey Village", document.getElementById("village"), document.getElementById("village-label"), false);
+const engi = new Tower("Engineer Monkey", document.getElementById("engi"), document.getElementById("engi-label"), false);
+const beast = new Tower("Beast Handler", document.getElementById("beast"), document.getElementById("beast-label"), false);
 
 const sizeInput = document.getElementById("team-size-input");
 const teamOutput = document.getElementById("team-output");
