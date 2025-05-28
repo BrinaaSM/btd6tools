@@ -6,7 +6,36 @@ class Tower {
 	}
 }
 
-const anyHero = new Tower("anyHero", document.getElementById("any-hero"), document.getElementById("any-hero-label"));
+// create hero classes
+const anyHero = new Tower("Any Hero", document.getElementById("any-hero"), document.getElementById("any-hero-label"));
+const gwen = new Tower("Gwendolyn", document.getElementById("gwen"), document.getElementById("gwen-label"));
+const striker = new Tower("Striker Jones", document.getElementById("striker"), document.getElementById("striker-label"));
+const obyn = new Tower("Obyn Greenfoot", document.getElementById("obyn"), document.getElementById("obyn-label"));
+const churchill = new Tower("Captain Churchill", document.getElementById("churchill"), document.getElementById("churchill-label"));
+const ben = new Tower("Benjamin", document.getElementById("ben"), document.getElementById("ben-label"));
+const ezili = new Tower("Ezili", document.getElementById("ezili"), document.getElementById("ezili-label"));
+const pat = new Tower("Pat Fusty", document.getElementById("pat"), document.getElementById("pat-label"));
+const adora = new Tower("Adora", document.getElementById("adora"), document.getElementById("adora-label"));
+const brickell = new Tower("Admiral Brickell", document.getElementById("brickell"), document.getElementById("brickell-label"));
+const etienne = new Tower("Etienne", document.getElementById("etienne"), document.getElementById("etienne-label"));
+const sauda = new Tower("Sauda", document.getElementById("sauda"), document.getElementById("sauda-label"));
+const psi = new Tower("Psi", document.getElementById("psi"), document.getElementById("psi-label"));
+const gerry = new Tower("Geraldo", document.getElementById("gerry"), document.getElementById("gerry-label"));
+const corvus = new Tower("Corvus", document.getElementById("corvus"), document.getElementById("corvus-label"));
+const rosalia = new Tower("Rosalia", document.getElementById("rosalia"), document.getElementById("rosalia-label"));
+
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
+const quincy = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"));
 
 const sizeInput = document.getElementById("team-size-input");
 const teamOutput = document.getElementById("team-output");
@@ -42,38 +71,6 @@ const supportLabels = [];
 
 var hero;
 const heroBox = document.getElementById("hero");
-const quincyBox = document.getElementById("quincy");
-const quincyLabel = document.getElementById("quincy-label");
-const gwenBox = document.getElementById("gwen");
-const gwenLabel = document.getElementById("gwen-label");
-const strikerBox = document.getElementById("striker");
-const strikerLabel = document.getElementById("striker-label");
-const obynBox = document.getElementById("obyn");
-const obynLabel = document.getElementById("obyn-label");
-const churchillBox = document.getElementById("churchill");
-const churchillLabel = document.getElementById("churchill-label");
-const benBox = document.getElementById("ben");
-const benLabel = document.getElementById("ben-label");
-const eziliBox = document.getElementById("ezili");
-const eziliLabel = document.getElementById("ezili-label");
-const patBox = document.getElementById("pat");
-const patLabel = document.getElementById("pat-label");
-const adoraBox = document.getElementById("adora");
-const adoraLabel = document.getElementById("adora-label");
-const brickellBox = document.getElementById("brickell");
-const brickellLabel = document.getElementById("brickell-label");
-const etienneBox = document.getElementById("etienne");
-const etienneLabel = document.getElementById("etienne-label");
-const saudaBox = document.getElementById("sauda");
-const saudaLabel = document.getElementById("sauda-label");
-const psiBox = document.getElementById("psi");
-const psiLabel = document.getElementById("psi-label");
-const gerryBox = document.getElementById("gerry");
-const gerryLabel = document.getElementById("gerry-label");
-const corvusBox = document.getElementById("corvus");
-const corvusLabel = document.getElementById("corvus-label");
-const rosaliaBox = document.getElementById("rosalia");
-const rosaliaLabel = document.getElementById("rosalia-label");
 
 var primary;
 const primaryBox = document.getElementById("primary");
