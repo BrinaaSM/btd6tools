@@ -1,9 +1,14 @@
+const categoryList = [];
+const towerList = [];
+
 class Category {
 	constructor(name, towerList, checkBoxElem, labelElem) {
 		this.name = name;
 		this.list = towerList;
 		this.box = checkBoxElem;
 		this.label = labelElem;
+		
+		categoryList.push(this);
 	}
 }
 
@@ -15,6 +20,8 @@ class Tower {
 		this.label = labelElem;
 		this.hero = isHero;
 		this.start = isChimpsStart;
+		
+		towerList.push(this);
 	}
 }
 
@@ -94,97 +101,40 @@ const possibleTowers = [];
 const possibleHeroes = [];
 const chosenTowers = [];
 
-const heroList = [];
-const primaryList = [];
-const militaryList = [];
-const magicList = [];
-const supportList = [];
-
-const categoryList = [];
-
 var hero = true;
 var primary = true;
 var military = true;
 var magic = true;
 var support = true;
 
-const heroCat = new Category("Heroes", heroList, document.getElementById("hero"), hero);
-const primaryCat = new Category("Primary", primaryList, document.getElementById("primary"), primary);
-const militaryCat = new Category("Military", militaryList, document.getElementById("military"), military);
-const magicCat = new Category("Magic", magicList, document.getElementById("magic"), magic);
-const supportCat = new Category("Support", supportList, document.getElementById("support"), support);
-
-categoryList.push(heroCat);
-categoryList.push(primaryCat);
-categoryList.push(militaryCat);
-categoryList.push(magicCat);
-categoryList.push(supportCat);
-
+const heroCat = new Category("hero", [], document.getElementById("hero"), hero);
+const primaryCat = new Category("primary", [], document.getElementById("primary"), primary);
+const militaryCat = new Category("military", [], document.getElementById("military"), military);
+const magicCat = new Category("magic", [], document.getElementById("magic"), magic);
+const supportCat = new Category("support", [], document.getElementById("support"), support);
 
 function fillCategoryLists() {
-	heroList.push(anyHero);
-	heroList.push(quincy);
-	heroList.push(gwen);
-	heroList.push(striker);
-	heroList.push(obyn);
-	heroList.push(churchill);
-	heroList.push(ben);
-	heroList.push(ezili);
-	heroList.push(pat);
-	heroList.push(adora);
-	heroList.push(brickell);
-	heroList.push(etienne);
-	heroList.push(sauda);
-	heroList.push(psi);
-	heroList.push(gerry);
-	heroList.push(corvus);
-	heroList.push(rosalia);
-
-	primaryList.push(anyPrimary);
-	primaryList.push(dart);
-	primaryList.push(boomerang);
-	primaryList.push(bomb);
-	primaryList.push(tack);
-	primaryList.push(ice);
-	primaryList.push(glue);
-
-	militaryList.push(anyMilitary);
-	militaryList.push(sniper);
-	militaryList.push(sub);
-	militaryList.push(bucc);
-	militaryList.push(ace);
-	militaryList.push(heli);
-	militaryList.push(mortar);
-	militaryList.push(dartling);
-
-	magicList.push(anyMagic);
-	magicList.push(wiz);
-	magicList.push(superm);
-	magicList.push(ninja);
-	magicList.push(alch);
-	magicList.push(druid);
-	magicList.push(mermonkey);
-
-	supportList.push(anySupport);
-	supportList.push(farm);
-	supportList.push(spac);
-	supportList.push(village);
-	supportList.push(engi);
-	supportList.push(beast);
+	for (let i = 0; i < categoryList.length; i++) {
+		for (let j = 0; j < towerList.length; j++) {
+			if(categoryList[i].name === towerList[j].category) {
+				categoryList[i].list.push(towerList[j]);
+			}
+		}
+	}
 	
 	return;
 }
 
 function initPage() {
 	fillCategoryLists();
-	console.log(heroList);
-	for(let i = 1; i < heroList.length; i++) {
-		heroList[i].box.checked = false;
+	// uncheck heros
+	for (let i = 1; i < categoryList[0].list.length; i++) {
+		categoryList[0].list[i].box.checked = false;
 	}
-	primaryList[0].box.checked = false;
-	militaryList[0].box.checked = false;
-	magicList[0].box.checked = false;
-	supportList[0].box.checked = false;
+	categoryList[1].list[0].box.checked = false;
+	categoryList[2].list[0].box.checked = false;
+	categoryList[3].list[0].box.checked = false;
+	categoryList[4].list[0].box.checked = false;
 	
 	return;
 }
@@ -204,20 +154,10 @@ function inputHandlerSize(e) {
 }
 
 function resetColors() {
-	for(let i = 0; i < heroList.length; i++) {
-		heroList[i].label.style.color = "#87CEEB";
-	}
-	for(let i = 0; i < militaryList.length; i++) {
-		militaryList[i].label.style.color = "#87CEEB";
-	}
-	for(let i = 0; i < primaryList.length; i++) {
-		primaryList[i].label.style.color = "#87CEEB";
-	}
-	for(let i = 0; i < magicList.length; i++) {
-		magicList[i].label.style.color = "#87CEEB";
-	}
-	for(let i = 0; i < supportList.length; i++) {
-		supportList[i].label.style.color = "#87CEEB";
+	for (let i = 0; i < categoryList.length; i++) {
+		for (let j = 0; j < categoryList[i].list.length; j++) {
+			categoryList[i].list[j].label.style.color = "#87CEEB";
+		}
 	}
 	
 	return;
@@ -322,9 +262,9 @@ function pickRandomTower(shouldBeHero) {
 
 // remove all heroes from possible towers
 function removeHeroes() {
-	for(let i = 0; i < heroList.length; i++) {
-		if(heroList[i].box.checked == true) {
-			possibleTowers.splice(possibleTowers.indexOf(heroList[i]), 1);
+	for(let i = 0; i < categoryList[0].list.length; i++) {
+		if(categoryList[0].list[i].box.checked == true) {
+			possibleTowers.splice(possibleTowers.indexOf(categoryList[0].list[i]), 1);
 		}
 	}
 	
