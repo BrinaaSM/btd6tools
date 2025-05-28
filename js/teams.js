@@ -257,47 +257,30 @@ function fillChimpsLists() {
 	return;
 }
 
+// fill list with towers that are enabled
 function fillTowerList() {
 	let heroAllowed = false;
 	
 	possibleTowers.length = 0;
 	possibleHeroes.length = 0;
 	
-	for(let i = 0; i < heroList.length; i++) {
-		if(heroList[i].box.checked == true) {
-			possibleTowers.push(heroList[i]);
-			possibleHeroes.push(heroList[i]);
-			heroAllowed = true;
-		}
-	}
-	for(let i = 0; i < primaryList.length; i++) {
-		if(primaryList[i].box.checked == true) {
-			possibleTowers.push(primaryList[i]);
-		}
-	}
-		
-	for(let i = 0; i < militaryList.length; i++) {
-		if(militaryList[i].box.checked == true) {
-			possibleTowers.push(militaryList[i]);
-		}
-	}
-		
-	for(let i = 0; i < magicList.length; i++) {
-		if(magicList[i].box.checked == true) {
-			possibleTowers.push(magicList[i]);
-		}
-	}
-	
-	for(let i = 0; i < supportList.length; i++) {
-		if(supportList[i].box.checked == true) {
-			if(chimpsViable) {
-				if(supportList[i] != farm) {
-					possibleTowers.push(supportList[i]);
+	for(let i = 0; i < categoryList.length; i++) {
+		for(let j = 0; j < categoryList[i].list.length; j++) {
+			if (categoryList[i].list[j].box.checked) {
+				// remove farm
+				if(chimpsViable) {
+					if(categoryList[i].list[j] != farm) {
+						possibleTowers.push(categoryList[i].list[j]);
+					} else {
+						categoryList[i].list[j].box.checked == false;
+					}
 				} else {
-					supportList[i].box.checked == false;
-				}		
-			} else {
-				possibleTowers.push(supportList[i]);
+					possibleTowers.push(categoryList[i].list[j]);
+				}
+				if (categoryList[i].list[j].hero) {
+					possibleHeroes.push(categoryList[i].list[j]);
+					heroAllowed = true;
+				}
 			}
 		}
 	}
