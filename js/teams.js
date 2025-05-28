@@ -96,9 +96,6 @@ const supportCat = new Category("support", [], document.getElementById("support"
 const sizeInput = document.getElementById("team-size-input");
 const teamOutput = document.getElementById("team-output");
 
-const possibleTowers = [];
-const possibleHeroes = [];
-
 function fillCategoryLists() {
 	for (let i = 0; i < categoryList.length; i++) {
 		for (let j = 0; j < towerList.length; j++) {
@@ -167,11 +164,8 @@ function toggleChimpsViable() {
 }
 
 // fill list with towers that are enabled
-function fillTowerList() {
+function fillTowerList(towerList) {
 	let heroAllowed = false;
-	
-	possibleTowers.length = 0;
-	possibleHeroes.length = 0;
 	
 	for(let i = 0; i < categoryList.length; i++) {
 		for(let j = 0; j < categoryList[i].list.length; j++) {
@@ -179,15 +173,14 @@ function fillTowerList() {
 				// remove farm
 				if(chimpsViable) {
 					if(categoryList[i].list[j] != farm) {
-						possibleTowers.push(categoryList[i].list[j]);
+						towerList.push(categoryList[i].list[j]);
 					} else {
 						categoryList[i].list[j].box.checked == false;
 					}
 				} else {
-					possibleTowers.push(categoryList[i].list[j]);
+					towerList.push(categoryList[i].list[j]);
 				}
 				if (categoryList[i].list[j].hero) {
-					possibleHeroes.push(categoryList[i].list[j]);
 					heroAllowed = true;
 				}
 			}
@@ -197,7 +190,7 @@ function fillTowerList() {
 	return heroAllowed;
 }
 
-// pick a random tower that can start C.H.I.M.P.S.
+// pick a random tower that can start C.H.I.M.P.S. (TODO: could be combined with random tower)
 function pickViableTower() {	
 	const chimpsViableTowers = [];
 	const chimpsViableHeroes = [];
@@ -222,24 +215,30 @@ function pickViableTower() {
 }
 
 // pick a random tower
-function pickRandomTower(shouldBeHero) {
+function pickRandomTower(towerList, shouldBeHero) {
+	const heroList = [];
 	let choice;
 	
 	if (shouldBeHero) {
-		choice = possibleHeroes[Math.floor(Math.random()*possibleHeroes.length)];
+		for(let i = 0; i < towerList.length; i++) {
+			if (towerList[i].hero) {
+				heroList.push(towerList[i]);
+			}
+		}
+		choice = heroList[Math.floor(Math.random()*heroList.length)];
 	} else {
-		choice = possibleTowers[Math.floor(Math.random()*possibleTowers.length)];
+		choice = towerList[Math.floor(Math.random()*towerList.length)];
 	}
-	possibleTowers.splice(possibleTowers.indexOf(choice), 1);
+	towerList.splice(towerList.indexOf(choice), 1);
 	
 	return choice;
 }
 
 // remove all heroes from possible towers
-function removeHeroes() {
+function removeHeroes(towerList) {
 	for(let i = 0; i < categoryList[0].list.length; i++) {
 		if(categoryList[0].list[i].box.checked == true) {
-			possibleTowers.splice(possibleTowers.indexOf(categoryList[0].list[i]), 1);
+			towerList.splice(towerList.indexOf(categoryList[0].list[i]), 1);
 		}
 	}
 	
@@ -248,6 +247,9 @@ function removeHeroes() {
 
 function roll() {
 	const chosenTowers = [];
+	const possibleHeroes = [];
+	const towerList = [];
+
 	let choice;	
 	let viableChoice = 0;
 	let reduceCount = 0;
@@ -256,7 +258,7 @@ function roll() {
 	let output = "";
 	
 	resetColors();
-	heroAllowed = fillTowerList();
+	heroAllowed = fillTowerList(towerList);
 
 	// check if team size illegal
 	if (!heroAllowed && teamSize <= 0) {
@@ -265,7 +267,7 @@ function roll() {
 		return;
 	}
 	// check if team possible to create
-	if ((possibleTowers.length - possibleHeroes.length) < teamSize) {
+	if ((towerList.length - possibleHeroes.length) < teamSize) {
 		teamOutput.value = "Err: Not enough Towers selected!";
 		
 		return;
@@ -273,8 +275,8 @@ function roll() {
 	
 	if(chimpsViable) {
 		if (teamSize == 0) {
-			choice = pickRandomTower(true);
-			removeHeroes();
+			choice = pickRandomTower(towerList, true);
+			removeHeroes(towerList);
 			teamSizeOffset = 1;
 		} else {
 			choice = pickViableTower();
@@ -285,30 +287,30 @@ function roll() {
 				return;
 			}
 			if (choice.hero) {
-				removeHeroes();
+				removeHeroes(towerList);
 			} else {
 				teamSizeOffset = 1;
 				if (heroAllowed) {
-					chosenTowers.push(pickRandomTower(true));
-					removeHeroes();
+					chosenTowers.push(pickRandomTower(towerList, true));
+					removeHeroes(towerList);
 				}
 			}
 		}
 		chosenTowers.push(choice);
 		// remove picked tower from list
-		possibleTowers.splice(possibleTowers.indexOf(choice), 1);
+		towerList.splice(towerList.indexOf(choice), 1);
 		for (let i = 0; i < teamSize - teamSizeOffset; i++) {
-			choice = pickRandomTower(false);
+			choice = pickRandomTower(towerList, false);
 			chosenTowers.push(choice);
 		}
 	} else {
 		if (heroAllowed) {
-			choice = pickRandomTower(true);
-			removeHeroes();
+			choice = pickRandomTower(towerList, true);
+			removeHeroes(towerList);
 			chosenTowers.push(choice);
 		}
 		for (let i = 0; i < teamSize; i++) {
-			choice = pickRandomTower(false);
+			choice = pickRandomTower(towerList, false);
 			chosenTowers.push(choice);
 		}
 	}
