@@ -46,12 +46,12 @@ const dartling = new Tower("Dartling Gunner", document.getElementById("dartling"
 
 // create magic classes
 const anyMMagic = new Tower("Any Magic Monkey", document.getElementById("any-magic"), document.getElementById("any-magic-label"), false);
-const wiz = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const superm = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const ninja = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const alch = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const druid = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
-const mermonkey = new Tower("Quincy", document.getElementById("quincy"), document.getElementById("quincy-label"), false);
+const wiz = new Tower("Wizard Monkey", document.getElementById("wiz"), document.getElementById("wiz-label"), false);
+const superm = new Tower("Supermonkey", document.getElementById("superm"), document.getElementById("superm-label"), false);
+const ninja = new Tower("Ninja Monkey", document.getElementById("ninja"), document.getElementById("ninja-label"), false);
+const alch = new Tower("Alchemist", document.getElementById("alch"), document.getElementById("alch-label"), false);
+const druid = new Tower("Druid", document.getElementById("druid"), document.getElementById("druid-label"), false);
+const mermonkey = new Tower("Mermonkey", document.getElementById("mermonkey"), document.getElementById("mermonkey-label"), false);
 
 // create support classes
 const anySupport = new Tower("Any Support Monkey", document.getElementById("any-support"), document.getElementById("any-support-label"), false);
