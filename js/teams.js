@@ -1,3 +1,13 @@
+class Tower {
+	constructor(name, checkBoxElem, labelElem) {
+		this.name = name;
+		this.box = checkBoxElem;
+		this.label = labelElem;
+	}
+}
+
+const anyHero = new Tower("anyHero", document.getElementById("any-hero"), document.getElementById("any-hero-label"));
+
 const sizeInput = document.getElementById("team-size-input");
 const teamOutput = document.getElementById("team-output");
 
@@ -29,6 +39,41 @@ const primaryLabels = [];
 const militaryLabels = [];
 const magicLabels = [];
 const supportLabels = [];
+
+var hero;
+const heroBox = document.getElementById("hero");
+const quincyBox = document.getElementById("quincy");
+const quincyLabel = document.getElementById("quincy-label");
+const gwenBox = document.getElementById("gwen");
+const gwenLabel = document.getElementById("gwen-label");
+const strikerBox = document.getElementById("striker");
+const strikerLabel = document.getElementById("striker-label");
+const obynBox = document.getElementById("obyn");
+const obynLabel = document.getElementById("obyn-label");
+const churchillBox = document.getElementById("churchill");
+const churchillLabel = document.getElementById("churchill-label");
+const benBox = document.getElementById("ben");
+const benLabel = document.getElementById("ben-label");
+const eziliBox = document.getElementById("ezili");
+const eziliLabel = document.getElementById("ezili-label");
+const patBox = document.getElementById("pat");
+const patLabel = document.getElementById("pat-label");
+const adoraBox = document.getElementById("adora");
+const adoraLabel = document.getElementById("adora-label");
+const brickellBox = document.getElementById("brickell");
+const brickellLabel = document.getElementById("brickell-label");
+const etienneBox = document.getElementById("etienne");
+const etienneLabel = document.getElementById("etienne-label");
+const saudaBox = document.getElementById("sauda");
+const saudaLabel = document.getElementById("sauda-label");
+const psiBox = document.getElementById("psi");
+const psiLabel = document.getElementById("psi-label");
+const gerryBox = document.getElementById("gerry");
+const gerryLabel = document.getElementById("gerry-label");
+const corvusBox = document.getElementById("corvus");
+const corvusLabel = document.getElementById("corvus-label");
+const rosaliaBox = document.getElementById("rosalia");
+const rosaliaLabel = document.getElementById("rosalia-label");
 
 var primary;
 const primaryBox = document.getElementById("primary");
@@ -98,44 +143,7 @@ const engiLabel = document.getElementById("engi-label");
 const beastBox = document.getElementById("beast");
 const beastLabel = document.getElementById("beast-label");
 
-var hero;
-const heroBox = document.getElementById("hero");
-const anyHeroBox = document.getElementById("any-hero");
-const anyHeroLabel = document.getElementById("any-hero-label");
-const quincyBox = document.getElementById("quincy");
-const quincyLabel = document.getElementById("quincy-label");
-const gwenBox = document.getElementById("gwen");
-const gwenLabel = document.getElementById("gwen-label");
-const strikerBox = document.getElementById("striker");
-const strikerLabel = document.getElementById("striker-label");
-const obynBox = document.getElementById("obyn");
-const obynLabel = document.getElementById("obyn-label");
-const churchillBox = document.getElementById("churchill");
-const churchillLabel = document.getElementById("churchill-label");
-const benBox = document.getElementById("ben");
-const benLabel = document.getElementById("ben-label");
-const eziliBox = document.getElementById("ezili");
-const eziliLabel = document.getElementById("ezili-label");
-const patBox = document.getElementById("pat");
-const patLabel = document.getElementById("pat-label");
-const adoraBox = document.getElementById("adora");
-const adoraLabel = document.getElementById("adora-label");
-const brickellBox = document.getElementById("brickell");
-const brickellLabel = document.getElementById("brickell-label");
-const etienneBox = document.getElementById("etienne");
-const etienneLabel = document.getElementById("etienne-label");
-const saudaBox = document.getElementById("sauda");
-const saudaLabel = document.getElementById("sauda-label");
-const psiBox = document.getElementById("psi");
-const psiLabel = document.getElementById("psi-label");
-const gerryBox = document.getElementById("gerry");
-const gerryLabel = document.getElementById("gerry-label");
-const corvusBox = document.getElementById("corvus");
-const corvusLabel = document.getElementById("corvus-label");
-const rosaliaBox = document.getElementById("rosalia");
-const rosaliaLabel = document.getElementById("rosalia-label");
-
-heroBoxes.push(anyHeroBox);
+heroBoxes.push(anyHero.box);
 heroBoxes.push(quincyBox);
 heroBoxes.push(gwenBox);
 heroBoxes.push(strikerBox);
@@ -153,7 +161,7 @@ heroBoxes.push(gerryBox);
 heroBoxes.push(corvusBox);
 heroBoxes.push(rosaliaBox);
 
-heroLabels.push(anyHeroLabel);
+heroLabels.push(anyHero.label);
 heroLabels.push(quincyLabel);
 heroLabels.push(gwenLabel);
 heroLabels.push(strikerLabel);
@@ -342,9 +350,9 @@ function fillChimpsLists() {
 	chimpsCount = 0;
 	
 	// viable heroes	
-	if(anyHeroBox.checked) {
-		chimpsViableTowers.push(anyHeroLabel);
-		chimpsViableHeroes.push(anyHeroLabel);
+	if(anyHero.box.checked) {
+		chimpsViableTowers.push(anyHero.label);
+		chimpsViableHeroes.push(anyHero.label);
 		chimpsCount++;
 	}
 	if(quincyBox.checked) {
