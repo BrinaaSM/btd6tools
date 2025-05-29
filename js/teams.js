@@ -161,6 +161,12 @@ function toggleChimpsViable() {
 	farm.box.checked = !chimpsViable;
 }
 
+function setChimpsViable(on) {
+	chimpsViable = on;
+	farm.box.checked = !on;
+	document.getElementById("chimps-viable").checked = on;
+}
+
 // fill list with towers that are enabled
 function fillTowerList(towerList) {
 	for(let i = 0; i < categoryList.length; i++) {
@@ -264,6 +270,10 @@ function roll() {
 	} else if (teamSize <= 0) {
 		teamOutput.value = "Err: Team size is set to 0!";
 		return;
+	}
+	
+	if (teamSize <= 0) {
+		setChimpsViable(false);
 	}
 	
 	// check if team possible to create
