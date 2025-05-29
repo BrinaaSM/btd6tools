@@ -250,24 +250,20 @@ function roll() {
 	const towerList = [];
 
 	let choice;	
-	let viableChoice = 0;
-	let heroAllowed = true;
 	let teamSizeOffset = 0;
 	let output = "";
 	
 	resetColors();
-	heroAllowed = fillTowerList(towerList);
-
-	// check if team size illegal
-	if (!heroAllowed && teamSize <= 0) {
-		teamOutput.value = "Err: Team size is set to 0!";
-		return;
-	}
+	fillTowerList(towerList);
 	
 	// add hero if allowed
 	if (countHeroes(towerList) > 0) {
 		choice = pickRandomTower(towerList, true, false);
 		chosenTowers.push(choice);
+	// check if team size illegal
+	} else if (teamSize <= 0) {
+		teamOutput.value = "Err: Team size is set to 0!";
+		return;
 	}
 	
 	// check if team possible to create
