@@ -103,8 +103,7 @@ function fillCategoryLists() {
 				categoryList[i].list.push(towerList[j]);
 			}
 		}
-	}
-	
+	}	
 	return;
 }
 
@@ -118,7 +117,8 @@ function initPage() {
 	categoryList[2].list[0].box.checked = false;
 	categoryList[3].list[0].box.checked = false;
 	categoryList[4].list[0].box.checked = false;
-	
+	// uncheck farm
+	farm.box.checked = false;
 	return;
 }
 
@@ -131,8 +131,7 @@ function inputHandlerSize(e) {
 	if (teamSize > maxMonkeyCount) {
 		sizeInput.value = maxMonkeyCount;
 		teamSize = maxMonkeyCount;
-	}
-	
+	}	
 	return;
 }
 
@@ -141,8 +140,7 @@ function resetColors() {
 		for (let j = 0; j < categoryList[i].list.length; j++) {
 			categoryList[i].list[j].label.style.color = "#87CEEB";
 		}
-	}
-	
+	}	
 	return;
 }
 
@@ -155,23 +153,21 @@ function toggleCategory(category) {
 	if(category.label) {
 		category.list[0].box.checked = false;
 	}
-	
 	return;
 }
 
 function toggleChimpsViable() {
 	chimpsViable = !chimpsViable;
+	farm.box.checked = !chimpsViable;
 }
 
 // fill list with towers that are enabled
 function fillTowerList(towerList) {
-	let heroAllowed = false;
-	
 	for(let i = 0; i < categoryList.length; i++) {
 		for(let j = 0; j < categoryList[i].list.length; j++) {
 			if (categoryList[i].list[j].box.checked) {
-				// remove farm
 				if(chimpsViable) {
+					// remove farm
 					if(categoryList[i].list[j] != farm) {
 						towerList.push(categoryList[i].list[j]);
 					} else {
@@ -180,79 +176,81 @@ function fillTowerList(towerList) {
 				} else {
 					towerList.push(categoryList[i].list[j]);
 				}
-				if (categoryList[i].list[j].hero) {
-					heroAllowed = true;
-				}
 			}
 		}
 	}
-	
-	return heroAllowed;
+	return;
 }
 
 // pick a random tower that can start C.H.I.M.P.S. (TODO: could be combined with random tower)
-function pickViableTower() {	
-	const chimpsViableTowers = [];
-	const chimpsViableHeroes = [];
+function pickViableTower(towerList) {
 	
-	for(let i = 0; i < categoryList.length; i++) {
-		for(let j = 0; j < categoryList[i].list.length; j++) {
-			if (categoryList[i].list[j].box.checked && categoryList[i].list[j].start) {
-				chimpsViableTowers.push(categoryList[i].list[j]);
-				if (categoryList[i].list[j].hero) {
-					chimpsViableHeroes.push(categoryList[i].list[j]);
-				}
-			}
+	for(let i = 0; i < towerList.length; i++) {
+		if (towerList[i].start) {
+			viableTowers.push(towerList[i]);
 		}
 	}
 
 	// check if no chimps start possible
-	if (chimpsViableTowers.length == 0) {
+	if (viableTowers.length == 0) {
 		return null;
-	}
-	
-	return chimpsViableTowers[Math.floor(Math.random()*chimpsViableTowers.length)];
+	}	
+	return viableTowers[Math.floor(Math.random()*viableTowers.length)];
 }
 
 // pick a random tower
-function pickRandomTower(towerList, shouldBeHero) {
+// pick hero forces hero or non hero
+// pick start forces (non-hero) that can start or doesn't matter
+function pickRandomTower(towerList, pickHero, pickStart) {
 	const heroList = [];
+	const nonHeroList = [];
+	const startList = [];
+	
 	let choice;
 	
-	if (shouldBeHero) {
-		for(let i = 0; i < towerList.length; i++) {
-			if (towerList[i].hero) {
-				heroList.push(towerList[i]);
+	for(let i = 0; i < towerList.length; i++) {
+		if (towerList[i].hero) {
+			heroList.push(towerList[i]);
+		} else {
+			nonHeroList.push(towerList[i]);
+			if (towerList[i].start) {
+				startList.push(towerList[i]);
 			}
 		}
+	}
+	
+	if (pickStart) {
+		choice = startList[Math.floor(Math.random()*startList.length)];
+		towerList.splice(towerList.indexOf(choice), 1);
+		return choice;
+	}
+	
+	if (pickHero) {
 		choice = heroList[Math.floor(Math.random()*heroList.length)];
 	} else {
-		choice = towerList[Math.floor(Math.random()*towerList.length)];
+		choice = nonHeroList[Math.floor(Math.random()*nonHeroList.length)];
 	}
 	towerList.splice(towerList.indexOf(choice), 1);
-	
 	return choice;
 }
 
-// remove all heroes from possible towers
-function removeHeroes(towerList) {
-	for(let i = 0; i < categoryList[0].list.length; i++) {
-		if(categoryList[0].list[i].box.checked == true) {
-			towerList.splice(towerList.indexOf(categoryList[0].list[i]), 1);
+function countHeroes(towerList) {
+	let sum = 0;
+	
+	for(let i = 0; i < towerList.length; i++) {
+		if(towerList[i].hero) {
+			sum++;
 		}
 	}
-	
-	return;
+	return sum;
 }
 
 function roll() {
 	const chosenTowers = [];
-	const possibleHeroes = [];
 	const towerList = [];
 
 	let choice;	
 	let viableChoice = 0;
-	let reduceCount = 0;
 	let heroAllowed = true;
 	let teamSizeOffset = 0;
 	let output = "";
@@ -263,57 +261,41 @@ function roll() {
 	// check if team size illegal
 	if (!heroAllowed && teamSize <= 0) {
 		teamOutput.value = "Err: Team size is set to 0!";
-		
-		return;
-	}
-	// check if team possible to create
-	if ((towerList.length - possibleHeroes.length) < teamSize) {
-		teamOutput.value = "Err: Not enough Towers selected!";
-		
 		return;
 	}
 	
+	// add hero if allowed
+	if (countHeroes(towerList) > 0) {
+		choice = pickRandomTower(towerList, true, false);
+		chosenTowers.push(choice);
+	}
+	
+	// check if team possible to create
+	if (towerList.length - countHeroes(towerList) < teamSize) {
+		teamOutput.value = "Err: Not enough Towers selected!";
+		return;
+	}
+	
+	// force chimps start
 	if(chimpsViable) {
-		if (teamSize == 0) {
-			choice = pickRandomTower(towerList, true);
-			removeHeroes(towerList);
-			teamSizeOffset = 1;
-		} else {
-			choice = pickViableTower();
+		// check if hero can start
+		if (choice && !choice.start) {
+			choice = pickRandomTower(towerList, false, true);
 			// check if viable tower is found
 			if(!choice) {
 				teamOutput.value = "Err: No C.H.I.M.P.S. viable combination found!"
-				
 				return;
 			}
-			if (choice.hero) {
-				removeHeroes(towerList);
-			} else {
-				teamSizeOffset = 1;
-				if (heroAllowed) {
-					chosenTowers.push(pickRandomTower(towerList, true));
-					removeHeroes(towerList);
-				}
-			}
-		}
+		teamSizeOffset = 1;
 		chosenTowers.push(choice);
-		// remove picked tower from list
-		towerList.splice(towerList.indexOf(choice), 1);
-		for (let i = 0; i < teamSize - teamSizeOffset; i++) {
-			choice = pickRandomTower(towerList, false);
-			chosenTowers.push(choice);
-		}
-	} else {
-		if (heroAllowed) {
-			choice = pickRandomTower(towerList, true);
-			removeHeroes(towerList);
-			chosenTowers.push(choice);
-		}
-		for (let i = 0; i < teamSize; i++) {
-			choice = pickRandomTower(towerList, false);
-			chosenTowers.push(choice);
 		}
 	}
+	
+	for (let i = 0; i < teamSize - teamSizeOffset; i++) {
+		choice = pickRandomTower(towerList, false, false);
+		chosenTowers.push(choice);
+	}
+	
 	for (let i = 0; i < chosenTowers.length; i++) {
 		output += chosenTowers[i].name;
 		chosenTowers[i].label.style.color = "yellow";
@@ -321,8 +303,8 @@ function roll() {
 			output += ", ";
 		}
 	}
-	teamOutput.value = output;
 	
+	teamOutput.value = output;
 	return;
 }
 
