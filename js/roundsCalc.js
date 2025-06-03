@@ -17,58 +17,46 @@ const xpOutputEnd = document.getElementById("xp-output-end");
 const cashOutputEnd = document.getElementById("cash-output-end");
 const durationOutputEnd = document.getElementById("duration-output-end");
 
-var startRound = 1;
-var endRound = 1;
-var currentCash = 0;
-var roundType;
+let startRound = 1;
+let endRound = 1;
+let currentCash = 0;
+let roundType;
 
 // input handling
 
 function inputHandlerStart(e) {
-	var maxRound;
+	let maxRound;
+	
 	startRound = e.target.value;
-	if(roundType === "default") {
-		maxRound = 140;
-	} else if(roundType === "abr") {
-		maxRound = 100;
-	} else {
-		maxRound = 100;
-	}
-		
-	if(startRound < 1) {
-		startRound = "";
-	}
-	if(startRound > maxRound) {
-		startRound = maxRound;
-	}
+	if (roundType === "default") maxRound = 140;
+	else if (roundType === "abr") maxRound = 100;
+	else maxRound = 100;
+	
+	if (startRound < 1) startRound = "";
+	if (startRound > maxRound) startRound = maxRound;
+
 	startInput.value = startRound;
 }
 
 function inputHandlerEnd(e) {
-	var maxRound;
-	endRound = e.target.value;
-	if(roundType === "default") {
-		maxRound = 140;
-	} else if(roundType === "abr") {
-		maxRound = 100;
-	} else {
-		maxRound = 100;
-	}
+	let maxRound;
 	
-	if(endRound < 1) {
-		endRound = "";
-	}
-	if(endRound > maxRound) {
-		endRound = maxRound;
-	}
+	endRound = e.target.value;
+	if (roundType === "default") maxRound = 140;
+	else if (roundType === "abr") maxRound = 100;
+	else  maxRound = 100;
+	
+	if (endRound < 1) endRound = "";
+	if (endRound > maxRound) endRound = maxRound;
 	endInput.value = endRound;
 }
 
 function inputHandlerCash(e) {
-	var regex=/^[0-9]+$/; // only numbers valid
-	var max_integer = 2147483647;
+	let regex=/^[0-9]+$/; // only numbers valid
+	let max_integer = 2147483647;
+	
 	currentCash = e.target.value;
-	if(currentCash < 0) {
+	if (currentCash < 0) {
 		cashInput.value = currentCash;
 		currentCash = 0;
 	}
@@ -76,31 +64,23 @@ function inputHandlerCash(e) {
 		cashInput.value = "";
 		currentCash = 0;
 	}
-	if(currentCash > max_integer) {
+	if (currentCash > max_integer) {
 		currentCash = max_integer;
 		cashInput.value = currentCash;
 	}
 }
 
 function checkValidRounds() {
-	if(startRound === undefined || startRound === "") {	
-		startRound = 1;
-	}
-	if(endRound === undefined || endRound === "") {
-		endRound = 1;
-	}
-	if (parseInt(startRound) > parseInt(endRound)) {
-		endRound = startRound;
-	}
+	if (startRound === undefined || startRound === "") startRound = 1;
+	if (endRound === undefined || endRound === "") endRound = 1;
+	if (parseInt(startRound) > parseInt(endRound)) endRound = startRound;
 	startInput.value = startRound;
 	endInput.value = endRound;
 }
 
-// calculation
-
 function calcAll() {
 	checkValidRounds();
-	var incomeSum = sumIncome();
+	let incomeSum = sumIncome();
 	
 	rbeOutputTotal.innerHTML = sumRBE().toLocaleString() + " RBE";
 	xpOutputTotal.innerHTML = sumXP().toLocaleString() + " XP";
@@ -118,51 +98,42 @@ function calcAll() {
 	durationOutputEnd.innerHTML = convertDuration(getDuration(endRound)) + "s";
 }
 
-// summing
-
 function sumIncome() {
-	sum = 0;
-	for (var i = parseInt(startRound); i <= parseInt(endRound); i++) {
-		sum += calcIncome(i);
-	}
+	let sum = 0;
+	
+	for (let i = parseInt(startRound); i <= parseInt(endRound); i++) sum += calcIncome(i);
 	return sum;
 }
 	
 function sumRBE() {
-	sum = 0;
-	for (var i = parseInt(startRound); i <= parseInt(endRound); i++) {
-		sum += calcRBE(i);
-	}
+	let sum = 0;
+	
+	for (let i = parseInt(startRound); i <= parseInt(endRound); i++) sum += calcRBE(i);
 	return sum;
 }
 
 function sumXP() {
-	sum = 0;
-	for (var i = parseInt(startRound); i <= parseInt(endRound); i++) {
-		sum += calcXP(i);
-	}
+	let sum = 0;
+	
+	for (let i = parseInt(startRound); i <= parseInt(endRound); i++) sum += calcXP(i);
 	return sum;
 }
 
 function sumDuration() {
-	sum = 0;
-	for (var i = parseInt(startRound); i <= parseInt(endRound); i++) {
-		sum += getDuration(i);
-	}
+	let sum = 0;
+	
+	for (let i = parseInt(startRound); i <= parseInt(endRound); i++) sum += getDuration(i);
 	return sum;
 }
 
-// helper
-
 function convertDuration(duration) {
-	var converted = "";
-	if(duration > 60) {
-		var min = Math.floor(duration/60);
+	let converted = "";
+	
+	if (duration > 60) {
+		let min = Math.floor(duration/60);
 		converted += min + "m ";
 		converted += Math.floor(duration - (min * 60));
-	} else {
-		converted = Math.floor(duration);
-	}
+	} else converted = Math.floor(duration);
 	return converted;
 }
 

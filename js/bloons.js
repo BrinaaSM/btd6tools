@@ -31,6 +31,9 @@ function getHP(bloon, isFortified, round) {
 	if(round > 80 && getBloonStructure(bloon).hpFP) hp = getBloonStructure(bloon).hpFP;
 	else hp = getBloonStructure(bloon).hp;
 	
+	// f-lead special
+	if (isFortified && bloon === 'lead') return 4;
+	
 	// default HP bloon
 	if (!hp) return 1;
 	
@@ -45,11 +48,9 @@ function getHP(bloon, isFortified, round) {
 		else if (round >= 301 && round <= 400) hp = hp * (91.5 + (round - 300) * 1.5);
 		else if (round >= 401 && round <= 500) hp = hp * (241.5 + (round - 400) * 2.5);
 		else hp = hp * (491.5 + (round - 500) * 5.0);
-	}	
-	if (isFortified) hp *= fortifiedMultiplier;
-	// f-lead special
-	if (isFortified && bloon === 'lead') hp *= fortifiedMultiplier;
+	}
 	
+	if (isFortified) hp *= fortifiedMultiplier;
 	return hp;
 }
 
@@ -73,9 +74,9 @@ function getRBE(bloon, isFortified, round) {
 	// remove 0th-layer of HP-bloons
 	if (getHP(bloon, isFortified, round) > 1) rbe--;
 
-	if (isFortified) rbe *= fortifiedMultiplier;
+	// if (isFortified) rbe *= fortifiedMultiplier;
 	// f-lead special
-	if (isFortified && bloon === 'lead') rbe *= fortifiedMultiplier;
+	// if (isFortified && bloon === 'lead') rbe *= fortifiedMultiplier;
 	
 	let keys = Object.keys(childs);
 	keys.forEach(
@@ -85,13 +86,17 @@ function getRBE(bloon, isFortified, round) {
 			}
 		}
 	);
+	
 	return rbe;
 }
 	
 function getIncomeBloon(bloon, round) {
+	let childs;
 	let income = 1;
 	let currentLayer = getBloonStructure(bloon, round);
-	let childs = currentLayer.childs;
+	
+	if (round > 80 && currentLayer.childsFP) childs = currentLayer.childsFP;
+	else childs = currentLayer.childs;
 	
 	// red bloon
 	if (!childs) {
