@@ -22,8 +22,6 @@ let endRound = 1;
 let currentCash = 0;
 let roundType;
 
-// input handling
-
 function inputHandlerStart(e) {
 	let maxRound;
 	
