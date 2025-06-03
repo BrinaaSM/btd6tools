@@ -98,8 +98,6 @@ function fillCategoryLists() {
 	for (let i = 0; i < categoryList.length; i++)
 		for (let j = 0; j < towerList.length; j++)
 			if(categoryList[i].name === towerList[j].category) categoryList[i].list.push(towerList[j]);
-		}
-	}	
 	return;
 }
 
@@ -109,10 +107,10 @@ function initPage() {
 	for (let i = 1; i < heroCat.list.length; i++) {
 		heroCat.list[i].box.checked = false;
 	}
-	primaryCat.list[0].box.checked = false;
-	militaryCat.list[0].box.checked = false;
-	magicCat.list[0].box.checked = false;
-	supportCat.list[0].box.checked = false;
+	anyPrimary.box.checked = false;
+	anyMilitary.box.checked = false;
+	anyMagic.box.checked = false;
+	anySupport.box.checked = false;
 	// uncheck farm
 	farm.box.checked = false;
 	return;
@@ -125,7 +123,7 @@ function inputHandlerSize(e) {
 	if (teamSize > maxMonkeyCount) {
 		sizeInput.value = maxMonkeyCount;
 		teamSize = maxMonkeyCount;
-	}	
+	}
 	return;
 }
 
@@ -133,7 +131,6 @@ function resetColors() {
 	for (let i = 0; i < categoryList.length; i++)
 		for (let j = 0; j < categoryList[i].list.length; j++)
 			categoryList[i].list[j].label.style.color = "#87CEEB";
-	}	
 	return;
 }
 
@@ -170,9 +167,6 @@ function fillTowerList(towerList) {
 					if(categoryList[i].list[j] != farm) towerList.push(categoryList[i].list[j]);
 					else categoryList[i].list[j].box.checked == false;
 				} else towerList.push(categoryList[i].list[j]);
-			}
-		}
-	}
 	return;
 }
 
@@ -181,7 +175,6 @@ function pickViableTower(towerList) {
 	for(let i = 0; i < towerList.length; i++)
 		if (towerList[i].start)
 			viableTowers.push(towerList[i]);
-	}
 
 	// check if no chimps start possible
 	if (viableTowers.length == 0) return null;
@@ -204,7 +197,6 @@ function pickRandomTower(towerList, pickHero, pickStart) {
 			nonHeroList.push(towerList[i]);
 			if (towerList[i].start) startList.push(towerList[i]);
 		}
-	}
 	
 	if (pickStart) {
 		choice = startList[Math.floor(Math.random()*startList.length)];
