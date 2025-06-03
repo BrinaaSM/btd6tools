@@ -9,7 +9,7 @@ const bloonStructure = [
 	{name: "zebra", childs: {black: 1, white: 1}, childsFP: {white: 1}, speed: 1.8, immunities: {cold: 1, explosion: 1}},
 	{name: "black", childs: {pink: 2}, childsFP: {pink: 1}, speed: 1.8, immunities: {explosion: 1}},
 	{name: "white", childs: {pink: 2}, childsFP: {pink: 1}, speed: 2, immunities: {cold: 1}},
-	{name: "purple", childs: {pink: 2, childsFP: {pink: 1}}, speed: 3, immunities: {energy: 1, plasma: 1}},
+	{name: "purple", childs: {pink: 2}, childsFP: {pink: 1}, speed: 3, immunities: {energy: 1, plasma: 1}},
 	{name: "lead", childs: {black: 2}, childsFP: {black: 1}, speed: 1, immunities: {energy: 1, sharp: 1, shatter: 1}},
 	{name: "pink", childs: {yellow: 1}, speed: 3.5},
 	{name: "yellow", childs: {green: 1}, speed: 3.2},
