@@ -51,7 +51,7 @@ function showAll() {
 		
 		let immuStr = "";
 		if ('immunities' in bloonStructure[(bloonStructure.length - 1) - i]) {
-			immuStr += "Immune to: " + getImmunitiesBloonStr(bloonStructure[(bloonStructure.length - 1) - i].name);
+			immuStr += "Immune to: " + getImmunitiesBloonString(bloonStructure[(bloonStructure.length - 1) - i].name);
 		}
 		
 		immuArr[i].innerHTML = immuStr;
