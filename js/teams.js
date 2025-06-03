@@ -111,7 +111,6 @@ function initPage() {
 	anyMilitary.box.checked = false;
 	anyMagic.box.checked = false;
 	anySupport.box.checked = false;
-	// uncheck farm
 	farm.box.checked = false;
 	return;
 }
@@ -159,14 +158,18 @@ function setChimpsViable(on) {
 
 // fill list with towers that are enabled
 function fillTowerList(towerList) {
+	let checkedList = [];
+	
 	for(let i = 0; i < categoryList.length; i++)
 		for(let j = 0; j < categoryList[i].list.length; j++)
-			if (categoryList[i].list[j].box.checked)
-				if(chimpsViable) {
-					// remove farm
-					if(categoryList[i].list[j] != farm) towerList.push(categoryList[i].list[j]);
-					else categoryList[i].list[j].box.checked == false;
-				} else towerList.push(categoryList[i].list[j]);
+			if (categoryList[i].list[j].box.checked) checkedList.push(categoryList[i].list[j]);
+	
+	for(let i = 0; i < checkedList.length; i++)
+		if(chimpsViable) {
+			// remove farm
+			if(checkedList[i] != farm) towerList.push(categoryList[i].list[j]);
+			else checkedList[i].box.checked == false;
+		} else towerList.push(categoryList[i].list[j]);
 	return;
 }
 
