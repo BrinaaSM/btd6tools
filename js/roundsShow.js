@@ -1,27 +1,19 @@
-var startRound = 1;
-var endRound = 1;
-var currentCash = 0;
-var roundType;
-
-// input handling
-
-// showing
+let roundType;
 
 function showAll() {
-	if(roundType === "default") {
-		endRound = 140;
-	} else if(roundType === "abr") {
-		endRound = 100;
-	} else {
-		endRound = 100;
-	}
+	let startRound = 1;
+	let endRound;
 	
-	var roundsArr = [];
-	var bloonsArr = [];
-	var bloonsImages = [];
-	var emptyArr = [];
+	if (roundType === "default") endRound = 140;
+	else if (roundType === "abr") endRound = 100;
+	else endRound = 100;
 	
-	for(var i = startRound - 1; i < endRound; i++) {
+	let roundsArr = [];
+	let bloonsArr = [];
+	let bloonsImages = [];
+	let emptyArr = [];
+	
+	for(let i = startRound - 1; i < endRound; i++) {
 		roundsArr.push(document.createElement('div'));
 		emptyArr.push(document.createElement('empty'));
 		roundsArr[i].innerHTML = "Round: " + (parseInt(i) + 1);
@@ -34,39 +26,30 @@ function showAll() {
 }
 
 function createBloonDiv(round, bloonsArr, bloonsImages, roundsArr) {
-	var bloons = getBloons(round);
-	var firstEntry = 1;
+	let bloons = getBloons(round);
+	let firstEntry = 1;
 	
 	bloons.forEach(
 		function(bloon) {
-			var bloonsStr = "";
-			var imgStr = "../img/";
+			let bloonsStr = "";
+			let imgStr = "../img/";
 			bloonsArr.push(document.createElement('div'));
 			bloonsImages.push(document.createElement('img'));
-			if('fortified' in bloon) {
-				imgStr += "f";
-			}
-			if('camo' in bloon) {
-				imgStr += "c";
-			}
-			if('regrow' in bloon) {
-				imgStr += "r";
-			}
+			if ('fortified' in bloon) imgStr += "f";
+			if ('camo' in bloon) imgStr += "c";
+			if ('regrow' in bloon) imgStr += "r";
 			imgStr += bloon.name.replaceAll(".", "_") + ".webp";
 			bloonsStr += bloon.count + " x";
 			bloonsImages[bloonsImages.length - 1].src = imgStr;
 			
 			bloonsArr[bloonsArr.length - 1].innerHTML = bloonsStr;
 			
-			if(firstEntry === 1) {
+			if (firstEntry === 1) {
 				firstEntry = 0;
 				roundsArr[round - 1].appendChild(bloonsArr[bloonsArr.length - 1])
-			} else {
-				bloonsArr[bloonsArr.length - 2].appendChild(bloonsArr[bloonsArr.length - 1])
-			}
+			} else bloonsArr[bloonsArr.length - 2].appendChild(bloonsArr[bloonsArr.length - 1]);
 			bloonsArr[bloonsArr.length - 1].appendChild(bloonsImages[bloonsImages.length - 1]);
 		}
 	);
-		
 	return;
 }

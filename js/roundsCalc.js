@@ -20,15 +20,17 @@ const durationOutputEnd = document.getElementById("duration-output-end");
 let startRound = 1;
 let endRound = 1;
 let currentCash = 0;
-let roundType;
 
 function inputHandlerStart(e) {
 	let maxRound;
 	
 	startRound = e.target.value;
+	// roundType defined in the round files
 	if (roundType === "default") maxRound = 140;
 	else if (roundType === "abr") maxRound = 100;
 	else maxRound = 100;
+	
+	console.log(roundType);
 	
 	if (startRound < 1) startRound = "";
 	if (startRound > maxRound) startRound = maxRound;
@@ -42,7 +44,7 @@ function inputHandlerEnd(e) {
 	endRound = e.target.value;
 	if (roundType === "default") maxRound = 140;
 	else if (roundType === "abr") maxRound = 100;
-	else  maxRound = 100;
+	else maxRound = 100;
 	
 	if (endRound < 1) endRound = "";
 	if (endRound > maxRound) endRound = maxRound;
