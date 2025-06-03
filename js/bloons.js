@@ -1,208 +1,127 @@
 const bloonStructure = [
-	{id: "bad", childs: {zomg: 2, ddt: 3}, hp: 20000, type: 'blimp', speed: 0.18, immunities: {knockback: 1, slow: 1, stun: 1}},
-	{id: "ddt", childs: {ceramic: 4}, hp: 400, type: 'blimp', speed: 2.64, immunities: {energy: 1, explosion: 1, sharp: 1, shatter: 1}},
-	{id: "zomg", childs: {bfb: 4}, hp: 4000, type: 'blimp', speed: 0.18},
-	{id: "bfb", childs: {moab: 4}, hp: 700, type: 'blimp', speed: 0.25},
-	{id: "moab", childs: {ceramic: 4}, hp: 200, type: 'blimp', speed: 1},
-	{id: "ceramic", childs: {rainbow: 2}, hp: 10, type: 'split', speed: 2.5},
-	{id: "rainbow", childs: {zebra: 2}, type: 'split', speed: 2.2},
-	{id: "zebra", childs: {black: 1, white: 1}, type: 'split', speed: 1.8, immunities: {cold: 1, explosion: 1}},
-	{id: "black", childs: {pink: 2}, type: 'split', speed: 1.8, immunities: {explosion: 1}},
-	{id: "white", childs: {pink: 2}, type: 'split', speed: 2, immunities: {cold: 1}},
-	{id: "purple", childs: {pink: 2}, type: 'normal', speed: 3, immunities: {energy: 1, plasma: 1}},
-	{id: "lead", childs: {black: 2}, type: 'normal', speed: 1, immunities: {energy: 1, sharp: 1, shatter: 1}},
-	{id: "pink", childs: {yellow: 1}, type: 'normal', speed: 3.5},
-	{id: "yellow", childs: {green: 1}, type: 'normal', speed: 3.2},
-	{id: "green", childs: {blue: 1}, type: 'normal', speed: 1.8},
-	{id: "blue", childs: {red: 1}, type: 'normal', speed: 1.4},
-	{id: "red", type: 'normal', speed: 1}
+	{name: "b.a.d.", childs: {"z.o.m.g.": 2, "d.d.t.": 3}, hp: 20000, speed: 0.18, immunities: {knockback: 1, slow: 1, stun: 1}},
+	{name: "d.d.t.", childs: {ceramic: 4}, hp: 400, speed: 2.64, immunities: {energy: 1, explosion: 1, sharp: 1, shatter: 1}},
+	{name: "z.o.m.g.", childs: {"b.f.b.": 4}, hp: 4000, speed: 0.18},
+	{name: "b.f.b.", childs: {"m.o.a.b.": 4}, hp: 700, speed: 0.25},
+	{name: "m.o.a.b.", childs: {ceramic: 4}, hp: 200, speed: 1},
+	{name: "ceramic", childs: {rainbow: 2}, childsFP: {rainbow: 1}, hp: 10, hpFP: 60, speed: 2.5},
+	{name: "rainbow", childs: {zebra: 2}, childsFP: {zebra: 1}, speed: 2.2},
+	{name: "zebra", childs: {black: 1, white: 1}, childsFP: {white: 1}, speed: 1.8, immunities: {cold: 1, explosion: 1}},
+	{name: "black", childs: {pink: 2}, childsFP: {pink: 1}, speed: 1.8, immunities: {explosion: 1}},
+	{name: "white", childs: {pink: 2}, childsFP: {pink: 1}, speed: 2, immunities: {cold: 1}},
+	{name: "purple", childs: {pink: 2}, childsFP: {pink: 1}, speed: 3, immunities: {energy: 1, plasma: 1}},
+	{name: "lead", childs: {black: 2}, childsFP: {black: 1}, speed: 1, immunities: {energy: 1, sharp: 1, shatter: 1}},
+	{name: "pink", childs: {yellow: 1}, speed: 3.5},
+	{name: "yellow", childs: {green: 1}, speed: 3.2},
+	{name: "green", childs: {blue: 1}, speed: 1.8},
+	{name: "blue", childs: {red: 1}, speed: 1.4},
+	{name: "red", speed: 1}
 ]
 
-const bloonStructureFreeplay = [
-	{id: "bad", childs: {zomg: 2, ddt: 3}, hp: 20000, type: 'blimp', speed: 0.18, immunities: {knockback: 1, slow: 1, stun: 1}},
-	{id: "ddt", childs: {ceramic: 4}, hp: 400, type: 'blimp', speed: 2.64, immunities: {energy: 1, explosion: 1, sharp: 1, shatter: 1}},
-	{id: "zomg", childs: {bfb: 4}, hp: 4000, type: 'blimp', speed: 0.18},
-	{id: "bfb", childs: {moab: 4}, hp: 700, type: 'blimp', speed: 0.25},
-	{id: "moab", childs: {ceramic: 4}, hp: 200, type: 'blimp', speed: 1},
-	{id: "ceramic", childs: {rainbow: 1}, hp: 60, type: 'split', speed: 2.5},
-	{id: "rainbow", childs: {zebra: 1}, type: 'split', speed: 2.2},
-	{id: "zebra", childs: {white: 1}, type: 'split', speed: 1.8, immunities: {cold: 1, explosion: 1}},
-	{id: "black", childs: {pink: 1}, type: 'split', speed: 1.8, immunities: {explosion: 1}},
-	{id: "white", childs: {pink: 1}, type: 'split', speed: 2, immunities: {cold: 1}},
-	{id: "purple", childs: {pink: 1}, type: 'normal', speed: 3, immunities: {energy: 1, plasma: 1}},
-	{id: "lead", childs: {black: 1}, type: 'normal', speed: 1, immunities: {energy: 1, sharp: 1, shatter: 1}},
-	{id: "pink", childs: {yellow: 1}, type: 'normal', speed: 3.5},
-	{id: "yellow", childs: {green: 1}, type: 'normal', speed: 3.2},
-	{id: "green", childs: {blue: 1}, type: 'normal', speed: 1.8},
-	{id: "blue", childs: {red: 1}, type: 'normal', speed: 1.4},
-	{id: "red", type: 'normal', speed: 1}
-]
+const fortifiedMultiplier = 2;
 
-// structure
-
-function getBloon(bloon) {
-	for (var i = 0; i < bloonStructure.length; i++) {
-		if (bloonStructure[i].id === bloon) {
-			return bloonStructure[i];
-		}
-	}
+function getBloonStructure(bloonLayerTop) {
+	for (let i = 0; i < bloonStructure.length; i++)
+		if (bloonStructure[i].name === bloonLayerTop) return bloonStructure[i];
+	return null;
 }
 
-function getBloonFreeplay(bloon) {
-	for (var i = 0; i < bloonStructureFreeplay.length; i++) {
-		if (bloonStructureFreeplay[i].id === bloon) {
-			return bloonStructureFreeplay[i];
-		}
-	}
-}
-
-function getBloonStructure(bloonLayerTop, round) {
-	var structure;
-	if(round > 80) {
-		structure = bloonStructureFreeplay;
-	} else {
-		structure = bloonStructure;
-	}
-	for (var i = 0; i < structure.length; i++) {
-		if (structure[i].id === bloonLayerTop) {
-			return structure[i];
-		}
-	}
-}
-
-// HP
-
-function getHP(bloon, round) {
-	var hp;
-	var baseHP;
-	if(round > 80) {
-		baseHP = getBloonFreeplay(bloon).hp;
-	} else {
-		baseHP = getBloon(bloon).hp;
-	}
-		
-	if (isNaN(baseHP)) {
-		return 1;
+function getHP(bloon, isFortified, round) {
+	let hp;
+	if(round > 80 && getBloonStructure(bloon).hpFP) hp = getBloonStructure(bloon).hpFP;
+	else hp = getBloonStructure(bloon).hp;
+	
+	// f-lead special
+	if (isFortified && bloon === 'lead') return 4;
+	
+	// default HP bloon
+	if (!hp) return 1;
+	
+	// freeplay hp scaling for moab class only
+	if (bloon !== 'ceramic' && bloon !== 'lead') {	
+		if (round >= 1 && round <= 80) hp = hp;
+		else if (round >= 81 && round <= 100) hp = hp * (1 + (round - 80) * 0.02);
+		else if (round >= 101 && round <= 124) hp = hp * (1.4 + (round - 100) * 0.05);
+		else if (round >= 125 && round <= 150) hp = hp * (2.6 + (round - 124) * 0.15);
+		else if (round >= 151 && round <= 250) hp = hp * (6.5 + (round - 150) * 0.35);
+		else if (round >= 251 && round <= 300) hp = hp * (41.5 + (round - 250) * 1.0);
+		else if (round >= 301 && round <= 400) hp = hp * (91.5 + (round - 300) * 1.5);
+		else if (round >= 401 && round <= 500) hp = hp * (241.5 + (round - 400) * 2.5);
+		else hp = hp * (491.5 + (round - 500) * 5.0);
 	}
 	
-	if (bloon === 'ceramic' || bloon === 'lead') {
-		return baseHP;
-	}
-	
-	if (round >= 1 && round <= 80) {
-		hp = baseHP;
-	}
-	else if(round >= 81 && round <= 100) {
-		hp = baseHP * (1 + (round - 80) * 0.02);
-	}
-	else if(round >= 101 && round <= 124) {
-		hp = baseHP * (1.4 + (round - 100) * 0.05);
-	}
-	else if(round >= 125 && round <= 150) {
-		hp = baseHP * (2.6 + (round - 124) * 0.15);
-	}
-	else if(round >= 151 && round <= 250) {
-		hp = baseHP * (6.5 + (round - 150) * 0.35);
-	}
-	else if(round >= 251 && round <= 300) {
-		hp = baseHP * (41.5 + (round - 250) * 1.0);
-	}
-	else if(round >= 301 && round <= 400) {
-		hp = baseHP * (91.5 + (round - 300) * 1.5);
-	}
-	else if(round >= 401 && round <= 500) {
-		hp = baseHP * (241.5 + (round - 400) * 2.5);
-	}
-	else {
-		hp = baseHP * (491.5 + (round - 500) * 5.0);
-	}
-	
+	if (isFortified) hp *= fortifiedMultiplier;
 	return hp;
 }
 
-// RBE
-
 function getRBE(bloon, isFortified, round) {
-	var rbe = 1;
-	var currentLayer = getBloonStructure(bloon, round);
-	var childs = currentLayer.childs;
-	var rbeBefore;
-	if(childs === undefined) {
-		return 1;
-	}
+	let childs;
+	let rbe = 1;
+	let currentLayer = getBloonStructure(bloon);
 	
-	rbeBefore = rbe;
+	if (round > 80 && currentLayer.childsFP) childs = currentLayer.childsFP;
+	else childs = currentLayer.childs;
 	
-	if(bloon === 'rainbow' || bloon === 'black') {
-		isFortified = 0;
-	}
+	// red bloon reached
+	if (!childs) return 1;
 	
-	if(bloon === 'ceramic') rbe += getHP('ceramic', round);
-	if(bloon === 'moab') rbe += getHP('moab', round);
-	if(bloon === 'bfb') rbe += getHP('bfb', round);
-	if(bloon === 'zomg') rbe += getHP('zomg', round);
-	if(bloon === 'ddt') rbe += getHP('ddt', round);
-	if(bloon === 'bad') rbe += getHP('bad', round);
+	// defortify f-ceramic/f-lead childs
+	if (bloon === 'rainbow' || bloon === 'black') isFortified = false;
 	
-	if(rbeBefore !== rbe) rbe--; // remove 0-layer of HP-bloons
+	// ceramic and higher + f-lead
+	if (getHP(bloon, isFortified, round) > 1) rbe += getHP(bloon, isFortified, round);
+	
+	// remove 0th-layer of HP-bloons
+	if (getHP(bloon, isFortified, round) > 1) rbe--;
 
-	if(isFortified === 1 && bloon !== 'lead') {
-		rbe *= 2;
-	}
-	if(isFortified === 1 && bloon === 'lead') {
-		rbe *= 4;
-	}
-			
-	var keys = Object.keys(childs);
+	// if (isFortified) rbe *= fortifiedMultiplier;
+	// f-lead special
+	// if (isFortified && bloon === 'lead') rbe *= fortifiedMultiplier;
+	
+	let keys = Object.keys(childs);
 	keys.forEach(
 		function(bloon) {
-			var bloonCount = childs[bloon];
-			for (var i = 0; i < bloonCount; i++) {
+			for (let i = 0; i < childs[bloon]; i++) {
 				rbe += getRBE(bloon, isFortified, round);
 			}
 		}
 	);
+	
 	return rbe;
 }
 	
-// Income
-	
 function getIncomeBloon(bloon, round) {
-	var income = 1;
-	var currentLayer = getBloonStructure(bloon, round);
-	var childs = currentLayer.childs;
-	if(childs === undefined) {
+	let childs;
+	let income = 1;
+	let currentLayer = getBloonStructure(bloon, round);
+	
+	if (round > 80 && currentLayer.childsFP) childs = currentLayer.childsFP;
+	else childs = currentLayer.childs;
+	
+	// red bloon
+	if (!childs) {
 		return 1;
 	}
-	
-	if(round > 80) {
-		if(bloon === 'ceramic') income += 86;
-	}
-	
-	var keys = Object.keys(childs);
-	keys.forEach(
+
+	// ceramic special income
+	if (round > 80 && bloon === 'ceramic') income += 86;
+
+	let bloonChilds = Object.keys(childs);
+	bloonChilds.forEach(
 		function(bloon) {
-			var bloonCount = childs[bloon];
-			for (var i = 0; i < bloonCount; i++) {
-				income += getIncomeBloon(bloon, round);
-			}
+			for (let i = 0; i < childs[bloon]; i++) income += getIncomeBloon(bloon, round);
 		}
 	);
 	return income;
 }
 
-// Immunites
-
-function getImmunitiesBloonStr(bloon) {
-	var immuStr = "";
-	var currentLayer = getBloonStructure(bloon, 1);
-	var immunities = currentLayer.immunities;
+function getImmunitiesBloonString(bloon) {
+	let immuStr = "";
+	let immunityList = Object.keys(getBloonStructure(bloon, 1).immunities);
 	
-	var keys = Object.keys(immunities);
-	keys.forEach(
-		function(immunity) {
-			immuStr += immunity + " ";
-		}
-	);
+	for (let i = 0; i < immunityList.length; i++) {
+		immuStr += immunityList[i];
+		if (i < immunityList.length - 1) immuStr += ", ";
+	}
 	return immuStr;
 }

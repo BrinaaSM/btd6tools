@@ -52,7 +52,7 @@ function createBloonDiv(round, bloonsArr, bloonsImages, roundsArr) {
 			if('regrow' in bloon) {
 				imgStr += "r";
 			}
-			imgStr += bloon.type + ".webp";
+			imgStr += bloon.name.replaceAll(".", "_") + ".webp";
 			bloonsStr += bloon.count + " x";
 			bloonsImages[bloonsImages.length - 1].src = imgStr;
 			
