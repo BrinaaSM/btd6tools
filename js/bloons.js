@@ -1,9 +1,9 @@
 const bloonStructure = [
-	{name: "bad", childs: {zomg: 2, ddt: 3}, hp: 20000, speed: 0.18, immunities: {knockback: 1, slow: 1, stun: 1}},
-	{name: "ddt", childs: {ceramic: 4}, hp: 400, speed: 2.64, immunities: {energy: 1, explosion: 1, sharp: 1, shatter: 1}},
-	{name: "zomg", childs: {bfb: 4}, hp: 4000, speed: 0.18},
-	{name: "bfb", childs: {moab: 4}, hp: 700, speed: 0.25},
-	{name: "moab", childs: {ceramic: 4}, hp: 200, speed: 1},
+	{name: "b.a.d.", childs: {"z.o.m.g.": 2, "d.d.t.": 3}, hp: 20000, speed: 0.18, immunities: {knockback: 1, slow: 1, stun: 1}},
+	{name: "d.d.t.", childs: {ceramic: 4}, hp: 400, speed: 2.64, immunities: {energy: 1, explosion: 1, sharp: 1, shatter: 1}},
+	{name: "z.o.m.g.", childs: {"b.f.b.": 4}, hp: 4000, speed: 0.18},
+	{name: "b.f.b.", childs: {"m.o.a.b.": 4}, hp: 700, speed: 0.25},
+	{name: "m.o.a.b.", childs: {ceramic: 4}, hp: 200, speed: 1},
 	{name: "ceramic", childs: {rainbow: 2}, childsFP: {rainbow: 1}, hp: 10, hpFP: 60, speed: 2.5},
 	{name: "rainbow", childs: {zebra: 2}, childsFP: {zebra: 1}, speed: 2.2},
 	{name: "zebra", childs: {black: 1, white: 1}, childsFP: {white: 1}, speed: 1.8, immunities: {cold: 1, explosion: 1}},
@@ -18,35 +18,39 @@ const bloonStructure = [
 	{name: "red", speed: 1}
 ]
 
+const fortifiedMultiplier = 2;
+
 function getBloonStructure(bloonLayerTop) {
 	for (let i = 0; i < bloonStructure.length; i++)
 		if (bloonStructure[i].name === bloonLayerTop) return bloonStructure[i];
 	return null;
 }
 
-function getHP(bloon, round) {
+function getHP(bloon, isFortified, round) {
 	let hp;
-	let baseHP;
 	
-	if(round > 80 && getBloonStructure(bloon).hpFP) baseHP = getBloonStructure(bloon).hpFP;
-	else baseHP = getBloonStructure(bloon).hp;
+	if(round > 80 && getBloonStructure(bloon).hpFP) hp = getBloonStructure(bloon).hpFP;
+	else hp = getBloonStructure(bloon).hp;
 	
 	// default HP bloon
-	if (!baseHP) return 1;
+	if (!hp) return 1;
 	
-	// non-MOAB class with HP
-	if (bloon === 'ceramic' || bloon === 'lead') return baseHP;
+	// freeplay hp scaling for moab class only
+	if (!bloon === 'ceramic' && !bloon === 'lead') {	
+		if (round >= 1 && round <= 80) hp = hp;
+		else if (round >= 81 && round <= 100) hp = hp * (1 + (round - 80) * 0.02);
+		else if (round >= 101 && round <= 124) hp = hp * (1.4 + (round - 100) * 0.05);
+		else if (round >= 125 && round <= 150) hp = hp * (2.6 + (round - 124) * 0.15);
+		else if (round >= 151 && round <= 250) hp = hp * (6.5 + (round - 150) * 0.35);
+		else if (round >= 251 && round <= 300) hp = hp * (41.5 + (round - 250) * 1.0);
+		else if (round >= 301 && round <= 400) hp = hp * (91.5 + (round - 300) * 1.5);
+		else if (round >= 401 && round <= 500) hp = hp * (241.5 + (round - 400) * 2.5);
+		else hp = hp * (491.5 + (round - 500) * 5.0);
+	}	
+	if (isFortified) hp *= fortifiedMultiplier;
+	// f-lead special
+	if (isFortified && bloon === 'lead') hp *= fortifiedMultiplier;
 	
-	// freeplay hp scaling
-	if (round >= 1 && round <= 80) hp = baseHP;
-	else if (round >= 81 && round <= 100) hp = baseHP * (1 + (round - 80) * 0.02);
-	else if (round >= 101 && round <= 124) hp = baseHP * (1.4 + (round - 100) * 0.05);
-	else if (round >= 125 && round <= 150) hp = baseHP * (2.6 + (round - 124) * 0.15);
-	else if (round >= 151 && round <= 250) hp = baseHP * (6.5 + (round - 150) * 0.35);
-	else if (round >= 251 && round <= 300) hp = baseHP * (41.5 + (round - 250) * 1.0);
-	else if (round >= 301 && round <= 400) hp = baseHP * (91.5 + (round - 300) * 1.5);
-	else if (round >= 401 && round <= 500) hp = baseHP * (241.5 + (round - 400) * 2.5);
-	else hp = baseHP * (491.5 + (round - 500) * 5.0);
 	return hp;
 }
 
@@ -64,15 +68,15 @@ function getRBE(bloon, isFortified, round) {
 	// defortify f-ceramic/f-lead childs
 	if (bloon === 'rainbow' || bloon === 'black') isFortified = false;
 	
-	// ceramic and higher
-	if (getHP(bloon, 1) > 1) rbe += getHP(bloon, round);
+	// ceramic and higher + f-lead
+	if (getHP(bloon, isFortified, round) > 1) rbe += getHP(bloon, isFortified, round);
 	
 	// remove 0th-layer of HP-bloons
-	if (getHP(bloon, 1) > 1) rbe--;
+	if (getHP(bloon, isFortified, round) > 1) rbe--;
 
-	if (isFortified) rbe *= 2;
+	if (isFortified) rbe *= fortifiedMultiplier;
 	// f-lead special
-	if (isFortified && bloon === 'lead') rbe *= 2;
+	if (isFortified && bloon === 'lead') rbe *= fortifiedMultiplier;
 	
 	let keys = Object.keys(childs);
 	keys.forEach(

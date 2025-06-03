@@ -18,7 +18,9 @@ function showAll() {
 		speedArr.push(document.createElement('div'));
 		immuArr.push(document.createElement('div'));
 		emptyArr.push(document.createElement('empty'));
-		bloonsArr[i].innerHTML = bloon.name;
+		// add bloon to name if not moab
+		if(bloon.hp > 10) bloonsArr[i].innerHTML = bloon.name;
+		else bloonsArr[i].innerHTML = bloon.name + " Bloon";
 		document.getElementById("default").appendChild(bloonsArr[i]);
 		createBloonDiv(i, bloonsImages, bloonsArr);
 		
@@ -26,7 +28,7 @@ function showAll() {
 		rbeArr[i].innerHTML = createRBEString(bloon);
 		hpArr[i].innerHTML = createHPString(bloon);	
 		speedArr[i].innerHTML = "Base RBS: " + bloon.speed;
-		let immuStr;
+		let immuStr = "";
 		if (bloon.immunities) immuStr += "Immune to: " + getImmunitiesBloonString(bloon.name);
 		immuArr[i].innerHTML = immuStr;
 		
@@ -42,10 +44,7 @@ function showAll() {
 
 function createRBEString(bloon) {
 	let rbe = getRBE(bloon.name, false, 1);
-	let rbeFreeplay = getRBE(bloon.name, false, 81);
-	let rbeStr = "RBE: " + rbe.toLocaleString();
-	
-	if(rbe != rbeFreeplay) rbeStr += " / " + rbeFreeplay.toLocaleString();
+	let rbeStr = "Base RBE: " + rbe.toLocaleString();
 	return rbeStr;	
 }
 
@@ -75,7 +74,7 @@ function createBloonDiv(index, bloonsImages, bloonsArr) {
 	let imgStr = "../img/";
 	
 	bloonsImages.push(document.createElement('img'));
-	imgStr += bloon.name + ".webp";
+	imgStr += bloon.name.replaceAll(".", "_") + ".webp";
 	bloonsImages[bloonsImages.length - 1].src = imgStr;
 	bloonsArr[bloonsArr.length - 1].appendChild(bloonsImages[bloonsImages.length - 1]);
 	return;
