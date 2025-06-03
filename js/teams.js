@@ -4,8 +4,8 @@ const towerList = [];
 const defaultTeamSize = 3;
 const maxMonkeyCount = 24;
 
-var chimpsViable = true;
-var teamSize = 3;
+let chimpsViable = true;
+let teamSize = 3;
 
 class Category {
 	constructor(name, towerList, checkBoxElem, labelElem) {
@@ -13,7 +13,6 @@ class Category {
 		this.list = towerList;
 		this.box = checkBoxElem;
 		this.label = labelElem;
-		
 		categoryList.push(this);
 	}
 }
@@ -26,7 +25,6 @@ class Tower {
 		this.label = labelElem;
 		this.hero = isHero;
 		this.start = isChimpsStart;
-		
 		towerList.push(this);
 	}
 }
@@ -97,11 +95,9 @@ const sizeInput = document.getElementById("team-size-input");
 const teamOutput = document.getElementById("team-output");
 
 function fillCategoryLists() {
-	for (let i = 0; i < categoryList.length; i++) {
-		for (let j = 0; j < towerList.length; j++) {
-			if(categoryList[i].name === towerList[j].category) {
-				categoryList[i].list.push(towerList[j]);
-			}
+	for (let i = 0; i < categoryList.length; i++)
+		for (let j = 0; j < towerList.length; j++)
+			if(categoryList[i].name === towerList[j].category) categoryList[i].list.push(towerList[j]);
 		}
 	}	
 	return;
@@ -110,13 +106,13 @@ function fillCategoryLists() {
 function initPage() {
 	fillCategoryLists();
 	// uncheck heros
-	for (let i = 1; i < categoryList[0].list.length; i++) {
-		categoryList[0].list[i].box.checked = false;
+	for (let i = 1; i < heroCat.list.length; i++) {
+		heroCat.list[i].box.checked = false;
 	}
-	categoryList[1].list[0].box.checked = false;
-	categoryList[2].list[0].box.checked = false;
-	categoryList[3].list[0].box.checked = false;
-	categoryList[4].list[0].box.checked = false;
+	primaryCat.list[0].box.checked = false;
+	militaryCat.list[0].box.checked = false;
+	magicCat.list[0].box.checked = false;
+	supportCat.list[0].box.checked = false;
 	// uncheck farm
 	farm.box.checked = false;
 	return;
@@ -125,9 +121,7 @@ function initPage() {
 // check and correct team size
 function inputHandlerSize(e) {
 	teamSize = e.target.value;
-	if(teamSize < 0) {
-		sizeInput.value = defaultTeamSize;
-	}
+	if(teamSize < 0) sizeInput.value = defaultTeamSize;
 	if (teamSize > maxMonkeyCount) {
 		sizeInput.value = maxMonkeyCount;
 		teamSize = maxMonkeyCount;
@@ -136,52 +130,46 @@ function inputHandlerSize(e) {
 }
 
 function resetColors() {
-	for (let i = 0; i < categoryList.length; i++) {
-		for (let j = 0; j < categoryList[i].list.length; j++) {
+	for (let i = 0; i < categoryList.length; i++)
+		for (let j = 0; j < categoryList[i].list.length; j++)
 			categoryList[i].list[j].label.style.color = "#87CEEB";
-		}
 	}	
 	return;
 }
 
 function toggleCategory(category) {
 	category.label = !category.label;
-	for(let i = 0; i < category.list.length; i++) {
+	for (let i = 0; i < category.list.length; i++) {
 		category.list[i].box.checked = category.label;
 		category.list[i].box.disabled = !category.label;
 	}
-	if(category.label) {
-		category.list[0].box.checked = false;
-	}
+	if(category.label) category.list[0].box.checked = false;
 	return;
 }
 
 function toggleChimpsViable() {
 	chimpsViable = !chimpsViable;
 	farm.box.checked = !chimpsViable;
+	return;
 }
 
 function setChimpsViable(on) {
 	chimpsViable = on;
 	farm.box.checked = !on;
 	document.getElementById("chimps-viable").checked = on;
+	return;
 }
 
 // fill list with towers that are enabled
 function fillTowerList(towerList) {
-	for(let i = 0; i < categoryList.length; i++) {
-		for(let j = 0; j < categoryList[i].list.length; j++) {
-			if (categoryList[i].list[j].box.checked) {
+	for(let i = 0; i < categoryList.length; i++)
+		for(let j = 0; j < categoryList[i].list.length; j++)
+			if (categoryList[i].list[j].box.checked)
 				if(chimpsViable) {
 					// remove farm
-					if(categoryList[i].list[j] != farm) {
-						towerList.push(categoryList[i].list[j]);
-					} else {
-						categoryList[i].list[j].box.checked == false;
-					}
-				} else {
-					towerList.push(categoryList[i].list[j]);
-				}
+					if(categoryList[i].list[j] != farm) towerList.push(categoryList[i].list[j]);
+					else categoryList[i].list[j].box.checked == false;
+				} else towerList.push(categoryList[i].list[j]);
 			}
 		}
 	}
@@ -190,17 +178,13 @@ function fillTowerList(towerList) {
 
 // pick a random tower that can start C.H.I.M.P.S. (TODO: could be combined with random tower)
 function pickViableTower(towerList) {
-	
-	for(let i = 0; i < towerList.length; i++) {
-		if (towerList[i].start) {
+	for(let i = 0; i < towerList.length; i++)
+		if (towerList[i].start)
 			viableTowers.push(towerList[i]);
-		}
 	}
 
 	// check if no chimps start possible
-	if (viableTowers.length == 0) {
-		return null;
-	}	
+	if (viableTowers.length == 0) return null;
 	return viableTowers[Math.floor(Math.random()*viableTowers.length)];
 }
 
@@ -214,14 +198,11 @@ function pickRandomTower(towerList, pickHero, pickStart) {
 	
 	let choice;
 	
-	for(let i = 0; i < towerList.length; i++) {
-		if (towerList[i].hero) {
-			heroList.push(towerList[i]);
-		} else {
+	for(let i = 0; i < towerList.length; i++)
+		if (towerList[i].hero) heroList.push(towerList[i]);
+		else {
 			nonHeroList.push(towerList[i]);
-			if (towerList[i].start) {
-				startList.push(towerList[i]);
-			}
+			if (towerList[i].start) startList.push(towerList[i]);
 		}
 	}
 	
@@ -231,11 +212,9 @@ function pickRandomTower(towerList, pickHero, pickStart) {
 		return choice;
 	}
 	
-	if (pickHero) {
-		choice = heroList[Math.floor(Math.random()*heroList.length)];
-	} else {
-		choice = nonHeroList[Math.floor(Math.random()*nonHeroList.length)];
-	}
+	if (pickHero) choice = heroList[Math.floor(Math.random()*heroList.length)];
+	else choice = nonHeroList[Math.floor(Math.random()*nonHeroList.length)];
+	
 	towerList.splice(towerList.indexOf(choice), 1);
 	return choice;
 }
@@ -243,11 +222,8 @@ function pickRandomTower(towerList, pickHero, pickStart) {
 function countHeroes(towerList) {
 	let sum = 0;
 	
-	for(let i = 0; i < towerList.length; i++) {
-		if(towerList[i].hero) {
-			sum++;
-		}
-	}
+	for(let i = 0; i < towerList.length; i++)
+		if (towerList[i].hero) sum++;
 	return sum;
 }
 
@@ -272,9 +248,7 @@ function roll() {
 		return;
 	}
 	
-	if (teamSize <= 0) {
-		setChimpsViable(false);
-	}
+	if (teamSize <= 0) setChimpsViable(false);
 	
 	// check if team possible to create
 	if (towerList.length - countHeroes(towerList) < teamSize) {
@@ -305,9 +279,7 @@ function roll() {
 	for (let i = 0; i < chosenTowers.length; i++) {
 		output += chosenTowers[i].name;
 		chosenTowers[i].label.style.color = "yellow";
-		if (i < chosenTowers. length - 1) {
-			output += ", ";
-		}
+		if (i < chosenTowers. length - 1) output += ", ";
 	}
 	
 	teamOutput.value = output;
