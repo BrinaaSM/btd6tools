@@ -28,7 +28,6 @@ function getBloonStructure(bloonLayerTop) {
 
 function getHP(bloon, isFortified, round) {
 	let hp;
-	
 	if(round > 80 && getBloonStructure(bloon).hpFP) hp = getBloonStructure(bloon).hpFP;
 	else hp = getBloonStructure(bloon).hp;
 	
@@ -36,7 +35,7 @@ function getHP(bloon, isFortified, round) {
 	if (!hp) return 1;
 	
 	// freeplay hp scaling for moab class only
-	if (!bloon === 'ceramic' && !bloon === 'lead') {	
+	if (bloon !== 'ceramic' && bloon !== 'lead') {	
 		if (round >= 1 && round <= 80) hp = hp;
 		else if (round >= 81 && round <= 100) hp = hp * (1 + (round - 80) * 0.02);
 		else if (round >= 101 && round <= 124) hp = hp * (1.4 + (round - 100) * 0.05);

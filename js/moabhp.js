@@ -1,11 +1,8 @@
 const roundInput = document.getElementById("current-round-input");
 const modifierInput = document.getElementById("modifier-input");
-const resultMOAB = document.getElementById("moab-hp-output");
-const resultBFB = document.getElementById("bfb-hp-output");
-const resultZOMG = document.getElementById("zomg-hp-output");
-const resultDDT = document.getElementById("ddt-hp-output");
-const resultBAD = document.getElementById("bad-hp-output");
-const resultCeramic = document.getElementById("ceram-hp-output");
+
+const resultList = [];
+
 const fortified_modifier = 2;
 const knowledge_modifier = 0.9;
 const min_modifier = 5;
@@ -18,6 +15,13 @@ let challenge;
 let modifier = 100;
 let round;
 
+resultList.push(document.getElementById("bad-hp-output"));
+resultList.push(document.getElementById("ddt-hp-output"));
+resultList.push(document.getElementById("zomg-hp-output"));
+resultList.push(document.getElementById("bfb-hp-output"));
+resultList.push(document.getElementById("moab-hp-output"));
+resultList.push(document.getElementById("ceram-hp-output"));
+
 function inputHandlerRound(e) {
 	round = e.target.value;
 	calcAll(round, modifier);
@@ -25,8 +29,8 @@ function inputHandlerRound(e) {
 
 function inputHandlerModifier(e) {
 	modifier = e.target.value;
-	if(modifier < 0) modifierInput.value = min_modifier;
-	if(modifier < min_modifier) modifier = min_modifier;
+	if (modifier < 0) modifierInput.value = min_modifier;
+	if (modifier < min_modifier) modifier = min_modifier;
 	else if(modifier > max_modifier) {
 		modifierInput.value = max_modifier;
 		modifier = max_modifier;
@@ -36,7 +40,7 @@ function inputHandlerModifier(e) {
 
 function checkValidModifier() {
 	modifier = modifierInput.value;
-	if(modifier <= 0) {
+	if (modifier <= 0) {
 		modifier = 100;
 		modifierInput.value = "";
 	} else if(modifier < min_modifier) {
@@ -60,14 +64,14 @@ function toggleChallenge(){
 }
 
 function selectCheckbox(domElement) {
-	if(domElement.checked) domElement.parentNode.style.border = "3px yellow solid";
+	if (domElement.checked) domElement.parentNode.style.border = "3px yellow solid";
 	else domElement.parentNode.style.border = "0px #00003f solid";
 }
 
 function calcAll(round, modifier) {	
-	if(!round) round = roundInput.value;
+	if (!round) round = roundInput.value;
 	
-	if(round <= 0) {
+	if (round <= 0) {
 		roundInput.value = "";
 		round = 1;
 	} else if (round > Number.MAX_SAFE_INTEGER) {
@@ -75,33 +79,23 @@ function calcAll(round, modifier) {
 		round = Number.MAX_SAFE_INTEGER;
 	}
 	
-	resultMOAB.innerHTML = calcHP(getHP('m.o.a.b.', round));
-	resultBFB.innerHTML = calcHP(getHP('b.f.b.', round));
-	resultZOMG.innerHTML = calcHP(getHP('z.o.m.g.', round));
-	resultDDT.innerHTML = calcHP(getHP('d.d.t.', round));
-	resultBAD.innerHTML = calcHP(getHP('b.a.d.', round));
-	resultCeramic.innerHTML = calcHPCeram(getHP('ceramic', round));
+	for (let i = 0; i < resultList.length; i++) {
+		let hp = modifyResult(getHP(bloonStructure[i].name, fortified, round), bloonStructure[i].name);
+		resultList[i].innerHTML = hp;
+	}
 }
 
-function calcHPCeram(baseHP) {
-	let hp = baseHP;
-	
-	if(fortified) hp = hp * fortified_modifier;
-	
-	if(challenge) {
-		hp = Math.floor(hp * (modifier / 100));
+function modifyResult(hp, bloon) {
+	if (challenge) {
+		hp = Math.round(hp * (modifier / 100));
 		if(hp < 1) hp = 1;
 	}
-	return hp.toLocaleString();
-}
-
-function calcHP(baseHP) {
-	let hp = baseHP;
 	
-	if(knowledge) hp = Math.floor(parseInt(hp) * knowledge_modifier);
-	if(fortified) hp = hp * fortified_modifier;
-	if(doubleHP) hp = hp * 2;
-	if(challenge) hp = Math.floor(hp * (modifier / 100));	
+	if (bloon === 'ceramic') return hp.toLocaleString();
+	
+	if (knowledge) hp = Math.round(parseInt(hp) * knowledge_modifier);
+	if (doubleHP) hp = hp * 2;
+	
 	return hp.toLocaleString();
 }
 
