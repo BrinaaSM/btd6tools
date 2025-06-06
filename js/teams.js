@@ -167,7 +167,7 @@ function fillTowerList(towerList) {
 	for(let i = 0; i < checkedList.length; i++)
 		if(chimpsViable) {
 			// remove farm
-			if(checkedList[i] != farm) towerList.push(categoryList[i].list[j]);
+			if(checkedList[i] != farm) towerList.push(checkedList[i]);
 			else checkedList[i].box.checked == false;
 		} else towerList.push(categoryList[i].list[j]);
 	return;
