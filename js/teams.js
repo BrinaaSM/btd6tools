@@ -169,7 +169,7 @@ function fillTowerList(towerList) {
 			// remove farm
 			if(checkedList[i] != farm) towerList.push(checkedList[i]);
 			else checkedList[i].box.checked == false;
-		} else towerList.push(categoryList[i].list[j]);
+		} else towerList.push(checkedList[i]);
 	return;
 }
 
