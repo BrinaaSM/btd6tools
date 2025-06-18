@@ -56,6 +56,7 @@ const bomb = new Tower("Bomb", "primary", document.getElementById("bomb"), docum
 const tack = new Tower("Tack", "primary", document.getElementById("tack"), document.getElementById("tack-label"), false, true);
 const ice = new Tower("Ice", "primary", document.getElementById("ice"), document.getElementById("ice-label"), false, false);
 const glue = new Tower("Glue", "primary", document.getElementById("glue"), document.getElementById("glue-label"), false, false);
+const desperado = new Tower("Desperado", "primary", document.getElementById("desperado"), document.getElementById("desperado-label"), false, true);
 
 // create military classes
 const anyMilitary = new Tower("Any Military", "military", document.getElementById("any-military"), document.getElementById("any-military-label"), false, true);
