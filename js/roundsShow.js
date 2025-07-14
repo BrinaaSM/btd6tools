@@ -1,4 +1,4 @@
-let roundType;
+var roundType;
 
 function showAll() {
 	let startRound = 1;
